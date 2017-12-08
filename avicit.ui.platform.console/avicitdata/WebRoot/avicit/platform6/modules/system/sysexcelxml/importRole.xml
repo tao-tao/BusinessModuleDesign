@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<avicit_excel_import>
+	<importType  id="importRole">
+		<tablePorperty name="SYS_ROLE" priority="1" >
+			<model class="avicit.platform6.core.api.unituser.sysrole.domain.SysRole"
+		    updateCurrentRecord="select t.id from SYS_ROLE t where role_code =?uniqueCheckRecord[]0" 
+			updateCurrentValue="roleCode"
+			uniqueCheck="true">
+				<classPorperty name="roleCode" valueMode="single">
+					<property id="1" ExcelTitleName="角色代码"
+						DataType="String"  isNull="n" />
+				</classPorperty>
+				
+				<classPorperty name="roleName" valueMode="single">
+					<property id="2" ExcelTitleName="角色名称"
+						DataType="String" isNull="n"/>
+				</classPorperty>
+				
+				<classPorperty name="roleGroup" valueMode="single">
+					<property id="3" ExcelTitleName="角色组"
+						DataType="String" />
+				</classPorperty>
+				
+				<classPorperty name="sysDeptId" valueMode="single">
+					<property id="4" ExcelTitleName="所属部门编码"
+						DataType="String" fkCheck="select t.id from sys_dept t where t.dept_code = ?'4'"
+						saveDataFrom="FK"/>
+				</classPorperty>
+				
+				<classPorperty name="sysDeptName" valueMode="single">
+					<property id="5" ExcelTitleName="所属部门名称"
+						DataType="String" />
+				</classPorperty>
+				
+				<classPorperty name="roleType" valueMode="single">
+					<property id="6" ExcelTitleName="角色类型"
+						DataType="String" lookupCode="PLATFORM_SYS_ROLETYPE"/>
+				</classPorperty>
+				
+				<classPorperty name="desc" valueMode="single">
+					<property id="7" ExcelTitleName="描述"
+						DataType="String"/>
+				</classPorperty>	
+				
+				<classPorperty name="orderBy" valueMode="single">
+					<property id="8" ExcelTitleName="排序"
+						DataType="BigDecimal" default="0"/>	
+				</classPorperty>	
+				
+				<classPorperty name="sysApplicationId" valueMode="single">
+					<property id="9" ExcelTitleName="应用程序ID"
+						DataType="String"  saveDataFrom="classMethod" saveDataFromClass="avicit.platform6.core.session.SessionHelper" saveDataFromMethod="getApplicationId"/>
+				</classPorperty>
+				
+				<classPorperty name="validFlag" valueMode="single">
+					<property id="9" ExcelTitleName="应用程序ID"
+						DataType="String"  saveDataFrom="classMethod" saveDataFromClass="avicit.platform6.core.session.SessionHelper" saveDataFromMethod="getApplicationId"/>
+				</classPorperty>
+			</model>
+		</tablePorperty>
+		
+	</importType>
+</avicit_excel_import>
+

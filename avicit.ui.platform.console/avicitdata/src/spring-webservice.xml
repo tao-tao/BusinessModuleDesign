@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/context  
+    http://www.springframework.org/schema/context/spring-context.xsd  
+    http://cxf.apache.org/jaxws   
+    http://cxf.apache.org/schemas/jaxws.xsd">  
+    <import resource="classpath*:META-INF/cxf/cxf.xml" />  
+    <import resource="classpath*:META-INF/cxf/cxf-servlet.xml" />  
+    <import resource="classpath*:META-INF/cxf/cxf-extension-xml.xml"/>
+    
+    <!-- 服务端demo  -->  
+	<!-- 
+	<bean id="helloServiceImpl" class="avicit.platform6.demo.webservice.impl.HelloServiceImpl"></bean>  
+    <jaxws:endpoint id="helloService" implementor="#helloServiceImpl" address="/helloService"></jaxws:endpoint> 
+	-->
+	<!-- 客户端demo  -->  
+	 <!-- 
+    <jaxws:client id="helloServiceClient"  serviceClass="avicit.platform6.demo.webservice.HelloService" 
+    	address="http://127.0.0.1:8080/avicit-platform6-main/ws/helloService"/> 
+     -->
+</beans>

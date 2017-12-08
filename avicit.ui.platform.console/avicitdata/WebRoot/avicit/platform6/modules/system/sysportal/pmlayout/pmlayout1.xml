@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<layout name="多项目模板一" enName="pmTemplate1">
+		<layout-columns>
+			<layout-column id="column_1" width="49.5%"/>
+			<layout-column id="column_2" width="49.5%"/>
+		</layout-columns>
+	</layout>

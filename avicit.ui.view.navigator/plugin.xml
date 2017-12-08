@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension-point id="modelFactory" name="modelFactory" schema="schema/modelFactory.exsd"/>
+	<extension-point id="adapter" name="adapter" schema="schema/adapter.exsd"/>
+	<extension-point id="avicit.view.ui.imageRepository" name="imageRepository" schema="schema/imageRepository.exsd"/>
+
+	<extension point="org.eclipse.ui.views">
+		<category name="AVICIT PLAT" id="avicit.ui.view.navigator">
+      	</category>
+      <view name="金航开发平台" icon="icons/decorator/projectavicit.png" category="avicit.ui.view.navigator"
+            class="avicit.ui.view.navigator.views.AvicitProjectNavigator" id="com.avicit.platform">
+      </view>
+   	</extension>
+
+   	<extension point="org.eclipse.ui.popupMenus">
+        <objectContribution id="group.refactor" objectClass="org.eclipse.core.resources.IProject">
+        </objectContribution>
+    </extension>
+
+   	<extension id="avicitBuilder" name="Avicit project builder" point="org.eclipse.core.resources.builders">
+		<builder hasNature="true">
+			<run class="com.avicit.ui.navigator.builder.AvicitBuilder"></run>
+		</builder>
+	</extension>
+	
+	<extension id="avicitNature" name="Avicit Project Nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="com.avicit.ui.navigator.builder.AvicitNature"></run>
+		</runtime>
+		<builder id="com.avicit.ui.navigator.avicitBuilder"></builder>
+	</extension>
+	
+	<extension id="avicitLibNature" name="avicit Lib Project Nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="com.avicit.ui.navigator.builder.AvicitLibNature"></run>
+		</runtime>
+	</extension>
+	
+	<extension point="org.eclipse.ui.perspectives">
+		<perspective name="金航平台" id="com.avicit.ui.perspective" icon="/icons/avic.png" class="avicit.ui.view.navigator.AvicitPerspectiveFactory" />
+	</extension>
+	
+	<extension point="org.eclipse.ui.perspectiveExtensions">
+		<perspectiveExtension targetID="org.eclipse.jdt.ui.JavaPerspective">
+			<showInPart id="org.eclipse.jdt.ui.PackageExplorer" />
+			<showInPart id="org.eclipse.team.ui.GenericHistoryView" />
+			<showInPart id="org.eclipse.ui.views.ResourceNavigator" />
+			<showInPart id="com.avicit.platform" />
+		</perspectiveExtension>
+	</extension>
+	<extension point="org.eclipse.ui.ide.projectNatureImages">
+		<image icon="icons/decorator/projectavicit_1.png" natureId="com.avicit.ui.navigator.avicitNature" id="org.eclipse.ui.easycareProjectNatureImage">
+  		</image>  
+   	</extension>
+   	
+	<extension point="org.eclipse.ui.navigator.viewer">
+	   <viewer viewerId="com.avicit.platform">
+			<popupMenu allowsPlatformContributions="true" id="com.avicit.platform.menu#PopupMenu">
+				<insertionPoint name="group.new" />
+				<insertionPoint name="group.open" separator="true" />
+				<insertionPoint name="group.openWith" />
+				<insertionPoint name="group.goto" separator="true" />
+				<insertionPoint name="group.edit" separator="true" />
+				<insertionPoint name="group.refactor" separator="true" />
+				<insertionPoint name="group.build" separator="true" />
+				<insertionPoint name="group.reorganize" />
+				<insertionPoint name="group.port" separator="true" />
+				<insertionPoint name="group.generate" separator="true" />
+				<insertionPoint name="group.search" separator="true" />
+				<insertionPoint name="additions" separator="true" />
+				<insertionPoint name="group.properties" separator="true" />
+				<insertionPoint name="group.shell" />
+				<insertionPoint name="shell" />
+			</popupMenu>
+		</viewer>
+		<viewerActionBinding viewerId="com.avicit.platform">
+			<includes>
+				<actionExtension  pattern="org.eclipse.ui.navigator.resources.*"></actionExtension>
+				<actionExtension  pattern="avicit.ui.runtime.core.action.*"></actionExtension>	
+	         </includes>
+		</viewerActionBinding>
+		<viewerContentBinding viewerId="com.avicit.platform">
+				<includes>
+					<contentExtension pattern="org.eclipse.ui.navigator.resourceContent" />
+						<contentExtension pattern="org.eclipse.ui.navigator.resources.*">  
+						</contentExtension> 
+						<contentExtension pattern="com.tansun.ui.filters.*" />
+						<contentExtension pattern="avicit.ui.navigator.projectContent" />
+				</includes>
+		</viewerContentBinding>
+	</extension>
+   
+	<extension point="org.eclipse.ui.navigator.navigatorContent">
+		<navigatorContent id="avicit.ui.navigator.projectContent" contentProvider="avicit.ui.view.navigator.views.NavigatorContentProvider" icon="/icons/avic.png" labelProvider="avicit.ui.view.navigator.views.NavigatorLabelProvider" activeByDefault="true" name="金航平台">
+			<triggerPoints>
+				<or>
+					<adapt type="org.eclipse.core.resources.IProject">
+						<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+					</adapt>
+					<instanceof value="org.eclipse.core.resources.IResource" />
+					<instanceof value="org.eclipse.jdt.core.IJavaElement" />
+					<instanceof value="org.eclipse.jdt.core.IJarEntryResource" />
+					<!--
+					<instanceof value="org.eclipse.jdt.internal.ui.packageview.PackageFragmentRootContainer" />
+					-->
+					<instanceof value="avicit.ui.runtime.core.INode" />
+				</or>
+			</triggerPoints>
+			<possibleChildren>
+				<or>
+				    <instanceof value="avicit.ui.runtime.core.INode" />
+					<instanceof value="org.eclipse.core.resources.IResource" />
+					<instanceof value="org.eclipse.jdt.core.IJavaElement" />
+					<instanceof value="org.eclipse.jdt.core.IJarEntryResource" />
+				</or>
+			</possibleChildren>
+			<!--
+			<actionProvider class="org.eclipse.jdt.internal.ui.navigator.JavaNavigatorViewActionProvider" id="avicit.ui.navigator.action.ViewActions">
+				<enablement>
+					<or>
+						<instanceof value="org.eclipse.core.resources.IWorkspaceRoot" />
+						<adapt type="java.util.Collection">
+							<count value="0" />
+						</adapt>
+					</or>
+				</enablement>
+			</actionProvider>
+			-->
+
+			<actionProvider class="avicit.ui.runtime.core.action.providers.OpenExplorerActionProvider" id="avicit.ui.action.OpenExplorerActions">
+				<enablement>
+					<or>
+						<instanceof value="avicit.ui.runtime.core.INode" />
+						<instanceof value="org.eclipse.jdt.core.IJavaElement" />
+						<instanceof value="org.eclipse.jdt.core.IJarEntryResource" />
+						<instanceof value="org.eclipse.core.resources.IResource" />
+						<adapt type="java.util.Collection">
+							<count value="0" />
+						</adapt>
+					</or>
+				</enablement>
+			</actionProvider>
+
+			<actionProvider class="avicit.ui.runtime.core.action.providers.PropertyActionProvider" id="avicit.ui.action.PropertyActions">
+                <enablement>
+                    <or>
+                        <instanceof value="avicit.ui.runtime.core.INode" />
+                        <instanceof value="org.eclipse.jdt.core.IJavaElement" />
+                        <instanceof value="org.eclipse.jdt.core.IJarEntryResource" />
+                        <instanceof value="org.eclipse.core.resources.IResource" />
+                        <adapt type="java.util.Collection">
+                            <count value="0" />
+                        </adapt>
+                    </or>
+                </enablement>
+            </actionProvider>
+
+<!--
+			<actionProvider class="org.eclipse.jdt.internal.ui.navigator.JavaNavigatorActionProvider" id="com.tansun.ui.navigator.action.StandardActions" overrides="org.eclipse.ui.navigator.resources.actions.EditActions">
+				<enablement>
+					<or>
+						<and>
+							<instanceof value="org.eclipse.core.resources.IProject" />
+							<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+						</and>
+						<instanceof value="org.eclipse.jdt.core.IJavaElement" />
+						<instanceof value="org.eclipse.jdt.core.IJarEntryResource" />
+						<instanceof value="org.eclipse.jdt.internal.ui.packageview.PackageFragmentRootContainer" />
+						<adapt type="java.util.Collection">
+							<count value="0" />
+						</adapt>
+					</or>
+				</enablement>
+			</actionProvider>
+-->
+			<actionProvider class="avicit.ui.runtime.core.action.providers.CreateSubSystemActionProvider" id="avicit.ui.navigator.action.subAction">
+				<enablement>
+					<or>
+						<instanceof value="avicit.ui.runtime.core.node.AbstractNode" />
+					</or>
+				</enablement>
+			</actionProvider>
+
+			<actionProvider class="avicit.ui.runtime.core.action.providers.CreatePackageActionProvider" id="avicit.ui.navigator.action.copyAction">
+				<enablement>
+					<or>
+						<instanceof value="avicit.ui.runtime.core.develope.bo.BoNode" />
+						<instanceof value="avicit.ui.runtime.core.develope.display.ViewNode" />
+						<instanceof value="avicit.ui.runtime.core.develope.logic.LogicNode" />
+						<instanceof value="avicit.ui.runtime.core.develope.control.ControlNode" />
+						<instanceof value="avicit.ui.runtime.core.develope.data.DataAccessNode" />
+						<instanceof value="avicit.ui.runtime.core.develope.service.ServiceNode" />
+					</or>
+				</enablement>
+			</actionProvider>
+
+<!--
+			<actionProvider class="org.eclipse.jdt.internal.ui.navigator.JavaNavigatorRefactorActionProvider" id="com.tansun.ui.navigator.action.RefactorActions" overrides="org.eclipse.ui.navigator.resources.actions.RefactorActions">
+				<enablement>
+					<or>
+						<and>
+							<instanceof value="org.eclipse.core.resources.IProject" />
+							<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+						</and>
+						<instanceof value="org.eclipse.jdt.core.IJavaElement" />
+						<instanceof value="org.eclipse.jdt.core.IJarEntryResource" />
+						<instanceof value="org.eclipse.jdt.internal.ui.packageview.PackageFragmentRootContainer" />
+						<adapt type="java.util.Collection">
+							<count value="0" />
+						</adapt>
+					</or>
+				</enablement>
+			</actionProvider>
+-->
+			<!-- 
+				<actionProvider class="org.eclipse.jdt.internal.ui.navigator.PackageExplorerOpenActionProvider" id="com.tansun.ui.navigator.action.OpenActions" overrides="org.eclipse.ui.navigator.resources.OpenActions"></actionProvider>
+			-->
+			<override policy="InvokeAlwaysRegardlessOfSuppressedExt" suppressedExtensionId="org.eclipse.ui.navigator.resourceContent" />
+			<commonSorter class="org.eclipse.jdt.ui.JavaElementSorter" id="org.eclipse.jdt.ui.javaElementSorter" />
+
+			<commonWizard menuGroupId="org.eclipse.jdt.ui.java" type="new" wizardId="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard">
+				<enablement>
+					<or>
+						<instanceof value="org.eclipse.jdt.core.IPackageFragment" />
+						<instanceof value="org.eclipse.jdt.core.IPackageFragmentRoot" />
+						<instanceof value="org.eclipse.jdt.core.ICompilationUnit" />
+						<instanceof value="org.eclipse.jdt.core.ICompilationUnit" />
+						<instanceof value="avicit.ui.runtime.core.develope.bo.BoNode" />
+
+						<adapt type="org.eclipse.core.resources.IProject">
+							<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+						</adapt>
+					</or>
+				</enablement>
+			</commonWizard>
+			<commonWizard menuGroupId="org.eclipse.jdt.ui.java" type="new" wizardId="org.eclipse.jdt.ui.wizards.NewClassCreationWizard">
+				<enablement>
+					<or>
+						<instanceof value="org.eclipse.jdt.core.IPackageFragment" />
+						<instanceof value="org.eclipse.jdt.core.IPackageFragmentRoot" />
+						<instanceof value="org.eclipse.jdt.core.ICompilationUnit" />
+						<adapt type="org.eclipse.core.resources.IProject">
+							<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+						</adapt>
+					</or>
+				</enablement>
+			</commonWizard>
+
+			<commonWizard menuGroupId="org.eclipse.jdt.ui.java" type="new" wizardId="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard">
+				<enablement>
+					<or>
+						<instanceof value="org.eclipse.jdt.core.IPackageFragment" />
+						<instanceof value="org.eclipse.jdt.core.IPackageFragmentRoot" />
+						<instanceof value="org.eclipse.jdt.core.ICompilationUnit" />
+						<adapt type="org.eclipse.core.resources.IProject">
+							<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+						</adapt>
+					</or>
+				</enablement>
+			</commonWizard>
+			<commonWizard menuGroupId="org.eclipse.jdt.ui.java" type="new" wizardId="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard">
+				<enablement>
+					<or>
+						<instanceof value="org.eclipse.jdt.core.IPackageFragment" />
+						<instanceof value="org.eclipse.jdt.core.IPackageFragmentRoot" />
+						<instanceof value="org.eclipse.jdt.core.ICompilationUnit" />
+						<adapt type="org.eclipse.core.resources.IProject">
+							<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+						</adapt>
+					</or>
+				</enablement>
+			</commonWizard>
+			<commonWizard menuGroupId="org.eclipse.jdt.ui.java" type="new" wizardId="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard">
+				<enablement>
+					<or>
+						<instanceof value="org.eclipse.jdt.core.IPackageFragment" />
+						<instanceof value="org.eclipse.jdt.core.IPackageFragmentRoot" />
+						<instanceof value="org.eclipse.jdt.core.ICompilationUnit" />
+						<adapt type="org.eclipse.core.resources.IProject">
+							<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+						</adapt>
+					</or>
+				</enablement>
+			</commonWizard>
+			<commonWizard menuGroupId="org.eclipse.jdt.ui.java" type="new" wizardId="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard">
+				<enablement>
+					<or>
+						<instanceof value="org.eclipse.jdt.core.IPackageFragmentRoot" />
+						<adapt type="org.eclipse.core.resources.IProject">
+							<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+						</adapt>
+					</or>
+				</enablement>
+			</commonWizard>
+			<commonWizard menuGroupId="resource" type="new" wizardId="org.eclipse.ui.wizards.new.folder">
+				<enablement>
+					<or>
+						<adapt type="org.eclipse.core.resources.IFolder"></adapt>
+						<adapt type="org.eclipse.core.resources.IProject" />
+						<adapt type="org.eclipse.core.resources.IWorkspaceRoot" />
+					</or>
+				</enablement>
+			</commonWizard>
+			<commonWizard menuGroupId="resource" type="new" wizardId="org.eclipse.ui.wizards.new.file">
+				<enablement>
+					<or>
+						<adapt type="org.eclipse.core.resources.IFile" />
+						<adapt type="org.eclipse.core.resources.IFolder" />
+						<adapt type="org.eclipse.core.resources.IProject" />
+						<adapt type="org.eclipse.core.resources.IWorkspaceRoot" />
+					</or>
+				</enablement>
+			</commonWizard>
+
+			<dropAssistant class="org.eclipse.jdt.internal.ui.navigator.JavaDropAdapterAssistant" id="org.eclipse.jdt.ui.dropAssistant">
+				<possibleDropTargets>
+					<or>
+						<instanceof value="org.eclipse.core.resources.IResource" />
+						<instanceof value="org.eclipse.jdt.core.IJavaElement" />
+					</or>
+				</possibleDropTargets>
+			</dropAssistant>
+		</navigatorContent>
+		<commonFilter activeByDefault="false" class="org.eclipse.jdt.internal.ui.navigator.NonEssentialEmptyPackageFilter" name="%HideEmptyPackages.label" description="%HideEmptyPackages.description" id="com.tansun.ui.filters.HideEmptyPackages" />
+		<commonFilter activeByDefault="true" class="org.eclipse.jdt.internal.ui.navigator.NonEssentialEmptyInnerPackageFilter" name="%HideEmptyInnerPackages.label" description="%HideEmptyInnerPackages.description" id="com.tansun.ui.filters.HideEmptyInnerPackages" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.AnnotationFilter" name="%HideAnnotation.label" description="%HideAnnotation.description" id="com.tansun.ui.filters.HideAnnotations" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.EnumFilter" name="%HideEnum.label" description="%HideEnum.description" id="com.tansun.ui.filters.HideAnnotations" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.InterfaceFilter" name="%HideInterface.label" description="%HideInterface.description" id="com.tansun.ui.filters.HideInterface" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.FieldsFilter" name="%HideFields.label" description="%HideFields.description" id="com.tansun.ui.filters.HideFields" />
+		<commonFilter activeByDefault="true" class="org.eclipse.jdt.internal.ui.filters.ImportDeclarationFilter" name="%HideImportDeclaration.label" description="%HideImportDeclaration.description" id="com.tansun.ui.filters.HideImportDeclaration" />
+		<commonFilter activeByDefault="true" class="org.eclipse.jdt.internal.ui.filters.InnerClassFilesFilter" name="%HideInnerClassFiles.label" description="%HideInnerClassFiles.description" id="com.tansun.ui.filters.HideInnerClassFiles" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.JavaFileFilter" name="%HideJavaFiles.label" description="%HideJavaFiles.description" id="com.tansun.ui.filters.HideJavaFiles" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.LocalTypesFilter" name="%HideLocalTypes.label" description="%HideLocalTypes.description" id="com.tansun.ui.filters.HideLocalTypes" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.NonJavaElementFilter" name="%HideNonJavaElements.label" description="%HideNonJavaElements.description" id="com.tansun.ui.filters.HideNonJavaElements" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.NonJavaProjectsFilter" name="%HideNonJavaProjects.label" description="%HideNonJavaProjects.description" id="com.tansun.ui.filters.HideNonJavaProjects" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.NonPublicFilter" name="%HideNonPublic.label" description="%HideNonPublic.description" id="com.tansun.ui.filters.HideNonPublic" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.NonSharedProjectFilter" name="%HideNonSharedProjects.label" description="%HideNonSharedProjects.description" id="com.tansun.ui.filters.HideNonSharedProjects" />
+		<commonFilter activeByDefault="true" class="org.eclipse.jdt.internal.ui.filters.PackageDeclarationFilter" name="%HidePackageDeclaration.label" description="%HidePackageDeclaration.description" id="com.tansun.ui.filters.HidePackageDeclaration" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.LibraryFilter" name="%HideReferencedLibraries.label" description="%HideReferencedLibraries.description" id="com.tansun.ui.filters.HideReferencedLibraries" />
+		<commonFilter class="org.eclipse.jdt.internal.ui.filters.StaticsFilter" name="%HideStatics.label" description="%HideStatics.description" id="com.tansun.ui.filters.HideStatics" />
+		<commonFilter activeByDefault="true" class="org.eclipse.jdt.internal.ui.filters.SyntheticMembersFilter" name="%HideSyntheticMembers.label" description="%HideSyntheticMembers.description" id="com.tansun.ui.filters.HideSyntheticMembers" />
+		<commonFilter activeByDefault="true" class="org.eclipse.jdt.internal.ui.filters.OutputFolderFilter" description="%HideOutputPath.description" id="com.tansun.ui.filters.output" name="%HideOutputPath.label" />
+		<commonFilter id="com.tansun.ui.filters.hideNonJavaProjects" name="Hide non-Java Projects">
+			<filterExpression>
+				<not>
+					<adapt type="org.eclipse.core.resources.IProject">
+						<and>
+							<test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature" />
+							<test property="org.eclipse.core.resources.projectNature" value="com.avicit.ui.navigator.avicitNature" />
+						</and>
+					</adapt>
+				</not>
+			</filterExpression>
+		</commonFilter>
+		
+		<commonFilter   activeByDefault="false"  description=""   class = "avicit.ui.filters.MetaInfoFolderFilter" id="com.tansun.ui.filters.metainfo"   name="hide meta-info">  
+		</commonFilter> 
+	</extension>
+	<!--公用-->
+ 	<extension point="avicit.view.ui.imageRepository">
+   		<repository image="icons/decorator/error_co.gif" name="error" />
+		<repository image="icons/etool16/refresh.gif" name="refresh" />
+		<repository image="icons/eview16/easycare.png" name="config" />
+		<repository image="icons/eview16/ecdeploy.png" name="deploy" />
+		<repository image="icons/eview16/rrr.png" name="ermodel" />
+		<repository image="icons/eview16/conf.gif" name="component" />
+		<repository image="icons/eview16/source.gif" name="source" />
+		<repository image="icons/eview16/folder_open.gif" name="folder" />
+		<repository image="icons/eview16/method.gif" name="element" />
+		<repository image="icons/eview16/export_wiz.gif" name="export" />
+		<repository image="icons/eview16/javaSource.gif" name="avicit.ui.runtime.core.node.JavaSourceNode" />
+		<repository image="icons/eview16/64626.gif" name="avicit.ui.runtime.core.cluster.function.ComponentNode" />
+		<repository image="icons/etool16/refresh.gif" name="avicit.ui.runtime.core.node.CommonChildNode" />
+		<repository image="icons/eview16/jar.gif" name="avicit.ui.runtime.core.node.JavaLibrariesNode" />
+		<repository image="icons/eview16/rrr.png" name="avicit.ui.runtime.core.requirement.designer.erm.ErNode" />
+		<repository image="icons/eview16/64587.gif" name="avicit.ui.runtime.core.subsystem.SubSystemNode" />		
+		<repository image="icons/eview16/package.gif" name="avicit.ui.runtime.core.node.PackageNode" />
+		<repository image="icons/eview16/class_diagram.gif" name="avicit.ui.runtime.core.requirement.designer.classm.ClassNode" />
+ 	</extension>
+   	<extension point="avicit.ui.view.navigator.modelFactory">
+		<modelFactory class="avicit.ui.view.module.ProjectModelFactory" priority="normal" resource="project" category="root" />
+		<modelFactory class="avicit.ui.view.module.JavaModelFactory" priority="normal" resource="folder" category="view" />
+		<modelFactory class="avicit.ui.view.module.SourceModelFactory" priority="normal" resource="folder" category="view" />
+		<modelFactory class="avicit.ui.view.module.ComponentLibModelFactory" priority="normal" resource="folder" category="model" />
+   </extension>
+
+	<extension point="avicit.ui.view.navigator.adapter">
+		<factory adaptableType="avicit.ui.runtime.core.node.ProjectNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+		</factory>
+	</extension>
+ 	<extension point="avicit.ui.view.navigator.adapter">
+		<factory adaptableType="avicit.ui.runtime.core.node.ProjectNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+		</factory>
+		<factory adaptableType="avicit.ui.runtime.core.node.JavaLibrariesNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+		</factory>
+		<factory adaptableType="avicit.ui.runtime.core.node.JavaSourceNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+		</factory>
+		<factory adaptableType="avicit.ui.runtime.core.cluster.function.ComponentNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+		</factory>
+		<factory adaptableType="avicit.ui.runtime.core.node.CommonNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+		</factory>
+		<factory adaptableType="avicit.ui.runtime.core.node.CommonChildNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	 	
+     	<factory adaptableType="avicit.ui.runtime.core.node.PackageNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+		</factory>
+	</extension>
+
+	<extension point="org.eclipse.core.expressions.propertyTesters">
+		<propertyTester class="avicit.ui.view.navigator.MyPropertyTester"
+			  id="avicit.ui.view.navigator.MyPropertyTester"
+			  namespace="org.eclipse.core.resources"
+			  properties="open"
+			  type="avicit.ui.runtime.core.node.AbstractNode">
+		</propertyTester>
+	</extension>
+
+ 	<!--分析设计-->
+ 	<extension point="avicit.view.ui.imageRepository">
+		<repository image="icons/eview16/service.gif" name="avicit.ui.runtime.core.requirement.analysis.AnalysisNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.analysis.epc.EpcNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.analysis.organization.OrganizationNode" />
+        <repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.requirement.usecase.UseCaseNode" />
+ 	</extension>
+ 	<extension point="avicit.ui.view.navigator.modelFactory">
+ 		<modelFactory class="avicit.ui.runtime.core.requirement.analysis.AnalysisModelFactory" priority="normal" resource="folder" category="view" />
+		<modelFactory class="avicit.ui.runtime.core.requirement.analysis.epc.EpcModelFactory" priority="normal" resource="folder" category="analysis" />
+		<modelFactory class="avicit.ui.runtime.core.subsystem.SubSystemModelFactory" priority="normal" resource="folder" category="analysis" />
+		<modelFactory class="avicit.ui.runtime.core.requirement.analysis.organization.OrganizationModelFactory" priority="normal" resource="folder" category="analysis" />
+ 	<modelFactory class="avicit.ui.runtime.core.requirement.analysis.organization.OrganizationModelFactory" priority="normal" resource="folder" category="analysis" />	
+ 	</extension>
+ 	<extension point="avicit.ui.view.navigator.adapter">
+	   	<factory adaptableType="avicit.ui.runtime.core.requirement.analysis.AnalysisNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+  	
+ 		<factory adaptableType="avicit.ui.runtime.core.node.CommonChildNode" class="com.tansun.runtime.resource.adapter.NodeAdapterFactory">
+			<adapter class="org.eclipse.jface.viewers.IDoubleClickListener" />
+		</factory>		 	
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.analysis.epc.EpcNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	
+    	<factory adaptableType="avicit.ui.runtime.core.requirement.analysis.epc.EpcNode" class="com.tansun.runtime.resource.adapter.NodeAdapterFactory">
+			<adapter class="org.eclipse.jface.viewers.IDoubleClickListener" />
+     	</factory>  	 	
+     	<factory adaptableType="avicit.ui.runtime.core.subsystem.SubSystemNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.analysis.organization.OrganizationNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.designer.classm.ClassNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+		</factory>
+
+		<factory adaptableType="avicit.ui.runtime.core.node.CommonChildNode" class="com.tansun.runtime.resource.adapter.NodeAdapterFactory">
+			<adapter class="org.eclipse.jface.viewers.IDoubleClickListener" />
+		</factory>	
+    </extension>
+	
+
+ 	<!--设计-->
+ 	<extension point="avicit.view.ui.imageRepository">
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.requirement.designer.GuizeNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.designer.erm.GuizeNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.designer.classm.GuizeNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.designer.logicflow.GuizeNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.designer.bpmdesigner.GuizeNode" />
+ 	</extension>
+ 	<!--开发阶段-->
+ 	<extension point="avicit.view.ui.imageRepository">
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.requirement.designer.GuizeNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.designer.erm.GuizeNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.designer.classm.GuizeNode" />
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.develope.control.ControlNode" />	
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.node.DevelopNode" />	
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.develope.display.ViewNode" />
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.requirement.analysis.usecase.FunctionUseCaseNode" />
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.requirement.requirement.business.BusinessUseCaseNode" />
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.develope.bo.BoNode" />
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.develope.logic.LogicNode" />	
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.develope.data.DataAccessNode" />
+		<repository image="icons/eview16/books.png" name="avicit.ui.runtime.core.develope.service.ServiceNode" />
+		<repository image="icons/eview16/usecase.gif" name="avicit.ui.runtime.core.usecase.common.UseCaseCommonNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.requirement.RequirementNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.requirement.business.BusinessNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.requirement.document.DocumentNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.requirement.function.FunctionStructureNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.requirement.requirement.requirement.GuizeNode" />
+		<repository image="icons/eview16/package_green.png" name="avicit.ui.runtime.core.cluster.FunctionClusterNode" />
+ 	</extension>
+ 	<extension point="avicit.ui.view.navigator.modelFactory">
+ 		<modelFactory class="avicit.ui.runtime.core.requirement.designer.GuizeModelFactory" priority="normal" resource="folder" category="view" extensions="input" />
+ 		<modelFactory class="avicit.ui.runtime.core.requirement.designer.erm.GuizeModelFactory" priority="normal" resource="folder" category="designer" />
+		<modelFactory class="avicit.ui.runtime.core.requirement.designer.classm.GuizeModelFactory" priority="normal" resource="folder" category="designer" />
+		<modelFactory class="avicit.ui.runtime.core.requirement.designer.logicflow.GuizeModelFactory" priority="normal" resource="folder" category="designer" />
+		<modelFactory class="avicit.ui.runtime.core.requirement.designer.bpmdesigner.GuizeModelFactory" priority="normal" resource="folder" category="designer" />
+		<modelFactory class="avicit.ui.runtime.core.requirement.requirement.RequirementModelFactory" priority="normal" resource="folder" category="requirementview" />
+		<modelFactory class="avicit.ui.runtime.core.cluster.FunctionClusterModelFactory" priority="normal" resource="folder" category="modelview" />
+		<modelFactory class="avicit.ui.runtime.core.cluster.function.ComponentModelFactory" priority="normal" resource="folder" category="modelview" />
+		<modelFactory class="avicit.ui.runtime.core.develope.display.ViewModelFactory" priority="normal" resource="folder" category="subview" />
+		<modelFactory class="avicit.ui.runtime.core.develope.control.ControlModelFactory" priority="normal" resource="folder" category="subview" />		
+		<modelFactory class="avicit.ui.runtime.core.develope.bo.BoModelFactory" priority="normal" resource="folder" category="subview" />
+		<modelFactory class="avicit.ui.runtime.core.develope.logic.LogicModelFactory" priority="normal" resource="folder" category="subview" />	
+		<modelFactory class="avicit.ui.runtime.core.develope.service.ServiceModelFactory" priority="normal" resource="folder" category="subview" />
+		<modelFactory class="avicit.ui.runtime.core.develope.data.DataAccessModelFactory" priority="normal" resource="folder" category="subview" />
+		<modelFactory class="avicit.ui.runtime.core.requirement.requirement.usecase.UseCaseModelFactory" priority="normal" resource="folder" category="subview1" />
+		<!--<modelFactory class="avicit.ui.runtime.core.requirement.requirement.function.FunctionStructureModelFactory" priority="normal" resource="folder" category="subview1" />-->
+		<modelFactory class="avicit.ui.runtime.core.requirement.requirement.business.BusinessModelFactory" priority="normal" resource="folder" category="subview1" />
+		<modelFactory class="avicit.ui.runtime.core.requirement.requirement.document.DocumentModelFactory" priority="normal" resource="folder" category="subview1" />
+ 	</extension>
+ 	<extension point="avicit.ui.view.navigator.adapter">
+ 		<factory adaptableType="avicit.ui.runtime.core.requirement.designer.GuizeNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.designer.erm.GuizeNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.designer.classm.GuizeNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.designer.erm.ErNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.designer.logicflow.GuizeNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.designer.bpmdesigner.GuizeNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	
+     	<factory adaptableType="avicit.ui.runtime.core.subsystem.function.FunctionNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.node.DevelopNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.develope.display.ViewNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.analysis.usecase.FunctionUseCaseNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.analysis.usecase.FunctionUseCaseNode" class="avicit.ui.runtime.core.requirement.analysis.usecase.NodeAdapterFactory">
+			<adapter class="org.eclipse.jface.viewers.IDoubleClickListener" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.requirement.business.BusinessUseCaseNode" class="avicit.ui.runtime.core.requirement.analysis.usecase.NodeAdapterFactory">
+			<adapter class="org.eclipse.jface.viewers.IDoubleClickListener" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.requirement.business.BusinessUseCaseNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.develope.bo.BoNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+    	<factory adaptableType="avicit.ui.runtime.core.develope.logic.LogicNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+    	<factory adaptableType="avicit.ui.runtime.core.develope.data.DataAccessNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	
+    	<factory adaptableType="avicit.ui.runtime.core.develope.service.ServiceNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+    	<factory adaptableType="avicit.ui.runtime.core.develope.control.ControlNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+    	<factory adaptableType="avicit.ui.runtime.core.usecase.common.UseCaseCommonNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>	
+     	<factory adaptableType="avicit.ui.runtime.core.usecase.common.UseCaseCommonNode" class="avicit.ui.runtime.core.requirement.analysis.usecase.NodeAdapterFactory">
+			<adapter class="org.eclipse.jface.viewers.IDoubleClickListener" />
+     	</factory>
+     	
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.requirement.RequirementNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+     	</factory>
+     	<factory adaptableType="avicit.ui.runtime.core.cluster.FunctionClusterNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+            <adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+            <adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+        </factory>
+     	<factory adaptableType="avicit.ui.runtime.core.requirement.requirement.usecase.UseCaseNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+            <adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+            <adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+        </factory>
+      <!--<factory adaptableType="avicit.ui.runtime.core.requirement.requirement.function.FunctionStructureNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+      </factory>-->
+      <factory adaptableType="avicit.ui.runtime.core.requirement.requirement.document.DocumentNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+      </factory>
+      <factory adaptableType="avicit.ui.runtime.core.requirement.requirement.business.BusinessNode" class="com.tansun.runtime.resource.adapter.WorkbenchAdapterFactory">
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter" />
+			<adapter class="org.eclipse.ui.model.IWorkbenchAdapter2" />
+      </factory>	 		 
+ 	</extension>
+
+	<!-- Bind the Properties content extension to the viewer -->
+	<!--
+	<extension point="org.eclipse.ui.navigator.viewer">
+		<viewerContentBinding viewerId="avicit.ui.view.navigator.views.AvicitProjectNavigator">
+			<includes>
+				<contentExtension pattern="com.tansun.ui.navigator.modelContent" />
+				<contentExtension pattern="com.tansun.ui.navigator.linkHelper" />
+				<contentExtension pattern="com.tansun.ui.navigator.projectContent" />
+			</includes>
+		</viewerContentBinding>
+	</extension>
+	<extension point="org.eclipse.ui.navigator.linkHelper">
+		<linkHelper class="avicit.ui.view.navigator.views.NavigatorLinkHelper" id="com.tansun.ui.navigator.linkHelper">
+			<editorInputEnablement>
+				<or>
+					<instanceof value="org.eclipse.ui.IFileEditorInput" />
+					<instanceof value="org.eclipse.jdt.internal.ui.javaeditor.IClassFileEditorInput" />
+					<instanceof value="org.eclipse.jdt.internal.ui.javaeditor.JarEntryEditorInput" />
+				</or>
+			</editorInputEnablement>
+			<selectionEnablement>
+				<or>
+					<adapt type="org.eclipse.core.resources.IProject"></adapt>
+					<instanceof value="org.eclipse.core.resources.IWorkspaceRoot" />
+					<instanceof value="org.eclipse.core.resources.IFolder" />
+					<instanceof value="org.eclipse.core.resources.IFile" />
+					<instanceof value="org.eclipse.core.resources.IStorage" />
+					<instanceof value="org.eclipse.jdt.core.IJavaProject" />
+					<instanceof value="org.eclipse.jdt.core.IJavaElement" />
+					<instanceof value="org.eclipse.jdt.internal.core.JarEntryFile" />
+					<instanceof value="org.eclipse.jdt.core.IClassFile" />
+					<instanceof value="org.eclipse.jdt.internal.ui.packageview.ClassPathContainer" />
+					<instanceof value="avicit.ui.runtime.core.INode" />
+				</or>
+			</selectionEnablement>
+		</linkHelper>
+	</extension>
+ 	-->
+ 	
+ 	<extension point="org.eclipse.ui.popupMenus">
+        <objectContribution
+              id="group.refactor"
+              objectClass="org.eclipse.core.resources.IProject">
+               <action
+                 class="avicit.ui.view.create.ComponentOpenProcessEditorAction"
+                 icon="icons/eview16/eccomp.png"
+                 id="com.tansun.platform.ui.action1"
+                 label="%Navigator.construction"
+                 menubarPath="com.tansun.platform.ui.menu/separator">
+           </action>
+           
+           
+           <menu id="com.tansun.platform.ui.menu"
+                 label="%Navigator.found"
+                 icon="icons/eview16/eccreate.png"
+                 menubarPath="group.refactor"
+                 path="group.refactor">
+                 
+              <separator name="separator"></separator>
+           </menu>
+              <menu id="com.tansun.platform.ui.menu.subsystem"
+                 label="%Navigator.subsystem"
+                 icon="icons/eview16/eccreate.png"
+                 menubarPath="group.refactor"
+                 path="group.refactor">
+                 
+              <separator name="separator"></separator>
+           </menu>        
+        </objectContribution>
+    </extension>
+ 	<extension point="org.eclipse.ui.popupMenus">
+        <objectContribution
+              id="group.refactor"
+              objectClass="org.eclipse.core.resources.IProject">
+               <action
+                 class="avicit.ui.view.create.AssemblyManagerAction"
+                 icon="icons/eview16/eccomp.png"
+                 id="com.tansun.platform.ui.action1"
+                 label="%Navigator.subsystem"
+                 menubarPath="group.refactor">
+           </action>
+        </objectContribution>
+    </extension>
+  <extension point="org.eclipse.ui.bindings">
+     <key
+           commandId="avicit.ui.action.PropertyActions"
+           contextId="org.eclipse.ui.contexts.dialogAndWindow"
+           schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+           sequence="Ctrl+Delete">
+     </key>
+  </extension>
+  <extension point="org.eclipse.ui.commands">
+     <command
+           defaultHandler="avicit.ui.runtime.core.handler.PropertyActionHandler"
+           id="avicit.ui.view.navigator.propertyaction"
+           name="Property">
+     </command>
+  </extension>
+  <extension point="org.eclipse.ui.popupMenus">
+     <objectContribution
+           adaptable="false"
+           id="avicit.ui.view.navigator.objectContribution1"
+           objectClass="avicit.ui.view.navigator.Object1">
+     </objectContribution>
+  </extension>
+    <!--
+    <extension point="org.eclipse.core.runtime.adapters">
+        <factory adaptableType="avicit.ui.runtime.core.requirement.requirement.function.FunctionStructureNode" class="com.tansun.runtime.resource.adapter.ResourceAdapterFactory">
+           
+           
+        </factory>
+    </extension>
+    -->
+
+<!--
+    <extension point = "org.eclipse.ui.propertyPages">
+        <page id="org.eclipse.ui.properties.resourcePage"
+            class="org.eclipse.ui.internal.ide.dialogs.ResourceInfoPage"
+            name = "%PropertyPages.info.file"
+        >
+        <enabledWhen>
+            <instanceof
+                  value="avicit.ui.runtime.core.INode">
+            </instanceof>
+        </enabledWhen>
+        </page>
+  </extension>
+-->
+</plugin>

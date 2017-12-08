@@ -1,0 +1,77 @@
+.typeBoolTrue {
+	COLOR: green
+}
+.typeBoolFalse {
+	COLOR: red
+}
+.typeObject {
+	COLOR: blue; FONT-STYLE: italic
+}
+.resizeLayer {
+	BACKGROUND: red; FONT: bold 10px arial; OVERFLOW: hidden; TEXT-ALIGN: center
+}
+.component {
+	BORDER-RIGHT: black 2px solid; BORDER-TOP: black 2px solid; 
+	DISPLAY: block; 
+	BACKGROUND: url(bg1.png) #ccccff repeat-x center bottom; FONT: 12px arial; OVERFLOW: hidden; BORDER-LEFT: black 2px solid; WIDTH: 50px; COLOR: black; BORDER-BOTTOM: black 2px solid; HEIGHT: 35px; TEXT-ALIGN: center; moz-border-radius: 3px
+}
+#FormBuilderComponentSelector .component {
+	FLOAT: left; MARGIN: 5px
+}
+#FormBuilderComponentSelector .over {
+	BORDER-LEFT-COLOR: navy; BORDER-BOTTOM-COLOR: navy; BORDER-TOP-COLOR: navy; BORDER-RIGHT-COLOR: navy
+}
+#FormBuilderComponentSelector .selected {
+	BORDER-LEFT-COLOR: blue; BORDER-BOTTOM-COLOR: blue; BORDER-TOP-COLOR: blue; BORDER-RIGHT-COLOR: blue
+}
+.selectedElementParent  {
+	BACKGROUND: #ccf
+}
+.selectedElementParent {
+	BACKGROUND: #ccf
+}
+.selectedElement  {
+	BACKGROUND: #ffc
+}
+.selectedElement {
+	BACKGROUND: #ffc
+}
+.icon-reset {
+	BACKGROUND-IMAGE: url(icons/asterisk_orange.png)! important
+}
+.icon-help {
+	BACKGROUND-IMAGE: url(icons/help.png)! important
+}
+.icon-time {
+	BACKGROUND-IMAGE: url(icons/time.png)! important
+}
+.icon-delete {
+	BACKGROUND-IMAGE: url(icons/delete.png)! important
+}
+.icon-add {
+	BACKGROUND-IMAGE: url(icons/add.png)! important
+}
+.icon-el {
+	BACKGROUND-IMAGE: url(icons/application.png)! important
+}
+.icon-deleteEl {
+	BACKGROUND-IMAGE: url(icons/application_delete.png)! important
+}
+.icon-addEl {
+	BACKGROUND-IMAGE: url(icons/application_add.png)! important
+}
+.icon-dupEl {
+	BACKGROUND-IMAGE: url(icons/application_double.png)! important
+}
+.icon-editEl {
+	BACKGROUND-IMAGE: url(icons/application_edit.png)! important
+}
+.icon-undo {
+	BACKGROUND-IMAGE: url(icons/arrow_undo.png)! important
+}
+.icon-update {
+	BACKGROUND-IMAGE: url(icons/arrow_refresh.png)! important
+}
+.icon-resize {
+	BACKGROUND-IMAGE: url(icons/arrow_inout.png)! important
+}

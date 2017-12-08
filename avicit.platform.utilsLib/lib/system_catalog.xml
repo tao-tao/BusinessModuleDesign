@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+<system systemId="http://www.w3.org/2001/xml.xsd" uri="file:/D:/MyEclipse 5.5.1 GA/xmleditor/configuration/org.eclipse.osgi/bundles/117/1/.cp/cache/www.w3.org/2001/xml.xsd"/>
+<uri name="http://www.w3.org/2001/XMLSchema" uri="file:/D:/MyEclipse 5.5.1 GA/xmleditor/configuration/org.eclipse.osgi/bundles/117/1/.cp/cache/www.w3.org/2001/XMLSchema.xsd"/>
+</catalog>

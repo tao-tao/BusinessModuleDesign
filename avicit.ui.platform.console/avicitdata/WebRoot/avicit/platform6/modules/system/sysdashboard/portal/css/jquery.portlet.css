@@ -1,0 +1,38 @@
+.ui-portlet-column {
+	float: left;
+	padding-bottom: 10px;
+}
+
+.ui-portlet-header {
+	padding: .1em 0.4em;
+	font-family: "宋体";
+	font-size:13px;
+}
+
+.ui-portlet-header .ui-icon {
+	float: right;
+}
+
+.ui-portlet-item {
+	margin: 0 0.4em 0.4em 0;
+}
+
+.ui-portlet-content {
+	padding: 0 0 0 0;
+/* 	overflow-y:auto; */
+}
+
+.ui-portlet-header .ui-portlet-header-icon {
+	float: left;
+	margin: 0 0.2em 0 -0.5em;
+}
+
+.ui-sortable-placeholder {
+	border: 1px dotted black;
+	visibility: visible !important;
+	height: 100px !important;
+}
+
+.ui-sortable-placeholder * {
+	visibility: hidden;
+}

@@ -1,0 +1,29 @@
+.icon-org,.icon-dept,.icon-home{
+	display:inline-block; 
+	width:20px; 
+	height:20px;
+}
+
+.icon-org{
+	background:url('icons/org.gif') no-repeat center center;
+}
+.icon-dept{
+	background:url('icons/dept.gif') no-repeat center center;
+}
+
+.icon-home{
+	background:url('icons/home.gif') no-repeat center center;
+}
+
+.icon-unlock1{
+	background:url('icon_extend/iconselectors.gif') no-repeat -20px -40px;
+/* 	background:url('icon_extend/iconselectors.gif') no-repeat -220px -20px; */
+}
+
+.icon-excel{
+	background:url('icons/excel.gif') no-repeat center center;
+}
+
+.icon-pdf{
+	background:url('icons/pdf.gif') no-repeat center center;
+}

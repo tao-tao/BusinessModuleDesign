@@ -1,0 +1,397 @@
+/*  
+// Icon Classes */
+.icon-ob {
+	background-image:url(../img/icons/ob_16.png) ! important;
+}
+.icon-home1 {
+	background-image:url(../img/icons/home.png) ! important;
+}
+.icon-work {
+	background-image:url(../img/icons/work.png) ! important;
+}
+.icon-graph {
+	background-image:url(../img/icons/chart_curve.png) ! important;
+}
+.icon-chart {
+	background-image:url(../img/icons/chart_bar.png) ! important;
+}
+.icon-prefs {
+	background-image:url(../img/icons/application_form.png) ! important;
+}
+.icon-ok {
+	background-image:url(../img/icons/ok16.png) ! important;
+}
+.icon-view-tile {
+	background-image:url(../img/icons/application_view_tile.png) ! important;
+}
+.icon-check, .icon-check-off {
+	background-image:url(../../ext/resources/images/default/menu/unchecked.gif) ! important;
+}
+.icon-check-on {
+	background-image:url(../../ext/resources/images/default/menu/checked.gif) ! important;
+}
+.icon-stat-data {
+	background-image:url(../img/icons/kate_16.png) ! important;
+}
+.icon-rename {
+	background-image:url(../img/icons/textfield_rename.png) ! important;
+}
+.icon-add-col {
+	background-image:url(../img/icons/page_white_add.png) ! important;
+}
+.icon-del-col {
+	background-image:url(../img/icons/page_white_delete.png) ! important;
+}
+.icon-save-table {
+	background-image:url(../img/icons/table_save.png) ! important;
+}
+.icon-add-tab {
+	background-image:url(../img/icons/tab_add.png) ! important;
+}
+.icon-del-tab {
+	background-image:url(../img/icons/tab_delete.png) ! important;
+}
+.icon-go-tab {
+	background-image:url(../img/icons/tab_go.png) ! important;
+}
+.icon-add-table {
+	background-image:url(../img/icons/table_add.png) ! important;
+}
+.icon-del-table {
+	background-image:url(../img/icons/table_delete.png) ! important;
+}
+.icon-admin {
+	background-image:url(../img/icons/adv_settings_16.png) ! important;
+}
+.icon-grid {
+    background-image:url(../img/icons/application_view_columns.png) !important;
+}
+.icon-key {
+	background-image:url(../img/icons/key.png) ! important;
+}
+.icon-key2 {
+	background-image:url(../img/icons/key_16.png) ! important;
+}
+.icon-expand-all {
+	background-image:url(../img/icons/expand-all.gif) ! important;
+}
+.icon-collapse-all {
+	background-image:url(../img/icons/collapse-all.gif) ! important;
+}
+.icon-tree-orgboard {
+	background-image:url(../img/icons/chart_organisation.png) ! important;
+}
+.icon-tree-area {
+	background-image:url(../img/icons/post_title.png) ! important;
+}
+.icon-tree-post {
+	background-image:url(../img/icons/page_white.png) ! important;
+}
+.icon-plus {
+	background-image:url(../img/icons/add.png) ! important;
+}
+.icon-minus {
+	background-image:url(../img/icons/delete.png) ! important;
+}
+.icon-house {
+	background-image:url(../img/icons/house_16.png) ! important;
+}
+.icon-user {
+	background-image:url(../img/icons/user2_16.png) ! important;
+}
+.icon-trash-empty {
+	background-image:url(../img/icons/bin_empty.png) ! important;
+}
+.icon-trash-closed {
+	background-image:url(../img/icons/bin_closed.png) ! important;
+}
+.icon-disk {
+	background-image:url(../img/icons/disk.png) ! important;
+}
+.icon-disk-bullet {
+	background-image:url(../img/icons/bullet_disk.png) ! important;
+}
+.icon-undo {
+	background-image:url(../img/icons/arrow_undo.png) ! important;
+}
+.icon-loading {
+	background-image:url(../../ext/resources/images/default/grid/grid-loading.gif) ! important;
+}
+.icon-refresh {
+	background-image:url(../img/icons/arrow_refresh.png) ! important;
+}
+.icon-commit {
+	background-image:url(../img/icons/accept.png) ! important;
+}
+.icon-db-gear {
+	background-image:url(../img/icons/database_gear.png) ! important;
+}
+.icon-magnifier {
+	background-image:url(../img/icons/magnifier.png) ! important;
+}
+.icon-wrench {
+	background-image:url(../img/icons/wrench_16.png) ! important;
+}
+.icon-wrench-orange {
+	background-image:url(../img/icons/wrench_orange.png) ! important;
+}
+.icon-star {
+	background-image:url(../img/icons/star.png) ! important;
+}
+.icon-lock-go {
+	background-image:url(../img/icons/lock_go.png) ! important;
+}
+.icon-group-add {
+	background-image:url(../img/icons/group_add.png) ! important;
+}
+.icon-group-del {
+	background-image:url(../img/icons/group_delete.png) ! important;
+}
+.icon-stat-portal {
+	background-image:url(../img/icons/stat_portal_16.png) ! important;
+}
+.icon-stat-list {
+	background-image:url(../img/icons/stat_list_16.png) ! important;
+}
+.icon-cancel {
+	background-image:url(../img/icons/cancel16.png) ! important;
+}
+.icon-cross {
+	background-image:url(../img/icons/cross.png) ! important;
+}
+.icon-defaults {
+	background-image:url(../img/icons/arrow_rotate_clockwise.png) ! important;
+}
+.icon-load {
+	background-image:url(../img/icons/database_go.png) ! important;
+}
+.icon-reconfigure {
+	background-image:url(../img/icons/database_gear.png) ! important;
+}
+.icon-working {
+	background-image:url(../../ext/resources/images/default/grid/wait.gif) ! important;
+}
+.icon-upload {
+	background-image:url(../img/icons/up.png) ! important;
+}
+.icon-folder-add {
+	background-image:url(../img/icons/folder_add.png) ! important;
+	background-repeat:no-repeat;
+}
+.icon-open {
+	background-image:url(../img/icons/application_go.png) ! important;
+}
+.icon-open-self {
+	background-image:url(../img/icons/application.png) ! important;
+}
+.icon-open-popup {
+	background-image:url(../img/icons/application_double.png) ! important;
+}
+.icon-open-blank {
+	background-image:url(../img/icons/application_cascade.png) ! important;
+}
+.icon-open-download {
+	background-image:url(../img/icons/application_put.png) ! important;
+}
+.icon-search {
+	background-image:url(../img/icons/search-trigger.gif) ! important;
+}
+.icon-refresh {
+	background-image:url(../img/icons/arrow_refresh.png) ! important;
+}
+.icon-pencil {
+	background-image:url(../img/icons/pencil.png) ! important;
+}
+.icon-stop {
+	background-image:url(../img/icons/control_stop.png) ! important;
+}
+.icon-email {
+	background-image:url(../img/icons/email.png) ! important;
+}
+.icon-email-compose {
+	background-image:url(../img/icons/email_edit.png) ! important;
+}
+.icon-coins {
+	background-image:url(../img/icons/coins.png) ! important;
+}
+.icon-clock {
+	background-image:url(../img/icons/clock.png) ! important;
+}
+.icon-zoom {
+	background-image:url(../img/icons/zoom.png) ! important;
+}
+.icon-print {
+	background-image:url(../img/icons/printer.png) ! important;
+}
+.icon-folder-component {
+	background-image:url(../img/icons/folder_brick.png) ! important;
+}
+.icon-plugin {
+	background-image:url(../img/icons/plugin.png) ! important;
+}
+.icon-extension {
+	background-image:url(../img/icons/brick.png) ! important;
+}
+.icon-function {
+	background-image:url(../img/icons/flag_yellow.png) ! important;
+}
+.icon-bulb {
+	background-image:url(../img/icons/lightbulb.png) ! important;
+}
+.icon-bulb-off {
+	background-image:url(../img/icons/lightbulb_off.png) ! important;
+}
+.icon-copy {
+	background-image:url(../img/icons/page_white_copy.png) ! important;
+}
+.icon-star {
+	background-image:url(../img/icons/award_star_gold_3.png) ! important;
+}
+.icon-edit-record {
+	background-image:url(../img/icons/pencil.png) ! important;
+}
+.icon-actions {
+	background-image:url(../img/icons/lightning.png) ! important;
+}
+.icon-form-add {
+	background-image:url(../img/icons/layout_add.png) ! important;
+}
+.icon-html {
+	background-image:url(../img/icons/html.png) ! important;
+}
+.icon-script {
+	background-image:url(../img/icons/script.png) ! important;
+}
+.icon-php {
+	background-image:url(../img/icons/script_code.png) ! important;
+}
+.icon-css {
+	background-image:url(../img/icons/css.png) ! important;
+}
+.icon-run {
+	background-image:url(../img/icons/application_go.png) ! important;
+}
+.icon-info {
+	background-image:url(../img/icons/information.png) ! important;
+}
+.icon-wages {
+	background-image:url(../img/icons/euro_16.png) ! important;
+}
+.icon-calculator {
+	background-image:url(../img/icons/calculator.png) ! important;
+}
+.icon-add-wage {
+	background-image:url(../img/icons/coins_add.png) ! important;
+}
+.icon-del-wage {
+	background-image:url(../img/icons/bin_closed.png) ! important;
+}
+.icon-home {
+	background-image:url(../img/home.png) ! important;
+}
+
+/*  Icon Classes end */
+.wf-obtain {
+	background-image:url(../img/wf/obtain.png) ! important;
+}
+.wf-adddealer {
+	background-image:url(../img/wf/adddealer.png) ! important;
+}
+.wf-callback {
+	background-image:url(../img/wf/callback.png) ! important;
+}
+.wf-complete {
+	background-image:url(../img/wf/complete.png) ! important;
+}
+.wf-copy {
+	background-image:url(../img/wf/copy.png) ! important;
+}
+.wf-edit {
+	background-image:url(../img/wf/edit.png) ! important;
+}
+.wf-forward {
+	background-image:url(../img/wf/forward.png) ! important;
+}
+.wf-notobtain {
+	background-image:url(../img/wf/notobtain.png) ! important;
+}
+.wf-save {
+	background-image:url(../img/wf/save.png) ! important;
+}
+.wf-send {
+	background-image:url(../img/wf/send.png) ! important;
+}
+.wf-sendMultiP {
+	background-image:url(../img/wf/sendMultiP.png) ! important;
+}
+.wf-trace {
+	background-image:url(../img/wf/trace.png) ! important;
+}
+.wf-sendback {
+	background-image:url(../img/wf/sendback.png) ! important;
+}
+
+.icon-add {
+	background-image:url(../img/icons/add.png) ! important;
+	_background-position:center center;
+}
+.icon-edit {
+	background-image:url(../img/icons/edit.png) ! important;
+}
+.icon-delete {
+	background-image:url(../img/icons/delete.png) ! important;
+}
+.icon-terminate {
+	background-image:url(../img/icons/control_stop.png) ! important;
+}
+.icon-read {
+	background-image:url(../img/icons/read.png) ! important;
+}
+.icon-save {
+	background-image:url(../img/icons/disk.png) ! important;
+}
+.icon-submit {
+	background-image:url(../img/icons/disk.png) ! important;
+}
+.icon-close {
+	background-image:url(../img/icons/cross.png) ! important;
+}
+.icon-back {
+	background-image:url(../img/icons/back.png) ! important;
+}
+.icon-previous {
+	background-image:url(../img/icons/back.png) ! important;
+}
+.icon-next {
+	background-image:url(../img/icons/next.png) ! important;
+}
+.icon-print {
+	
+}
+.icon-replay {
+	
+}
+.icon-batch-import {
+	
+}
+.icon-batch-export {
+	
+}
+.icon-remind {
+	
+}
+.icon-return {
+	background-image:url(../img/icons/return.png) ! important;
+}
+.icon-select {
+	background-image:url(../img/icons/select.png) ! important;
+}
+.icon-bell {
+	background-image:url(../img/icons/bell.png) ! important;
+}
+.icon-reply {
+	background-image:url(../img/icons/reply.png) ! important;
+}
+.icon-homepage {
+	background-image:url(../img/icons/homepage.png) ! important;
+}

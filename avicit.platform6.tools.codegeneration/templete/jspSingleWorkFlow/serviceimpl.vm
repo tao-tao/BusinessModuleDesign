@@ -1,0 +1,129 @@
+package ${packageName};
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import avicit.platform6.commons.utils.ComUtil;
+import avicit.platform6.commons.utils.PojoUtil;
+import avicit.platform6.core.api.system.syslog.service.SysLogUtil;
+import avicit.platform6.core.domain.BeanBase;
+import avicit.platform6.core.exception.DaoException;
+import avicit.platform6.core.properties.PlatformConstant.OpResult;
+import avicit.platform6.core.properties.PlatformConstant.OpType;
+import avicit.platform6.core.service.ServiceBase;
+
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dao.${tableInfo.entityBean.standName}Dao;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.domain.${tableInfo.entityBean.standName};
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.service.${tableInfo.entityBean.standName}Service;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.service.${tableInfo.entityBean.standName}EventService;
+
+
+
+@Service
+public class ${tableInfo.entityBean.standName}ServiceImpl extends ServiceBase implements ${tableInfo.entityBean.standName}Service {
+  
+@Autowired(required=false)
+private List<${tableInfo.entityBean.standName}EventService> eventBaseList;
+	
+@Autowired(required = true)
+private ${tableInfo.entityBean.standName}Dao ${tableInfo.entityBean.lowerFirstCharName}Dao;
+    
+@Override
+public ${tableInfo.entityBean.standName} get${tableInfo.entityBean.standName}ById(String id) {
+${tableInfo.entityBean.standName} h = (${tableInfo.entityBean.standName})hibernateDao.getSession().get(
+	${tableInfo.entityBean.standName}.class, id);
+return h;
+}
+
+@Override
+public List<${tableInfo.entityBean.standName}> getAll${tableInfo.entityBean.standName}() {
+	return ${tableInfo.entityBean.lowerFirstCharName}Dao.getAll("creationDate", false);
+}
+
+@Override
+public void insert${tableInfo.entityBean.standName}(${tableInfo.entityBean.standName} bean) throws DaoException {
+	String id = ComUtil.getId();
+	bean.setId(id);
+	this.insert(bean);
+}
+
+@Override
+public void update${tableInfo.entityBean.standName}(${tableInfo.entityBean.standName} bean) throws DaoException {
+	this.update(bean);
+}
+@Override
+public void delete${tableInfo.entityBean.standName}ById(String id) throws DaoException {
+	${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName} =  this.get${tableInfo.entityBean.standName}ById(id);
+		if (${tableInfo.entityBean.lowerFirstCharName} == null) {
+			throw new DaoException("${tableInfo.entityBean.standName}对象不存在！");
+		}
+		try{
+			super.BeforeDeleteEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		} catch (Exception e) {
+			throw new DaoException(e.getMessage()+"对象${tableInfo.entityBean.standName}前处理删除出错！");
+		}
+		${tableInfo.entityBean.lowerFirstCharName}Dao.delete(id);
+		super.AfterDeleteEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		SysLogUtil.log(${tableInfo.entityBean.lowerFirstCharName}, null, OpType.delete, OpResult.success);
+
+
+}
+
+
+	
+	@Override
+	public void insert(BeanBase bean) throws DaoException {
+		${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName} = (${tableInfo.entityBean.standName})bean;
+		if (${tableInfo.entityBean.lowerFirstCharName} == null) {
+			throw new DaoException(bean.toString() + "对象转换为${tableInfo.entityBean.standName}对象出错！");
+		}
+		${tableInfo.entityBean.lowerFirstCharName}.setId(ComUtil.getId());
+		PojoUtil.setSysProperties(${tableInfo.entityBean.lowerFirstCharName}, OpType.insert);
+		try{
+			super.BeforeInsertEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		} catch (Exception e) {
+			throw new DaoException(e.getMessage()+"对象${tableInfo.entityBean.standName}前处理插入出错！");
+		}
+		hibernateDao.save(${tableInfo.entityBean.lowerFirstCharName});
+		super.AfterInsertEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		SysLogUtil.log(${tableInfo.entityBean.lowerFirstCharName}, null, OpType.insert, OpResult.success);
+	}
+
+	@Override
+	public void update(BeanBase bean) throws DaoException {
+		${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName} = (${tableInfo.entityBean.standName})bean;
+		if (${tableInfo.entityBean.lowerFirstCharName} == null) {
+			throw new DaoException(bean.toString() + "对象转换为${tableInfo.entityBean.standName}对象出错！");
+		}
+		${tableInfo.entityBean.standName} objOld = get${tableInfo.entityBean.standName}ById(${tableInfo.entityBean.lowerFirstCharName}.getId());
+		SysLogUtil.log(${tableInfo.entityBean.lowerFirstCharName}, objOld, OpType.update, OpResult.success);
+		hibernateDao.evict(objOld);
+		try{
+			super.BeforeUpdateEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		} catch (Exception e) {
+			throw new DaoException(e.getMessage()+"对象${tableInfo.entityBean.standName}前处理更新出错！");
+		}
+		PojoUtil.setSysProperties(${tableInfo.entityBean.lowerFirstCharName}, OpType.update);
+		hibernateDao.update(${tableInfo.entityBean.lowerFirstCharName});
+		super.AfterUpdateEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+	}
+	
+	@Override
+	public void delete(BeanBase bean) throws DaoException {
+		${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName} = (${tableInfo.entityBean.standName})bean;
+		if (${tableInfo.entityBean.lowerFirstCharName} == null) {
+			throw new DaoException(bean.toString() + "对象转换为${tableInfo.entityBean.standName}对象出错！");
+		}
+		try{
+			super.BeforeDeleteEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		} catch (Exception e) {
+			throw new DaoException(e.getMessage()+"对象${tableInfo.entityBean.standName}前处理删除出错！");
+		}
+		hibernateDao.delete(${tableInfo.entityBean.lowerFirstCharName});
+		super.AfterDeleteEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		SysLogUtil.log(${tableInfo.entityBean.lowerFirstCharName}, null, OpType.delete, OpResult.success);
+	}
+
+}

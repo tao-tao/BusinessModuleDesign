@@ -1,0 +1,213 @@
+package ${packageName};
+import java.io.Serializable;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import avicit.platform6.commons.utils.ComUtil;
+import avicit.platform6.commons.utils.PojoUtil;
+import avicit.platform6.core.properties.PlatformConstant.OpType;
+import avicit.platform6.core.exception.DaoException;
+import avicit.platform6.core.mybatis.pagehelper.Page;
+import avicit.platform6.core.mybatis.pagehelper.PageHelper;
+import avicit.platform6.core.rest.msg.QueryReqBean;
+import avicit.platform6.core.rest.msg.QueryRespBean;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dao.${tableInfo.entityBean.standName}Dao;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dto.${tableInfo.entityBean.standName}DTO;
+import avicit.platform6.modules.system.syslog.service.SysLogUtil;
+
+/**
+ * @classname:  ${tableInfo.entityBean.standName}Service
+ * @description: 定义 ${tableInfo.tableComment}实现类
+ * @author:  ${author}
+ */
+@Service
+public class ${tableInfo.entityBean.standName}Service  implements Serializable {
+
+	private static final Logger logger =  LoggerFactory.getLogger(${tableInfo.entityBean.standName}Service.class);
+	
+    private static final long serialVersionUID = 1L;
+    
+//	@Autowired
+//	private SysLogUtil sysLogUtil;
+	
+	@Autowired
+	private ${tableInfo.entityBean.standName}Dao dao;
+
+
+	/**
+	 * 按条件分页查询
+	 * @param queryReqBean
+	 * @return
+	 * @throws Exception
+	 */
+	public QueryRespBean<${tableInfo.entityBean.standName}DTO> search${tableInfo.entityBean.standName}ByPage(QueryReqBean<${tableInfo.entityBean.standName}DTO> queryReqBean) throws Exception {
+		try{
+			PageHelper.startPage(queryReqBean.getPageParameter());
+			${tableInfo.entityBean.standName}DTO searchParams = queryReqBean.getSearchParams();
+
+			Page<${tableInfo.entityBean.standName}DTO> dataList =  dao.search${tableInfo.entityBean.standName}ByPage(searchParams);
+			QueryRespBean<${tableInfo.entityBean.standName}DTO> queryRespBean =new QueryRespBean<${tableInfo.entityBean.standName}DTO>();
+
+			queryRespBean.setResult(dataList);
+			return queryRespBean;
+		}catch(DaoException e){
+			logger.error("search${tableInfo.entityBean.standName}ByPaging出错：", e);
+			throw e;
+		}
+	}
+	/**
+	 * 按条件查询，不分页
+	 * @param queryReqBean
+	 * @return
+	 * @throws Exception
+	 */
+	public List<${tableInfo.entityBean.standName}DTO> search${tableInfo.entityBean.standName}(QueryReqBean<${tableInfo.entityBean.standName}DTO> queryReqBean) throws Exception {
+	    try{
+	    	${tableInfo.entityBean.standName}DTO searchParams = queryReqBean.getSearchParams();
+	    	List<${tableInfo.entityBean.standName}DTO> dataList = dao.search${tableInfo.entityBean.standName}(searchParams);
+	    	return dataList;
+	    }catch(Exception e){
+	    	logger.error("search${tableInfo.entityBean.standName}出错：", e);
+	    	throw new DaoException("",e);
+	    }
+    }
+	/**
+	 * 通过主键查询单条记录
+	 * @param id
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public ${tableInfo.entityBean.standName}DTO query${tableInfo.entityBean.standName}ByPrimaryKey(String id) throws Exception {
+		try{
+			${tableInfo.entityBean.standName}DTO dto = dao.find${tableInfo.entityBean.standName}ById(id);
+			//记录日志
+			SysLogUtil.log4Query(dto);
+			return dto;
+		}catch(Exception e){
+	    	logger.error("search${tableInfo.entityBean.standName}出错：", e);
+	    	throw new DaoException("",e);
+	    }
+	}
+
+	/**
+	 * 新增对象
+	 * @param dto
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public String insert${tableInfo.entityBean.standName}(${tableInfo.entityBean.standName}DTO dto) throws Exception {
+		try{
+			String id = ComUtil.getId();
+			dto.setId(id);
+			PojoUtil.setSysProperties(dto, OpType.insert);
+			dao.insert${tableInfo.entityBean.standName}(dto);
+			//记录日志
+			SysLogUtil.log4Insert(dto);
+			return id;
+		}catch(Exception e){
+			logger.error("insert${tableInfo.entityBean.standName}出错：", e);
+			throw new DaoException("",e);
+		}
+	}
+	/**
+	 * 修改对象全部字段
+	 * @param dto
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public int update${tableInfo.entityBean.standName}(${tableInfo.entityBean.standName}DTO dto) throws Exception {
+			//记录日志
+			${tableInfo.entityBean.standName}DTO old =findById(dto.getId());
+			SysLogUtil.log4Update(dto, old);
+			PojoUtil.setSysProperties(dto, OpType.update);
+			PojoUtil.copyProperties(old, dto,true);
+			int ret = dao.update${tableInfo.entityBean.standName}All(old);
+			if(ret ==0){
+				throw new DaoException("数据失效，请从新更新");
+			}
+			return ret;
+
+	}
+	/**
+	 * 修改对象部分字段
+	 * @param dto
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public int update${tableInfo.entityBean.standName}Sensitive(${tableInfo.entityBean.standName}DTO dto) throws Exception {
+		try{
+			//记录日志
+			${tableInfo.entityBean.standName}DTO old =findById(dto.getId());
+			SysLogUtil.log4Update(dto, old);
+			PojoUtil.setSysProperties(dto, OpType.update);
+			PojoUtil.copyProperties(old, dto,true);
+			int count = dao.update${tableInfo.entityBean.standName}Sensitive(old);
+			if(count ==0){
+				throw new DaoException("数据失效，请从新更新");
+			}
+			return count;
+		}catch(Exception e){
+			logger.error("searchDemoBusinessTrip出错：", e);
+			throw new DaoException("",e);
+		}
+
+	}
+	
+	/**
+	 * 按主键单条删除
+	 * @param id
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public int delete${tableInfo.entityBean.standName}ById(String id) throws Exception {
+		if(StringUtils.isEmpty(id)) throw new Exception("删除失败！传入的参数主键为null");
+		try{
+			//记录日志
+			SysLogUtil.log4Delete(findById(id));
+			return dao.delete${tableInfo.entityBean.standName}ById(id);
+		}catch(Exception e){
+			logger.error("delete${tableInfo.entityBean.standName}出错：", e);
+			throw new DaoException("",e);
+		}
+	}
+
+	/**
+	 * 批量删除数据
+	 * @param ids id的数组
+	 * @return
+	 * @throws Exception
+	 */
+	public int delete${tableInfo.entityBean.standName}ByIds(String[] ids) throws Exception{
+		int result =0;
+		for(String id : ids ){
+			delete${tableInfo.entityBean.standName}ById(id);
+			result++;
+		}
+		return result;
+	}
+	/**
+	 * 日志专用，内部方法，不再记录日志
+	 */
+	private ${tableInfo.entityBean.standName}DTO findById(String id) throws Exception {
+		try{
+			${tableInfo.entityBean.standName}DTO dto = dao.find${tableInfo.entityBean.standName}ById(id);
+			return dto;
+		}catch(DaoException e){
+	    		logger.error("find${tableInfo.entityBean.standName}出错：", e);
+	    		throw e;
+	    }
+	}
+		
+
+}
+

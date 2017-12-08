@@ -1,0 +1,33 @@
+a:link.butn {
+	font-family: Arial Narrow, Univers Condensed,Arial,Sans Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #0000FF;
+	text-decoration: none;
+	background: #BBCCFF;
+	color: #0000FF;
+	width: 96px;
+	float: left;
+	}
+
+a:visited.butn {
+	font-family: Arial Narrow, Univers Condensed,Arial,Sans Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #0000FF;
+	text-decoration: none;
+	background: #BBCCFF;
+	width: 96px;
+	float: left;
+	}
+
+a:hover.butn {
+	font-family: Arial Narrow, Univers Condensed,Arial,Sans Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FF0000;
+	text-decoration: none;
+	background: #FFFFCC; 
+	width: 96px;
+	float: left;
+	}

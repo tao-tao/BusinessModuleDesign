@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+   <bean id="avicit.shirorolefilter" class="avicit.platform6.api.sysshirolog.filter.ShiroRolesOrFilterAPI">
+    </bean>
+
+     <bean id="avicit.shiro.passwordEncoder" class="avicit.platform6.core.shiroSecurity.passwordencoder.ShaPasswordEncoder"></bean>
+     
+   
+	
+ 	 <bean id="shiroCacheManager" class="avicit.platform6.core.shiroSecurity.shiroCache.ShiroCacheManager">
+		<property name="cacheName" value="SecurityShiroCache"></property>
+    </bean>
+ 
+    
+	<bean id="dbAuthRealm" class="avicit.platform6.api.sysshirolog.impl.ShiroSecurityAPIDbAuthRealm" >
+	</bean>
+	
+	<bean id="shiroAuthServiceapi" class="avicit.platform6.api.sysshirolog.impl.ShiroAuthAPIServiceImpl" >
+	</bean>
+	
+	<bean id="shirosessionManager" class="org.apache.shiro.session.mgt.DefaultSessionManager" >
+		<property name="sessionDAO" ref="shirosessionDAO" />
+	</bean>
+	<bean id="shirosessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO" >
+		<property name="cacheManager" ref="shiroCacheManager" />
+		
+	</bean>
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="dbAuthRealm" />
+		<property name="cacheManager" ref="shiroCacheManager" />
+		 
+	</bean>
+	
+	
+     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" depends-on="avicit.shirorolefilter">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/login/toplogin.jsp"/>
+        <property name="unauthorizedUrl" value="/login/loginFailed.jsp"/>
+        <property name="filterChainDefinitions" value="#{shiroAuthServiceapi.loadFilterChainDefinitions()}"/>   
+        <property name="filters">
+           <map>
+           		<!-- 后续配置成个性化需求  需要在 filterChainDefinitions 配置-->
+              <entry key="avicit" value-ref="avicit.shirorolefilter">
+              </entry>
+           </map>
+        </property>
+    </bean>
+	
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+	
+</beans>

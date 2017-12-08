@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension-point id="introductionPage" name="Introduction Page" schema="schema/introductionPage.exsd"/>
+	<extension-point id="modelPage" name="Model Page" schema="schema/myIntroductionId.exsd"/>
+	<extension
+         point="org.eclipse.help.contexts">
+      <contexts file="toc/tansun_ui_contexts.xml" plugin="com.tansun.platform.ui"/>
+   </extension>
+
+	 <extension
+	         point="org.eclipse.ui.newWizards">
+	      <category
+	            name="金航数码"
+	            id="avicitproject">
+	      </category>
+	       <wizard
+	            name="基础工程"
+	            icon="icons/project.gif"
+	            category="avicitproject"
+	            class="com.avicit.platform.wizards.CreateAvicitProject"
+	            id="avicit.project">
+	      </wizard>
+	   </extension>
+
+	<extension id="com.tansun.platform.ui.EcPlatformEditor"
+		name="%pageflow.editor.intro.name"
+		point="avicit.ui.platform.console.introductionPage">
+		<introductionpage name="%platform.editor.intro.introduction"
+			description="%platform.editor.intro.welcome.develop">
+			<introductionelement 
+				icon="icons/easycare.png"
+				heading="%platform.editor.intro.develop.tool"
+				text="%platform.editor.intro.speediness.develop"/>
+
+			 <introductionelement
+				editorID="avicit.ui.model.editor.ModelEditor"
+				fileID="WebRoot/WEB-INF/_platform/applicationContext-common.xml"
+				icon="icons/ecbatchtask.png"
+				icon16="icons/ecbatchtask.png"
+				hyperlinkaction="avicit.ui.runtime.core.action.OpenFunctionNodeAction"
+				text="%platform.editor.intro.manage.dispose.task"
+				hyperlink="批处理任务"
+				type="internal"/>
+			<introductionelement
+				editorID="com.tansun.component.manager.editor.ComponentManagerEditor"
+				fileID="WebRoot/WEB-INF/_platform/applicationContext-common.xml"
+				icon="icons/batch.jpg"
+				icon16="icons/batch16.jpg"
+				hyperlinkaction="com.tansun.platform.action.OpenPageAction"
+				text="%platform.editor.intro.manage.include.show"
+				hyperlink="构件管理"
+				type="internal"/>
+			
+			<introductionelement
+				editorID="com.tansun.platform.ui.EcScriptEditor"
+				icon="icons/rule.jpg"
+				icon16="icons/rule16.jpg"
+				fileID="WebRoot/WEB-INF/wf-configs/TransitionScript.xml"
+				hyperlinkaction="com.tansun.platform.action.OpenPageAction"
+				text="platform.editor.intro.manage.pass"
+				hyperlink="规则管理"/>
+
+			<introductionelement
+				editorID="EcPlatformEditor.CheatSheet"
+				icon="icons/Config_Tutorial.gif"
+				hyperlinkaction="com.tansun.platform.action.LoadCheatSheetAction"
+				text="Tutoral."
+				hyperlink="%platform.editor.intro.online.help"/>
+		</introductionpage>
+	</extension>
+
+
+	<extension id="com.tansun.platform.ui.EcPlatformEditor"
+		name="%pageflow.editor.intro.name"
+		point="avicit.ui.platform.console.modelPage">
+		<introductionpage name="%platform.editor.intro.introduction"
+			description="%platform.editor.intro.welcome.develop">
+			<introductionelement 
+				icon="icons/easycare.png"
+				heading="%platform.editor.intro.develop.tool"
+				text="%platform.editor.intro.speediness.develop"/>
+
+			 <introductionelement
+				editorID="avicit.ui.model.editor.ModelEditor"
+				fileID="WebRoot/WEB-INF/_platform/applicationContext-common.xml"
+				icon="icons/ecbatchtask.png"
+				icon16="icons/ecbatchtask.png"
+				hyperlinkaction="avicit.ui.runtime.core.action.OpenFunctionNodeAction"
+				text="%platform.editor.intro.manage.dispose.task"
+				hyperlink="EPC建模"
+				type="internal"/>
+			<introductionelement
+				editorID="com.tansun.component.manager.editor.ComponentManagerEditor"
+				fileID="WebRoot/WEB-INF/_platform/applicationContext-common.xml"
+				icon="icons/batch.jpg"
+				icon16="icons/batch16.jpg"
+				hyperlinkaction="com.tansun.platform.action.OpenPageAction"
+				text="%platform.editor.intro.manage.include.show"
+				hyperlink="功能结构建模"
+				type="internal"/>
+			
+			<introductionelement
+				editorID="com.tansun.platform.ui.EcScriptEditor"
+				icon="icons/rule.jpg"
+				icon16="icons/rule16.jpg"
+				fileID="WebRoot/WEB-INF/wf-configs/TransitionScript.xml"
+				hyperlinkaction="com.tansun.platform.action.OpenPageAction"
+				text="platform.editor.intro.manage.pass"
+				hyperlink="规则管理"/>
+
+			<introductionelement
+				editorID="EcPlatformEditor.CheatSheet"
+				icon="icons/Config_Tutorial.gif"
+				hyperlinkaction="com.tansun.platform.action.LoadCheatSheetAction"
+				text="Tutoral."
+				hyperlink="%platform.editor.intro.online.help"/>
+		</introductionpage>
+	</extension>
+
+</plugin>

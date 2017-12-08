@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<layout name="模板三" enName="template3">
+		<layout-columns>
+			<layout-column id="column_1" width="69.5%"/>
+			<layout-column id="column_2" width="30%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_3" width="49.5%"/>
+			<layout-column id="column_4" width="50%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_5" width="99.5%"/>
+		</layout-columns>
+	</layout>

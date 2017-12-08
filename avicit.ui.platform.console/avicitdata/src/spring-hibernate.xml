@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"  xmlns:jdbc="http://www.springframework.org/schema/jdbc"  
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd"
+	default-lazy-init="false">
+
+	<description>Spring DAO </description> 
+	<!--  
+	<bean id="defaultDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc0.driverClassName}"/>
+		<property name="url" value="${jdbc0.url}"/>
+		<property name="username" value="${jdbc0.username}"/>
+		<property name="password" value="${jdbc0.password}"/>
+		<property name="maxActive" value="${jdbc0.maxActive}" />
+		<property name="maxIdle" value="${jdbc0.maxIdle}" />
+		<property name="maxWait" value="${jdbc0.maxWait}"/>
+		<property name="removeAbandoned" value="true"></property>
+	</bean>
+		-->
+	<bean id="defaultDataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+	    <property name="driverClass" value="${bonecp0.driverClassName}" />
+	    <property name="jdbcUrl" value="${bonecp0.url}" />
+	    <property name="username" value="${bonecp0.username}"/>
+	    <property name="password" value="${bonecp0.password}"/>
+	    <property name="IdleConnectionTestPeriodInMinutes" value="${bonecp0.idleConnectionTestPeriod}"/>
+	    <property name="IdleMaxAgeInMinutes" value="${bonecp0.idleMaxAge}"/>
+	    <property name="maxConnectionsPerPartition" value="${bonecp0.maxConnectionsPerPartition}"/>
+	    <property name="minConnectionsPerPartition" value="${bonecp0.minConnectionsPerPartition}"/>
+	    <property name="partitionCount" value="${bonecp0.partitionCount}"/>
+	    <property name="acquireIncrement" value="${bonecp0.acquireIncrement}"/>
+  		<property name="poolAvailabilityThreshold" value="${bonecp0.poolAvailabilityThreshold}"></property>
+  		<property name="ConnectionTimeoutInMs" value="${bonecp0.connectionTimeout}"></property> 
+	 </bean>
+
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+		<!-- 允许嵌套事务 -->
+		<property name="nestedTransactionAllowed" value="true"></property>
+	</bean>
+	
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    
+	<aop:config proxy-target-class="true">
+		<aop:advisor pointcut="execution(* avicit..*.service.*Service*.*(..))" advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* avicit.platform6.bpm.api.*Service.*(..))" advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* avicit.platform6.bpm.parse.*Service*.*(..))" advice-ref="txAdvice" />
+	</aop:config>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="insert*" propagation="REQUIRED" />	
+			<tx:method name="add*" propagation="REQUIRED" />	
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="modify*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="do*" propagation="REQUIRED" />
+			<tx:method name="before*" propagation="REQUIRED" />
+			<tx:method name="after*" propagation="REQUIRED" />
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="search*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="query*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="load*" propagation="REQUIRED" read-only="true" />	
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="*" propagation="SUPPORTS"/>
+		</tx:attributes>
+	</tx:advice>
+
+	<bean id="dynamicDataSource" class="avicit.platform6.core.dao.datasource.DynamicDataSource">
+		<property name="defaultTargetDataSource" ref="defaultDataSource"></property>
+		<property name="targetDataSources"><!-- 多数据源列表，采用键值对形式，数据源名称和实例必须都存在 -->
+			<map key-type="java.lang.String" value-type="javax.sql.DataSource">
+				<entry key="defaultDataSource" value-ref="defaultDataSource"></entry>
+				<!-- <entry key="secondDataSource" value-ref="secondDataSource"></entry> -->
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="jdbcAvicit" class="avicit.platform6.core.jdbc.JdbcAvicit">
+		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+	</bean>
+	<bean id="dialectInitializer" class="avicit.platform6.core.jdbc.DialectInitializer"/>
+	<bean id="nativeJdbcExtractor" class="org.springframework.jdbc.support.nativejdbc.SimpleNativeJdbcExtractor" />
+	<bean id="oracleLobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler">
+		<property name="nativeJdbcExtractor" ref="nativeJdbcExtractor" />
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="defaultDataSource"></property>
+		<!-- 
+		<property name="entityInterceptor" ref="avicit.UnByteCodeProxyInterceptor" />
+		 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+
+				<!-- <prop key="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.SingletonEhCacheRegionFactory</prop> -->
+				<prop key="hibernate.order_updates">true</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+				<prop key="hibernate.jdbc.batch_versioned_data">true</prop>
+				<prop key="hibernate.jdbc.batch_size">15</prop>
+				<prop key="hibernate.connection.release_mode">after_statement</prop>
+			</props>
+		</property>
+		<property name="lobHandler" ref="oracleLobHandler" />
+		<property name="mappingLocations">
+			<list>
+				<value>classpath*:/avicit/platform6/bpm/cfg/hbm/*.hbm.xml</value>
+				<value>classpath*:/avicit/**/bo/*.hbm.xml</value>
+				<value>classpath*:/avicit/**/domain/*.hbm.xml</value>
+				<value>classpath*:/com/**/bo/*.hbm.xml</value>
+			</list>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>avicit/**/domain</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref ="sessionFactory"></property>
+	</bean> <!-- p:sessionFactory-ref="sessionFactory" /> -->
+	
+	<bean id="commonHibernateDao2" class="avicit.platform6.core.dao.hibernate.CommonHibernateDao2" scope="singleton">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dynamicDataSource"/>
+	</bean>
+	
+
+
+</beans>

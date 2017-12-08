@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="sec" uri="/WEB-INF/tags/shiro.tld"%>
+<%@ page import="avicit.platform6.commons.utils.ViewUtil"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- ControllerPath = "${mappingPath}${tableInfo.entityBean.standName}Controller/operation/Add/null" -->
+<title>添加</title>
+<base href="<%=ViewUtil.getRequestPath(request)%>">
+<jsp:include page="/avicit/platform6/component/common/BpmJsInclude.jsp"></jsp:include>
+</head>
+<body class="easyui-layout" fit="true">
+<div data-options="region:'center',split:true,border:false" style="overflow:hidden;padding-bottom:35px;">
+	<form id='form'>
+		<input type="hidden" name="id" />
+			<table width="100%" style="padding-top: 10px;">
+				<tr>
+#set($index=1)					
+#foreach($param in ${tableInfo.entityBean.params})##
+#if($param.standName!="createdBy" && $param.standName!="creationDate" && $param.standName!="lastUpdatedBy" && $param.standName!="lastUpdateDate" && $param.standName!="lastUpdateIp" && $param.standName!="version" && $param.standName!="attribute01" && $param.standName!="attribute02" && $param.standName!="attribute03" && $param.standName!="attribute04" && $param.standName!="attribute05" && $param.standName!="attribute06" && $param.standName!="attribute07" && $param.standName!="attribute08" && $param.standName!="attribute09" && $param.standName!="attribute10")##
+#if($param.field.fieldName.equals(${tableInfo.primaryField.fieldName}))###主键
+#else##
+#if($param.field.isNullable)##
+                            <th align="right">${param.field.comment}:</th>
+                            <td>
+#if($param.field.fieldTypeName.equals("DATE"))##
+								  <input title="${param.field.comment}" class="easyui-datebox" style="width: 180px;" type="text" name="${param.standName}" id="${param.standName}"/>
+#else##
+								  <input title="${param.field.comment}" class="inputbox" style="width: 180px;" type="text" name="${param.standName}" id="${param.standName}"/>
+#end##
+#else##
+                            <th align="right"><span style="color: red;">*</span>${param.field.comment}:</th>
+                            <td>
+#if($param.field.fieldTypeName.equals("DATE"))##
+							  <input title="${param.field.comment}" class="easyui-datebox" style="width: 180px;" type="text" name="${param.standName}" id="${param.standName}"/>
+#else##
+							  <input title="${param.field.comment}" class="inputbox" style="width: 180px;" type="text" name="${param.standName}" id="${param.standName}"/>
+#end##
+#end##
+							</td>
+															
+#if($!index % 2 == 0)##
+				</tr>
+				<tr>
+#end
+#set($index=$index+1)
+#end
+#end## 
+#end##
+				</tr>
+			</table>
+	</form>
+	<div id="toolbar" class="datagrid-toolbar datagrid-toolbar-extend">
+		<table class="tableForm" border="0" cellspacing="1" width='100%'>
+			<tr>	
+				<td width="60%" align="right">	
+				<a title="保存" id="saveButton"  class="easyui-linkbutton" onclick="saveForm();" href="javascript:void(0);">保存并启动流程</a>
+				<a title="返回" id="returnButton"  class="easyui-linkbutton" onclick="closeForm();" href="javascript:void(0);">返回</a>
+				</td>	
+			</tr>
+		</table>
+	</div>
+</div>
+<script type="text/javascript">
+function closeForm(){
+	parent.${tableInfo.entityBean.lowerFirstCharName}.closeDialog("#insert");
+}
+function saveForm(){
+	parent.${tableInfo.entityBean.lowerFirstCharName}.saveFormAndStartFlow(serializeObject($('#form')),"#insert");
+}
+</script>
+</body>
+</html>

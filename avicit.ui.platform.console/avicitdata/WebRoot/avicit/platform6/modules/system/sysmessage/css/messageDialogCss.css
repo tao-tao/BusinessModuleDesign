@@ -1,0 +1,64 @@
+#msg_win {
+	position: absolute;
+	right: 18px;
+	display: none;
+	overflow: hidden;
+	z-index: 99;
+ 	border: 1px solid #D3A608; 
+	background: #F9EFFC;
+	width: 380px;
+	height: 185px;
+	font-size: 12px;
+	margin: 0px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#msg_win .icos {
+	position: absolute;
+	margin-top: 2px;
+/* 	*top: 0px; */
+	right: 2px;
+	z-index: 9;
+	text-align: center;
+}
+
+.icos a {
+	float: left;
+	color: #FFFFFF;
+	margin: 1px;
+	text-align: center;
+	font-weight: bold;
+	width: 14px;
+	height: 22px;
+	line-height: 22px;
+	padding: 1px;
+	text-decoration: none;
+	font-family: webdings;
+}
+
+.icos a:hover {
+	color: #FFCC00;
+}
+
+#msg_title {
+	/**background: #008FEE url(/avicit/platform6/modules/system/sysmessage/icon/dialogTitle.gif) no-repeat 0 center;*/
+ 	border-bottom: 1px solid #FFD700; 
+	border-top: 0px solid #FFF;
+	border-left: 0px solid #FFF;
+	color: #FFFFFF;
+	height: 25px;
+	line-height: 25px;
+	text-indent: 2em;
+	font-weight: bold;
+}
+
+#msg_content {
+	background: #FDFCC2;
+	margin: 0px;
+	margin-right: 0;
+	width: 380px;
+	height: 159px;
+	overflow-y: auto;
+	overflow-x: visible;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 使用本地提供的平台服务 -->
+<restclient systemid="1" username="avicit2015" password="avicit2015" isServer="false">
+	<!-- 默认 -->
+	<resthost key = "main"          url="http://127.0.0.1:10001"  remote="true"/>
+	<!-- 大用户模块,包括user,dept,org,group,role,通用选择框 ,密码管理等-->
+	<resthost key = "sysuser"       url="http://127.0.0.1:10001" remote="true"/>
+	<!-- 首页,包括menu,portal -->
+	<resthost key = "sysmenu"       url="http://127.0.0.1:10001" remote="true"/>
+	<!-- 资源授权,包括resource,accesscontrol,数据权限等 -->
+	<resthost key = "sysresource"   url="http://127.0.0.1:10001" remote="true"/>
+	<!-- 多应用 -->
+	<resthost key = "sysapplication" url="http://127.0.0.1:10001" remote="true"/>
+	<!-- 多语言 -->
+	<resthost key = "syslanguage"    url="http://127.0.0.1:10001" remote="true"/>
+	<!-- 通用代码 -->
+	<resthost key = "syslookup"     url="http://127.0.0.1:10001" remote="true"/>
+	<!-- 系统参数 -->
+	<resthost key = "sysprofile"    url="http://127.0.0.1:10001" remote="true"/>
+	<!-- 个人惯用设置 -->
+	<resthost key = "syscustomed" 	url="http://127.0.0.1:10001" remote="true"/>
+	<!-- 消息 -->
+	<resthost key = "sysmessage" 	url="http://127.0.0.1:10001" remote="true"/>
+	
+	<resthost key = "bizlog"        url="http://127.0.0.1:10001" remote="true"/>
+	<resthost key = "syslog"        url="http://127.0.0.1:10001" remote="true"/>
+	<resthost key = "restmanage"    url="http://127.0.0.1:10001" remote="true"/>
+	<resthost key = "syshirosecurity" url="http://127.0.0.1:10001" remote="true"/>
+	<resthost key = "search"    url="http://127.0.0.1:10001" remote="true"/>
+	<resthost key = "quartz"    	url="http://127.0.0.1:10001" remote="true"/>
+	<resthost key = "sanYuan" url="http://127.0.0.1:10001" remote="true"/>
+	
+	<resthost key = "bpmengine"     url="http://127.0.0.1:10001" remote="true"/>
+	<resthost key = "bpmadmin"    	url="http://127.0.0.1:10001" remote="true"/>
+	<resthost key = "bpmclient"    	url="http://127.0.0.1:10001" remote="true"/>
+</restclient>
+
+
+
+
+
+

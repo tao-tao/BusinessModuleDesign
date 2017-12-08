@@ -1,0 +1,206 @@
+body{
+	font-family: Microsoft Yahei,sans-serif,Arial,Helvetica;
+	font-size:12px;
+}
+
+#loading{
+	position:absolute;
+	left:40%;
+	top:40%;
+	padding:2px;
+	z-index:20001;
+    height:auto;
+}
+#loading img {
+    margin-bottom:5px;
+}
+#loading .loading-indicator{
+	background:white;
+	color:#555;
+	font:12px tahoma,arial,helvetica;
+	padding:10px;
+	margin:0;
+    text-align:center;
+    height:auto;
+}
+/*锟斤拷锟斤拷锟斤拷式*/
+textarea {
+	line-height:25px;
+	padding:2px;
+	margin:2px;
+	border:1px solid #d6d6d8;
+	background:#FFFFFF url(../../../../../../static/images/platform/bpm/images/dot_25.gif);
+	resize: none; 
+}
+.searchInput{
+	font-weight: normal;
+	font-style : oblique;
+	font-family: Microsoft Yahei,sans-serif,Arial,Helvetica;
+	font-size: 12px;
+	border:0px solid #cccccc ;
+	width : 100%;
+	color : #cccccc; 
+}
+.searcher{
+	padding:2px;
+	margin:2px;
+	color: #000000; 
+	background-color: #FFFFFF; 
+	border:1px solid  #cccccc ;
+	width : 97.5%;
+	border-radius: 4px 4px 4px 4px;
+}
+.searchOp{
+	background: url("../../../../../../static/images/platform/bpm/images/search.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    float: right;
+    margin: 2px 2px 0 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 13px;
+    z-index: 99;
+}
+/* icon css*/
+.icon-org {
+    background: url("../../../../../../static/images/platform/bpm/images/org.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-department {
+    background: url("../../../../../../static/images/platform/bpm/images/org-1.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-position {
+    background: url("../../../../../../static/images/platform/bpm/images/org_postion.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-role {
+    background: url("../../../../../../static/images/platform/bpm/images/org-role.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-org {
+    background: url("../../../../../../static/images/platform/bpm/images/org.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-user {
+    background: url("../../../../../../static/images/platform/bpm/images/org-user.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-users {
+    background: url("../../../../../../static/images/platform/bpm/images/org-users.gif") no-repeat scroll 0 0 transparent;
+}
+
+.icon-users-remove {
+    background: url("../../../../../../static/images/platform/bpm/images/org-usres-remove.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-group {
+    background: url("../../../../../../static/images/platform/bpm/images/org-group.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-ideas {
+    background: url("../../../../../../static/images/platform/bpm/images/ideas.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-ideas-lock {
+    background: url("../../../../../../static/images/platform/bpm/images/ideas-lock.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-save {
+    background: url("../../../../../../static/images/platform/bpm/images/save.gif") no-repeat scroll 0 0 transparent;
+}
+.check_yes{
+	 width : 13px;
+	 height : 13px;
+	 background: url("../../../../../../static/images/platform/bpm/images/check_yes.gif") no-repeat scroll 0 0 transparent;
+	 cursor: pointer;
+}
+.check_no{
+	 width : 13px;
+	 height : 13px;
+	 background: url("../../../../../../static/images/platform/bpm/images/check_no.gif") no-repeat scroll 0 0 transparent;
+	 cursor: pointer;
+}
+.icon-branch {
+    background: url("../../../../../../static/images/platform/bpm/images/branch.gif") no-repeat scroll 0 0 transparent;
+}
+.user-remove {
+    background: url("../../../../../../static/images/platform/bpm/images/org-usre-remove.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+}
+.user-order-asc {
+	width : 16px;
+    background: url("../../../../../../static/images/platform/bpm/images/navup.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+}
+.user-order-desc {
+	width : 16px;
+    background: url("../../../../../../static/images/platform/bpm/images/navdown.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+}
+.icon-ideas-lock label{
+    cursor: pointer;
+}
+#jquery-live-search {
+	max-height: 400px;
+	overflow: auto;
+	position: absolute;
+	z-index: 99;
+	
+	color: #000000; 
+	background-color: #FFFFFF; 
+	border-left:1px solid  #cccccc ;
+	border-right:1px solid  #cccccc ;
+	border-bottom:1px solid  #cccccc ;
+	width : 100%;
+	border-radius: 0px 0px 4px 4px;
+	margin: 0 0 0 -3px;
+}
+#jquery-live-search table{
+    border-collapse: collapse;
+    border: solid #cccccc 1px;
+    margin: 0 0 5px 2px;
+}
+#jquery-live-search table td{
+    border: dotted #cccccc 1px;
+}
+.panel-body{
+	overflow: hidden;
+}
+.tree{
+	overflow : auto;
+}
+/* 锟斤拷锟斤拷锟斤拷锟斤拷锟�menu 锟斤拷示css*/
+#shareit-box {
+	position:absolute;
+	display:none;
+	border : 0px solid red;
+}
+#shareit-header {
+	width:138px;
+}
+#shareit-body {
+	width:300px; 
+	height:129px;
+	background: url("../../../../../../static/images/platform/bpm/images/shareit.gif") no-repeat scroll 0 0 transparent;
+}
+#shareit-blank {
+	height:20px;
+}
+#shareit-url {
+	height:100px;
+	margin-left:20px;
+	overflow : auto;
+	width : 270px;
+}
+#shareit-url li{
+	margin-left:10px;
+	cursor: pointer;
+	width : 90%;
+}
+
+#selectorUserTabs .easyui-layout .panel-body-noheader{
+	border : 0px;
+}
+fieldset { 
+padding:10px; 
+margin-top:5px; 
+border:1px solid gray; 
+
+} 
+
+fieldset legend { 
+	padding:3px 20px 3px 20px; 
+	border:1px solid #cccccc; 
+	margin-left:15px;  
+}

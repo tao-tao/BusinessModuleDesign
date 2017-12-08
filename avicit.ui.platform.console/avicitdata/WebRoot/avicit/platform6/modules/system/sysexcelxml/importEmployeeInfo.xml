@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<avicit_excel_import>
+	<importType  id="importEmployeeInfo">
+		<tablePorperty name="SYS_USER" priority="1" >
+			<model class="avicit.platform6.core.api.unituser.sysuser.domain.SysUser"
+		    updateCurrentRecord="select t.id from sys_user t where t.login_name=?uniqueCheckRecord[]0" 
+			updateCurrentValue="loginName"
+			uniqueCheck="true">
+				<classPorperty name="no" valueMode="single">
+					<property id="1" ExcelTitleName="用户编码"
+						DataType="String"  isNull="n" />
+				</classPorperty>
+				<classPorperty name="name" valueMode="single">
+					<property id="2" ExcelTitleName="姓名"
+						DataType="String"  isNull="n"/>
+				</classPorperty>
+				<classPorperty name="nameEn" valueMode="single">
+					<property id="3" ExcelTitleName="英文名"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="loginName"
+					valueMode="single">
+					<property id="4" ExcelTitleName="登录名"
+						DataType="String"  isNull="n"/>
+				</classPorperty>
+				<classPorperty name="loginPassword"
+					valueMode="single">
+					<property id="4" ExcelTitleName="登录名"
+						DataType="String"/>
+				</classPorperty>
+				
+				<classPorperty name="secretLevel"
+					valueMode="single">
+					<property id="5" ExcelTitleName="密级"
+						DataType="String"  isNull="n" lookupCode="PLATFORM_USER_SECRET_LEVEL"/>
+				</classPorperty>	
+				
+				<classPorperty name="birthday" valueMode="single">
+					<property id="6" ExcelTitleName="生日"
+						DataType="Date"/>
+				</classPorperty>
+				
+				<classPorperty name="sex"
+					valueMode="single">
+					<property id="7" ExcelTitleName="性别"
+						DataType="String" lookupCode="PLATFORM_SEX"/>
+				</classPorperty>
+				<classPorperty name="nation"
+					valueMode="single">
+					<property id="8" ExcelTitleName="民族"
+						DataType="String" lookupCode="PLATFORM_FOLK"/>
+				</classPorperty>
+				
+				<classPorperty name="birthAddress"
+					valueMode="single">
+					<property id="9" ExcelTitleName="籍贯"
+						DataType="String" />
+				</classPorperty>
+				
+				<classPorperty name="type"
+					valueMode="single">
+					<property id="10" ExcelTitleName="类型"
+						DataType="String" lookupCode="PLATFORM_USER_TYPE"/>
+				</classPorperty>
+				<classPorperty name="polity"
+					valueMode="single">
+					<property id="11" ExcelTitleName="政治面貌"
+						DataType="String" lookupCode="PLATFORM_POLITICAL"/>
+				</classPorperty>
+				<classPorperty name="workDate"
+					valueMode="single">
+					<property id="12" ExcelTitleName="工作日期"
+						DataType="Date"/>
+				</classPorperty>
+				<classPorperty name="title" valueMode="single">
+					<property id="13" ExcelTitleName="职称"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="degree"
+					valueMode="single">
+					<property id="14" ExcelTitleName="学历"
+						DataType="String" lookupCode="PLATFORM_DEGREE"/>
+				</classPorperty>
+				<classPorperty name="education" valueMode="single">
+					<property id="15" ExcelTitleName="毕业院校"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="mobile" valueMode="single">
+					<property id="16" ExcelTitleName="手机"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="officeTel" valueMode="single">
+					<property id="17" ExcelTitleName="办公电话"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="fax" valueMode="single">
+					<property id="18" ExcelTitleName="传真"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="email" valueMode="single">
+					<property id="19" ExcelTitleName="邮件" DataType="String"/>
+				</classPorperty>
+					
+				<classPorperty name="workSpace" valueMode="single">
+					<property id="20" ExcelTitleName="工作地点"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="roomNo" valueMode="single">
+					<property id="21" ExcelTitleName="房间号"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="homeAddress" valueMode="single">
+					<property id="22" ExcelTitleName="家庭地址"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="homeZip" valueMode="single">
+					<property id="23" ExcelTitleName="家庭邮编"
+						DataType="String"/>	
+				</classPorperty>		
+				
+				<classPorperty name="homeTel" valueMode="single">
+					<property id="24" ExcelTitleName="家庭电话"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="orderBy" valueMode="single">
+					<property id="25" ExcelTitleName="排序编号"
+						DataType="BigDecimal"/>	
+				</classPorperty>	
+				
+				<classPorperty name="remark" valueMode="single">
+					<property id="26" ExcelTitleName="描述"
+						DataType="String"/>
+				</classPorperty>
+				<classPorperty name="status" valueMode="single">
+					<property id="27" ExcelTitleName="状态"
+						DataType="String" lookupCode="PLATFORM_USER_STATUS"/>	
+				</classPorperty>
+				
+				<!-- 支持后台的方法 -->
+				<classPorperty name="languageCode" valueMode="single">
+					<property id="29" ExcelTitleName="默认语言"
+						DataType="String"  saveDataFrom="classMethod" saveDataFromClass="avicit.platform6.core.session.SessionHelper" saveDataFromMethod="getCurrentLanguageCode"/>
+				</classPorperty>
+				
+				<classPorperty name="attribute01"
+					valueMode="single">
+					<property id="28" ExcelTitleName="导入标识"
+						DataType="String" default="1"/>
+				</classPorperty>
+			</model>
+		</tablePorperty>
+		
+		<tablePorperty name="SYS_USER_ROLE" priority="2">
+			<model class="avicit.platform6.core.api.unituser.sysuser.domain.SysUserRole"
+			 updateCurrentRecord="select t.id from sys_user_role t where t.sys_role_id=?uniqueCheckRecord[]0 and t.sys_user_id=?uniqueCheckRecord[]1" 
+			 updateCurrentValue="sysRoleId,sysUserId">
+				<classPorperty name="sysUserId" valueMode="single">
+					<property id="1" ExcelTitleName="人员表ID"
+						DataType="String"  saveDataFrom="mainTable" fkCheck="SYS_USER"/>
+				</classPorperty>
+				
+				<classPorperty name="sysRoleId" valueMode="single">
+					<property id="2" ExcelTitleName="角色编码"
+						DataType="String" fkCheck="select id from sys_role t where t.role_code = ?'8'"
+						saveDataFrom="FK" isNull="n"/>
+				</classPorperty>
+				
+				<classPorperty name="id" valueMode="single">
+					<property id="3" ExcelTitleName="角色名称"
+						DataType="String" isDump="y" />
+				</classPorperty>
+			<!-- 支持后台的方法 -->
+				<classPorperty name="sysApplicationId" valueMode="single">
+					<property id="4" ExcelTitleName="应用程序ID"
+						DataType="String"  saveDataFrom="classMethod" saveDataFromClass="avicit.platform6.core.session.SessionHelper" saveDataFromMethod="getApplicationId"/>
+				</classPorperty>
+			</model>
+		</tablePorperty>
+		
+		<tablePorperty name="SYS_USER_DEPT_POSITION" priority="3">
+			<model class="avicit.platform6.core.api.unituser.sysuser.domain.SysUserDeptPosition"
+			updateCurrentRecord="select t.id from SYS_USER_DEPT_POSITION t where t.dept_id=?uniqueCheckRecord[]0 and t.user_id=?uniqueCheckRecord[]1" 
+			updateCurrentValue="deptId,userId">
+				<classPorperty name="userId" valueMode="single">
+					<property id="1" ExcelTitleName="人员表ID"
+						DataType="String"  saveDataFrom="mainTable" fkCheck="SYS_USER"/>
+				</classPorperty>
+				
+				<classPorperty name="deptId" valueMode="single">
+					<property id="2" ExcelTitleName="部门编码"
+						DataType="String" fkCheck="select t.id from sys_dept t where t.dept_code = ?'5'"
+						saveDataFrom="FK" isNull="n" />
+				</classPorperty>
+				
+				<classPorperty name="ids" valueMode="single">
+					<property id="3" ExcelTitleName="部门名称"
+						DataType="String" isDump="y" />
+				</classPorperty>
+			
+				<classPorperty name="positionId" valueMode="single">
+					<property id="4" ExcelTitleName="岗位编码"
+						DataType="String" fkCheck="select t.id from sys_position t where t.position_code = ?'10'"
+						saveDataFrom="FK" isNull="n" />
+				</classPorperty>
+				
+				<classPorperty name="id" valueMode="single">
+					<property id="5" ExcelTitleName="岗位名称"
+						DataType="String" isDump="y" />
+				</classPorperty>
+				
+				<classPorperty name="isManager"
+					valueMode="single">
+					<property id="6" ExcelTitleName="是否主管"
+						DataType="String" lookupCode="PLATFORM_SYSTEM_FLAG"/>
+				</classPorperty>
+				
+				<classPorperty name="isChiefDept"
+					valueMode="single">
+					<property id="7" ExcelTitleName="是否主部门"
+						DataType="String" default="1"/>
+				</classPorperty>
+			</model>
+		</tablePorperty>
+		
+	</importType>
+</avicit_excel_import>
+

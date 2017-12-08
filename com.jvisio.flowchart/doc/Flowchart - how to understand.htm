@@ -1,0 +1,494 @@
+<html><head><title>The Quality Toolbook: How to understand the Flowchart</title>
+
+
+<meta name="keywords" content="quality,tools,method,techniques">
+<meta name="description" content="Here are full details on how to understand the Flowchart.">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="Flowchart%20-%20how%20to%20understand_arquivos/quality.css">
+<link rel="shortcut icon" href="http://syque.com/quality_tools/images/quality.ico">
+
+<script language="javascript">
+<!--
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf ( "MSIE " );
+var urlname = document.URL;
+var titlename = document.title;
+if ( msie > 0 )
+{
+	document.write("<link rel='stylesheet' href='../../quality_ie.css' type='text/css'>");
+	document.write("<link rel='stylesheet' href='../../quality_ie2.css' type='text/css'>");
+}
+else {
+	document.write("<link rel='stylesheet' href='../../quality_net.css' type='text/css'>");
+	document.write("<link rel='stylesheet' href='../../quality_net2.css' type='text/css'>");
+}
+//-->
+</script><link rel="stylesheet" href="Flowchart%20-%20how%20to%20understand_arquivos/quality_net.css" type="text/css"><link rel="stylesheet" href="Flowchart%20-%20how%20to%20understand_arquivos/quality_net2.css" type="text/css"></head><body bgproperties="fixed" topmargin="0" leftmargin="4" rightmargin="4" bgcolor="#ffffff">
+
+<!--startpage-->
+<!--webbot bot="Include" U-Include="../../borders/top.htm" TAG="BODY" startspan -->
+
+<table bgcolor="#6fbcea" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td background="Flowchart%20-%20how%20to%20understand_arquivos/aetl.bmp" height="8" width="8">
+    </td><td colspan="2" bgcolor="#6fbcea" width="*">
+    </td><td background="Flowchart%20-%20how%20to%20understand_arquivos/aetr.bmp" height="8" width="8">
+  </td></tr>
+
+  <tr>
+    <td bgcolor="#6fbcea" width="8"></td>
+    <td background="Flowchart%20-%20how%20to%20understand_arquivos/qualitytools.gif" bgcolor="#6fbcea" height="90" width="260">
+          </td>
+    <td width="*">
+
+<!-- here -->
+      <table style="border-collapse: collapse;" bgcolor="#6fbcea" border="0" bordercolor="#111111" height="60" width="100%">
+		 <tbody><tr><td height="40">
+
+<p align="right">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-5598110712701911";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_channel ="5097648222";
+google_ad_type = "text_image";
+google_color_border = ["6FBCEA"];
+google_color_bg = ["6FBCEA"];
+google_color_link = ["000000"];
+google_color_url = ["000000"];
+google_color_text = ["6F6F6F"];
+//--></script><script type="text/javascript" src="Flowchart%20-%20how%20to%20understand_arquivos/show_ads.js">
+</script><iframe name="google_ads_frame" src="Flowchart%20-%20how%20to%20understand_arquivos/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="60" scrolling="no" width="468"></iframe>
+</p>
+		 </td></tr>
+		 
+		 <tr><td>
+
+<!-- SiteSearch Google -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="right" height="20" valign="bottom" width="*">
+
+<form method="get" action="http://www.google.com/custom" target="google_window" style="margin-bottom: 0pt;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<input name="sitesearch" value="syque.com" checked="checked" type="radio"> 
+<font color="#000000" face="Arial Narrow" size="2"><b>Quality<i>Tools</i></b></font>
+<input name="sitesearch" value="w" type="radio"> 
+<font color="#000000" face="Arial Narrow" size="2"><b>Web</b></font>&nbsp;
+
+<input name="q" size="20" maxlength="255" value="" type="text">
+<input name="sa" value="Search" style="margin: 0pt;" type="submit">
+<input name="client" value="pub-5598110712701911" type="hidden">
+<input name="forid" value="1" type="hidden">
+<input name="ie" value="ISO-8859-1" type="hidden">
+<input name="oe" value="ISO-8859-1" type="hidden">
+<input name="safe" value="active" type="hidden">
+<input name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1;" type="hidden">
+<input name="hl" value="en" type="hidden">
+</p></form></td><td>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<a href="http://www.google.com/"><img src="Flowchart%20-%20how%20to%20understand_arquivos/google3.gif" align="middle" border="0" height="24" width="54"></a></p>
+</td>
+
+
+
+</tr>         
+</tbody></table>
+<!-- SiteSearch Google -->
+
+		 </td></tr>        
+</tbody></table>
+<!-- here -->
+ 
+    </td>
+    <td background="Flowchart%20-%20how%20to%20understand_arquivos/aer.bmp" width="8">
+  </td></tr>
+
+</tbody></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td style="font-size: 1px;" bgcolor="#6fbcea" height="8" width="8">&nbsp;</td>
+    <td style="font-size: 1px;" bgcolor="#6fbcea" height="8" width="104">&nbsp;</td>
+    <td style="font-size: 1px;" background="Flowchart%20-%20how%20to%20understand_arquivos/aetlr.bmp" height="8" width="8">&nbsp;</td>
+    <td style="font-size: 1px;" background="Flowchart%20-%20how%20to%20understand_arquivos/aeb.bmp" height="8" width="*">&nbsp;</td>
+    <td style="font-size: 1px;" background="Flowchart%20-%20how%20to%20understand_arquivos/aebr.bmp" height="8" width="8">&nbsp;</td>
+  </tr>
+</tbody></table>
+
+<!--webbot bot="Include" i-checksum="7653" endspan -->
+
+<table style="border-collapse: collapse;" border="0" bordercolor="#111111" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td valign="top">
+<!--webbot bot="Include" U-Include="../../borders/left.htm" TAG="BODY" startspan -->
+<table style="border-collapse: collapse;" bgcolor="#6fbcea" border="0" bordercolor="#111111" cellpadding="0" cellspacing="0" width="120">
+  <tbody><tr>
+    <td width="8">
+    </td><td bgcolor="#6fbcea" width="*">
+    
+<table bgcolor="#6fbcea" border="0" cellpadding="0" cellspacing="0" width="104">
+<tbody><tr><td><p class="nom"><a class="butn" href="http://syque.com/quality_tools/index.htm">Home</a>
+</p></td></tr><tr><td height="6">
+</td></tr><tr><td><p class="nom"><a class="butn" href="http://syque.com/quality_tools/toolbook/toolbook.htm">Quality<br>Toolbook</a>
+</p></td></tr><tr><td height="2">
+</td></tr><tr><td><p class="nom"><a class="butn" href="http://syque.com/quality_tools/tools/tools.htm">Tools of<br>the Trade</a>
+</p></td></tr><tr><td height="2">
+</td></tr><tr><td><p class="nom"><a class="butn" href="http://syque.com/improvement/a_encyclopedia.htm">Improvement Encyclopedia</a>
+</p></td></tr><tr><td height="2">
+</td></tr><tr><td><p class="nom"><a class="butn" href="http://syque.com/quality_tools/articles/articles.htm">Quality <br>Articles</a>
+</p></td></tr><tr><td height="2">
+<!--
+<tr><td><p class="nom"><a class="butn" href="../books/books.htm">Books</a>
+<tr><td height="2">
+-->
+</td></tr><tr><td><p class="nom"><a class="butn" href="http://syque.com/quality_tools/links.htm">Quality <br>Links</a>
+</p></td></tr><tr><td height="4">
+</td></tr><tr><td><p class="nom"><a class="butn" href="http://changingminds.org/">Changing<br>Minds</a>
+</p></td></tr><tr><td height="2">
+</td></tr><tr><td><p class="nom"><a class="butn" href="http://creatingminds.org/">Creating<br>Minds</a>
+</p></td></tr><tr><td height="2">
+</td></tr><tr><td><p class="nom"><a class="butn" href="http://syque.com/index.htm">Syque</a>
+</p></td></tr><tr><td height="2">
+</td></tr><tr><td><p class="nom"><a class="butn" href="http://syque.com/quality_tools/about.htm">About</a>
+</p></td></tr><tr><td height="4">
+</td></tr></tbody></table>
+
+</td><td background="Flowchart%20-%20how%20to%20understand_arquivos/aer.bmp" width="8"></td>
+</tr>
+
+<tr>
+ <td background="Flowchart%20-%20how%20to%20understand_arquivos/aebl.bmp" height="8" width="8">
+ </td><td background="Flowchart%20-%20how%20to%20understand_arquivos/aeb.bmp" height="8" width="*">
+ </td><td background="Flowchart%20-%20how%20to%20understand_arquivos/aebr.bmp" height="8" width="8">
+</td></tr>
+   
+</tbody></table>
+
+<!--start share-->
+<table style="border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="116">
+<tbody><tr><td height="12">
+<p style="margin-top: 4px; margin-bottom: 2px;" align="center">
+<i>Share this page:</i><br>
+</p>
+</td></tr><tr><td>
+<script>
+<!--
+document.write('<a href="http://del.icio.us/post?url=');
+document.write(urlname);
+document.write('&amp;title=');
+document.write(titlename);
+document.write('" title="Add to Delicious"><img src=http://changingminds.org/images/delicious.gif height="18" width="18" style="border-width: 0px" alt="Add to Delicious"></a> ');
+
+document.write('<a href="http://ma.gnolia.com/bookmarklet/add?url=');
+document.write(urlname);
+document.write('&amp;title=');
+document.write(titlename);
+document.write('" title="Add to Magnolia"><img src=http://changingminds.org/images/magnolia.gif height="18" width="18" style="border-width: 0px" alt="Add to Magnolia"></a> ');
+
+document.write('<a href="http://digg.com/submit?phase=2&amp;url=');
+document.write(urlname);
+document.write('&amp;title=');
+document.write(titlename);
+document.write('" title="Add to Digg"><img src=http://changingminds.org/images/digg.gif height="18" width="18" style="border-width: 0px" alt="Add to Digg"></a> ');
+
+document.write('<a href="http://www.blinklist.com/index.php?Action=Blink/addblink.php&amp;Url=');
+document.write(urlname);
+document.write('&amp;Title=');
+document.write(titlename);
+document.write('" title="Add to Blinklist"><img src=http://changingminds.org/images/blinklist.gif height="18" width="18" style="border-width: 0px" alt="Add to Blinklist"></a> ');
+
+document.write('<a href="http://www.furl.net/storeIt.jsp?t=');
+document.write(titlename);
+document.write('&amp;u=');
+document.write(urlname);
+document.write('" title="Add to Furl"><img src=http://changingminds.org/images/furl.gif height="18" width="18" style="border-width: 0px" alt="Add to Furl"></a> ');
+
+document.write('<a href="http://reddit.com/submit?url=');
+document.write(urlname);
+document.write('&amp;title=');
+document.write(titlename);
+document.write('" title="Add to Reddit"><img src=http://changingminds.org/images/reddit.gif height="18" width="18" style="border-width: 0px" alt="Add to Reddit"></a> ');
+
+document.write('<a href="http://www.shadows.com/features/tcr.htm?url=');
+document.write(urlname);
+document.write('&amp;title=');
+document.write(titlename);
+document.write('" title="Add to Shadows"><img src=http://changingminds.org/images/shadows.gif height="18" width="18" style="border-width: 0px" alt="Add to Shadows"></a> ');
+
+document.write('<a href="http://www.newsvine.com/_tools/seed&amp;save?u=');
+document.write(urlname);
+document.write('&amp;h=');
+document.write(titlename);
+document.write('" title="Add to Newsvine"><img src=http://changingminds.org/images/newsvine.gif height="18" width="18" style="border-width: 0px" alt="Add to Newsvine"></a> ');
+
+document.write('<a href="http://www.spurl.net/spurl.php?url=');
+document.write(urlname);
+document.write('&amp;title=');
+document.write(titlename);
+document.write('" title="Add to Spurl"><img src=http://changingminds.org/images/spurl.gif height="18" width="18" style="border-width: 0px" alt="Add to Spurl"></a> ');
+
+document.write('<a href="http://www.wink.com/_/tag?url=');
+document.write(urlname);
+document.write('&amp;doctitle=');
+document.write(titlename);
+document.write('" title="Add to Wink"><img src=http://changingminds.org/images/wink.gif height="18" width="18" style="border-width: 0px" alt="Add to Wink"></a>');
+//-->
+</script><a href="http://del.icio.us/post?url=http://syque.com/quality_tools/toolbook/Flowchart/how.htm&amp;title=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart" title="Add to Delicious"><img src="Flowchart%20-%20how%20to%20understand_arquivos/delicious.gif" style="border-width: 0px;" alt="Add to Delicious" height="18" width="18"></a> <a href="http://ma.gnolia.com/bookmarklet/add?url=http://syque.com/quality_tools/toolbook/Flowchart/how.htm&amp;title=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart" title="Add to Magnolia"><img src="Flowchart%20-%20how%20to%20understand_arquivos/magnolia.gif" style="border-width: 0px;" alt="Add to Magnolia" height="18" width="18"></a> <a href="http://digg.com/submit?phase=2&amp;url=http://syque.com/quality_tools/toolbook/Flowchart/how.htm&amp;title=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart" title="Add to Digg"><img src="Flowchart%20-%20how%20to%20understand_arquivos/digg.gif" style="border-width: 0px;" alt="Add to Digg" height="18" width="18"></a> <a href="http://www.blinklist.com/index.php?Action=Blink/addblink.php&amp;Url=http://syque.com/quality_tools/toolbook/Flowchart/how.htm&amp;Title=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart" title="Add to Blinklist"><img src="Flowchart%20-%20how%20to%20understand_arquivos/blinklist.gif" style="border-width: 0px;" alt="Add to Blinklist" height="18" width="18"></a> <a href="http://www.furl.net/storeIt.jsp?t=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart&amp;u=http://syque.com/quality_tools/toolbook/Flowchart/how.htm" title="Add to Furl"><img src="Flowchart%20-%20how%20to%20understand_arquivos/furl.gif" style="border-width: 0px;" alt="Add to Furl" height="18" width="18"></a> <a href="http://reddit.com/submit?url=http://syque.com/quality_tools/toolbook/Flowchart/how.htm&amp;title=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart" title="Add to Reddit"><img src="Flowchart%20-%20how%20to%20understand_arquivos/reddit.gif" style="border-width: 0px;" alt="Add to Reddit" height="18" width="18"></a> <a href="http://www.shadows.com/features/tcr.htm?url=http://syque.com/quality_tools/toolbook/Flowchart/how.htm&amp;title=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart" title="Add to Shadows"><img src="Flowchart%20-%20how%20to%20understand_arquivos/shadows.gif" style="border-width: 0px;" alt="Add to Shadows" height="18" width="18"></a> <a href="http://www.newsvine.com/_tools/seed&amp;save?u=http://syque.com/quality_tools/toolbook/Flowchart/how.htm&amp;h=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart" title="Add to Newsvine"><img src="Flowchart%20-%20how%20to%20understand_arquivos/newsvine.gif" style="border-width: 0px;" alt="Add to Newsvine" height="18" width="18"></a> <a href="http://www.spurl.net/spurl.php?url=http://syque.com/quality_tools/toolbook/Flowchart/how.htm&amp;title=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart" title="Add to Spurl"><img src="Flowchart%20-%20how%20to%20understand_arquivos/spurl.gif" style="border-width: 0px;" alt="Add to Spurl" height="18" width="18"></a> <a href="http://www.wink.com/_/tag?url=http://syque.com/quality_tools/toolbook/Flowchart/how.htm&amp;doctitle=The%20Quality%20Toolbook:%20How%20to%20understand%20the%20Flowchart" title="Add to Wink"><img src="Flowchart%20-%20how%20to%20understand_arquivos/wink.gif" style="border-width: 0px;" alt="Add to Wink" height="18" width="18"></a>
+<p></p></td></tr></tbody></table>
+<!--end share-->
+
+ 
+<table style="border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="116">
+<tbody><tr><td><p><font size="1">&nbsp;</font></p></td></tr>
+
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-5598110712701911";
+google_ad_width = 120;
+google_ad_height = 90;
+google_ad_format = "120x90_0ads_al";
+google_ad_channel ="5097648222";
+//--></script>
+<script type="text/javascript" src="Flowchart%20-%20how%20to%20understand_arquivos/show_ads.js">
+</script><iframe name="google_ads_frame" src="Flowchart%20-%20how%20to%20understand_arquivos/ads_002.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="90" scrolling="no" width="120"></iframe>
+</td></tr>
+
+
+<tr><td><p>&nbsp;</p></td></tr>
+
+<tr><td>
+<table style="border-collapse: collapse;" border="2" bordercolor="#800000" cellpadding="0" cellspacing="0" width="116">
+<tbody><tr><td>
+<p class="smaller" align="center"><font color="#800000" face="Arial" size="2">
+<b>Books and <br>
+more at:</b></font></p>
+
+<h3 align="center">USA:</h3>
+<p style="margin-top: 0pt;" align="center">
+<!-- Amazon USA -->
+    <a href="http://www.amazon.com/exec/obidos/redirect?tag=changeminds-20&amp;path=subst/home/home.html">
+    <img src="Flowchart%20-%20how%20to%20understand_arquivos/amazonus100.gif" alt="In association with amazon.com" border="0" height="29" width="100"></a></p><h3 align="center">UK:</h3>
+<p style="margin-top: 0pt;" align="center">
+<!-- Amazon UK -->
+    	<a href="http://www.amazon.co.uk/exec/obidos/redirect-home?tag=changeminds-21&amp;site=amazon">
+        <img src="Flowchart%20-%20how%20to%20understand_arquivos/amazonuk100.gif" alt="In Association with Amazon.co.uk" border="0" height="23" width="100"></a>
+<!-- Amazon UK -->
+
+</p><h3 align="center">Canada:</h3>
+<p style="margin-top: 0pt;" align="center">
+<!-- Amazon UK -->
+    	<a href="http://www.amazon.ca/exec/obidos/redirect-home/changingmin08-20">
+        <img src="Flowchart%20-%20how%20to%20understand_arquivos/amazonca100.gif" alt="In Association with amazon.ca" border="0" height="28" width="100"></a>
+<!-- Amazon UK -->
+
+</p></td></tr></tbody></table>
+</td></tr></tbody></table>
+<p>&nbsp;</p>
+<!--webbot bot="Include" i-checksum="5719" endspan -->
+</td><td width="4"><p>&nbsp;
+</p></td><td valign="top" width="*">
+<!--starttext-->
+
+
+<h1> Flowchart: How to understand it</h1>
+
+<p class="smaller" align="center"><a href="http://syque.com/quality_tools/toolbook/toolbook.htm">The Quality Toolbook</a> &gt;&nbsp;<a href="http://syque.com/quality_tools/toolbook/Flowchart/flowchart.htm">Flowchart</a> &gt; How to understand it</p>
+
+<p class="smaller" align="center">
+<a href="http://syque.com/quality_tools/toolbook/Flowchart/when.htm">When to use it</a> | <a href="http://syque.com/quality_tools/toolbook/Flowchart/how.htm">How to understand it</a> | <a href="http://syque.com/quality_tools/toolbook/Flowchart/example.htm">
+Example</a> | <a href="http://syque.com/quality_tools/toolbook/Flowchart/do.htm">How to do it</a> | <a href="http://syque.com/quality_tools/toolbook/Flowchart/vary.htm">Practical 
+variations</a></p>
+
+<p class="smaller" align="center">&nbsp;</p>
+
+<p class="smaller" align="center"><a href="http://syque.com/quality_tools/toolbook/Flowchart/when.htm">&lt;-- Previous</a> |
+<a href="http://syque.com/quality_tools/toolbook/Flowchart/example.htm">Next --&gt;</a></p>
+
+<p class="smaller" align="center">&nbsp;</p>
+
+<h2>How to understand it</h2>
+
+<p>In order to improve a process, it is first necessary to understand
+its operation in detail. Describing this in text lacks the clarity of a
+pictorial diagram, where individual steps are more easily seen. </p>
+<p>The Flowchart is a simple mapping tool that shows the sequence of
+actions within a process, in a form that is easy to read and
+communicate.</p>
+<p>The basic element of a process is a simple action, which can be
+anything from striking an anvil to making a cash payment, and is
+represented as a box containing a description of the action. The
+mapping of 'what follows what' is shown with arrows between sequential
+action boxes,
+as in the illustration. This also shows the boxes for process start and
+end points of which there are normally one each.</p>
+<p>&nbsp;</p>
+<p align="center"><img src="Flowchart%20-%20how%20to%20understand_arquivos/Image146.gif" height="269" width="434">
+</p><p align="center">&nbsp;</p><p align="center"><b>Fig. 1. Basic Flowchart elements</b></p><p align="center">&nbsp;</p><p>Processes
+become more complex when decisions must be made on which, out of an
+alternative set of actions, must be taken. The decision is shown in a
+Flowchart as a diamond-shaped box containing a simple question to which
+the answer is 'yes' or 'no'
+as in Fig. 2. More complex decisions are made up of combinations of
+simple decision boxes.</p>
+<p>&nbsp;</p>
+<p align="center"><img src="Flowchart%20-%20how%20to%20understand_arquivos/Image147.gif" height="261" width="553">
+</p><p align="center">&nbsp;</p><p align="center"><b>Fig. 2. Decisions in Flowcharts</b></p><p align="center">&nbsp;</p><p>Processes often go wrong around decisions, as either the wrong question is being asked or the wrong answer is being given.</p>
+<p>Where boxes cannot be directly connected with lines, the separated
+lines are coordinated with connector boxes containing matching names.
+This typically occurs where lines cross onto another page,
+as in the illustration.</p>
+<p>&nbsp;</p>
+<p align="center"><img src="Flowchart%20-%20how%20to%20understand_arquivos/Image148.gif" height="365" width="553">
+</p><p align="center">&nbsp;</p><p align="center"><b>Fig. 3. Continuing Flowcharts 
+across pages</b></p><p align="center">&nbsp;</p><p>By
+using multiple connector boxes, it is very easy for Flowcharts to
+become very large, although this is usually self-defeating, as the
+Flowchart then becomes difficult to understand. The ideal size for a
+Flowchart is one page, as this gives a single visual 'chunk' that is
+reasonably easy to understand as a single item.</p>
+<p>Large processes can be broken down into a hierarchical set of
+smaller Flowcharts by representing a lower level process as a single
+sub-process box. This behaves like a normal action box at the higher
+level, but can be 'zoomed into' to expose another Flowchart,
+as in Fig. 4.</p>
+<p>&nbsp;</p>
+<p align="center"><img src="Flowchart%20-%20how%20to%20understand_arquivos/Image149.gif" height="234" width="554">
+</p><p align="center">&nbsp;</p><p align="center"><b>Fig. 4. Subprocesses</b></p><p align="center">&nbsp;</p><p>An additional 'action' box that can be useful when analyzing processes is the wait box, which highlights a delay (i.e. <i>no</i>
+action),
+as in the illustration. This is a typical point where the overall cost
+of a process may be improved by acting, possibly on other processes, to
+reduce the delay.</p>
+<p>&nbsp;</p>
+<p align="center"><img src="Flowchart%20-%20how%20to%20understand_arquivos/Image150.gif" height="178" width="257">
+</p><p align="center">&nbsp;</p><p align="center"><b>Fig. 5. Delay symbol</b></p><p align="center">&nbsp;</p><p>There
+are a number of different charting standards which extend this basic
+set of boxes. They typically include additional boxes for special types
+of action, such as getting input and producing output.</p>
+<p>A confusion that may arise from different standards is that they can
+use the same box for different purposes or use different boxes for the
+same purpose. It is therefore a good idea to be clear from the
+beginning of any exercise on the standard to be used.</p>
+<p>A limitation of Flowcharts is that, although they show the action
+sequence, they do not explicitly show the flow of information or items
+through the process. This may be done with other tools, such as <a href="http://syque.com/quality_tools/toolbook/IDEF0.htm/idef0.htm">IDEF0</a>.</p>
+
+<p>&nbsp;</p>
+
+<p class="smaller" align="center">&nbsp;</p>
+
+<p class="smaller" align="center"><a href="http://syque.com/quality_tools/toolbook/Flowchart/when.htm">&lt;-- Previous</a> |
+<a href="http://syque.com/quality_tools/toolbook/Flowchart/example.htm">Next --&gt;</a></p>
+
+<p>&nbsp;</p>
+</td>
+<!--endtext-->
+<td bgcolor="#ffffff" valign="top" width="4"></td>
+<td style="font-size: 1px;" bgcolor="#e0e0e0" valign="top" width="1"></td>
+<td valign="top" width="100">
+<!--webbot bot="Include" U-Include="../../borders/right.htm" TAG="BODY" startspan -->
+
+<div align="center">
+<center>
+
+<table width="100%">
+<tbody><tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-5598110712701911";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_channel ="5097648222";
+google_ad_type = "text_image";
+google_color_border = ["FFFFFF"];
+google_color_bg = ["FFFFFF"];
+google_color_link = ["000088"];
+google_color_url = ["0000DD"];
+google_color_text = ["445544"];
+//--></script>
+<script type="text/javascript" src="Flowchart%20-%20how%20to%20understand_arquivos/show_ads.js">
+</script><iframe name="google_ads_frame" src="Flowchart%20-%20how%20to%20understand_arquivos/ads_003.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="600" scrolling="no" width="160"></iframe>
+</td></tr>
+
+</tbody></table>
+
+  </center>
+</div>
+
+<!--webbot bot="Include" i-checksum="44526" endspan -->
+</td></tr></tbody></table>
+<!--webbot bot="Include" U-Include="../../borders/botm.htm" TAG="BODY" startspan -->
+<hr color="#dddddd" size="1">
+<table style="border-collapse: collapse;" bgcolor="#ffffff" border="0" bordercolor="#111111" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td width="100%">
+    <p align="center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-5598110712701911";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="5097648222";
+google_ad_type = "text_image";
+google_color_border = ["FFFFFF"];
+google_color_bg = ["FFFFFF"];
+google_color_link = ["0044dd"];
+google_color_url = ["008000"];
+google_color_text = ["6F6F6F"];
+//--></script><script type="text/javascript" src="Flowchart%20-%20how%20to%20understand_arquivos/show_ads.js">
+</script><iframe name="google_ads_frame" src="Flowchart%20-%20how%20to%20understand_arquivos/ads_004.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="90" scrolling="no" width="728"></iframe></p></td>
+  </tr>
+</tbody></table>
+
+<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr><td><font size="1"> &nbsp;</font></td></tr>
+</tbody></table>
+
+<table style="border-collapse: collapse;" bgcolor="#6fbcea" border="0" cellpadding="0" width="100%">
+  <tbody><tr>
+    <td height="8" width="8">
+    </td><td height="8" width="*">
+    </td><td background="Flowchart%20-%20how%20to%20understand_arquivos/aetr.bmp" height="8" width="8">
+  </td></tr>
+  <tr>
+    <td height="15" valign="top" width="8">
+    </td><td height="8" valign="top" width="*">
+    <table border="0" cellpadding="0" cellspacing="0" height="30" width="100%">
+      <tbody><tr>
+        <td valign="top" width="50%">
+        <p style="margin-top: 0pt; margin-bottom: 2px;">
+        &nbsp;
+        <a href="http://syque.com/copyright.htm" style="text-decoration: none;">
+        <font color="#000000" face="Times New Roman" size="2"> 
+        © Syque 2002-2007</font></a></p></td>
+        <td width="22">
+        <div align="center">
+          <center>
+          <table style="border-collapse: collapse;" id="AutoNumber1" bgcolor="#ffccff" border="1" bordercolor="#111111" cellspacing="0" width="95%">
+            <tbody><tr>
+              <td width="100%"><font face="Arial Black" size="1">
+              <a target="_self" href="">TOP</a></font></td>
+            </tr>
+          </tbody></table>
+          </center>
+        </div>
+        </td>
+        <td valign="top" width="50%">
+          <p style="margin-top: 3px;" align="right"><i>
+          <font color="#000080" face="Times New Roman" size="2">Massive Content 
+          -- Maximum Speed</font><font color="#ffff00" face="Univers Condensed" size="2">&nbsp;&nbsp;&nbsp; </font> </i></p></td>
+      </tr>
+    </tbody></table>
+    </td>
+    <td background="Flowchart%20-%20how%20to%20understand_arquivos/aer.bmp" valign="top" width="8">
+  &nbsp;
+  </td></tr>
+  <tr>
+    <td background="Flowchart%20-%20how%20to%20understand_arquivos/aebl.bmp" height="8" width="8">
+    </td><td background="Flowchart%20-%20how%20to%20understand_arquivos/aeb.bmp" height="8" width="*">
+    </td><td background="Flowchart%20-%20how%20to%20understand_arquivos/aebr.bmp" height="8" width="8">
+</td></tr></tbody></table>
+
+<!--webbot bot="Include" i-checksum="27908" endspan -->
+<!--endpage-->
+</body></html>

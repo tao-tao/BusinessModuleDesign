@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+
+/*
+ * 分页相关样式，包括页码标签，上一页，下一页等。
+ */
+#page {
+	font: 14px simsun;
+	white-space: nowrap;
+	margin-left: 65px;
+}
+
+#page a,#page strong {
+	background: none repeat scroll 0 0 white;
+	display: inline-block;
+	height: 54px;
+	line-height: 22px;
+	margin-right: 5px;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: text-bottom;
+}
+
+#page a {
+	cursor: pointer;
+}
+
+#page a:hover {
+	background: none repeat scroll 0 center transparent;
+}
+
+#page .n:hover,#page a:hover .pc {
+	background: none repeat scroll 0 0 #EBEBEB;
+}
+
+#page .n {
+	border: 1px solid #E7ECF0;
+	height: 22px;
+	padding: 0 6px;
+}
+
+#page span {
+	display: block;
+}
+
+#page .pc {
+	border: 1px solid #EBEBEB;
+	background-color: #FFFFFF;
+	color: #0000CC;
+	cursor: pointer;
+	height: 22px;
+	width: 35px;
+}
+
+#page .next {
+	border: 1px solid #EBEBEB;
+	background-color: #FFFFFF;
+	color: #0000CC;
+	cursor: pointer;
+	height: 22px;
+	width: 65px;
+}
+
+#page .fk {
+	cursor: pointer;
+	height: 30px;
+	width: 24px;
+}
+
+#page strong .fk,#page strong .pc {
+	cursor: auto;
+}
+
+#page .fkd {
+	background-position: -35px -303px;
+}
+
+#page .fk_cur {
+	background-position: 2px -312px;
+}
+
+#page strong .pc {
+	border: 0 none;
+	height: 24px;
+	line-height: 24px;
+	width: 24px;
+}
+
+#page .nums {
+	display: inline-block;
+	vertical-align: text-bottom;
+}

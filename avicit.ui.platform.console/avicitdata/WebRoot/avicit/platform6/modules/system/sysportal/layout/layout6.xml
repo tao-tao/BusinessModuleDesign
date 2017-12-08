@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<layout name="模板七" enName="template7">
+		<layout-columns>
+			<layout-column id="column_1" width="40.5%"/>
+			<layout-column id="column_2" width="40.5%"/>
+			<layout-column id="column_3" width="18.5%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_4" width="99.5%"/>
+		</layout-columns>
+		
+	</layout>

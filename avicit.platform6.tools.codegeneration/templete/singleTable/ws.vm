@@ -1,0 +1,25 @@
+package ${packageName};
+
+import java.util.Date;
+import java.util.Map;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.domain.${tableInfo.entityBean.standName};
+
+/**
+ *
+ * Title: ${tableInfo.entityBean.standName}对外WebService服务发布类
+ * Description: CXF可以自动封装此WS服务接口类
+ * Copyriht: ${copyright}
+ * Company: ${company}
+ * @author ${author}
+ * @version 1.0 Date: ${date}
+ *
+ */
+@WebService(name="${tableInfo.entityBean.standName}WS")
+public interface ${tableInfo.entityBean.standName}WSInterface {
+    
+  
+}

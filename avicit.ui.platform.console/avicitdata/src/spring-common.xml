@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"  xmlns:jdbc="http://www.springframework.org/schema/jdbc"  
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd"
+	>
+
+	<description>Spring公共配置文件</description> 
+	<!-- 定义检测执行时间的拦截器 -->
+	<bean id="performanceInterceptor" class="avicit.platform6.core.spring.aop.PerformanceInterceptor">
+		<property name="maxAllowedTimeMillis" value="1000"></property>
+	</bean>
+	<aop:config proxy-target-class="true">
+		<aop:advisor pointcut="execution(* avicit..*.service.*Service*.*(..))" advice-ref="performanceInterceptor" />
+	</aop:config>
+ 
+	<!-- JSR303 Validator定义 -->
+ 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+	
+	<bean id="springFactory" class="avicit.platform6.core.spring.SpringFactory" scope="singleton" lazy-init="false"></bean>
+	
+	
+	 <!-- 加载系统参数配置 -->
+	<!-- <bean id="platformProperties" class="avicit.platform6.core.properties.PlatformProperties" scope="singleton"></bean> -->
+	<!--自动加载AVICIT安全框架properties配置的文件类 -->
+	<bean id="avicit.security.propertiesConfigurationLoader" class="avicit.platform6.core.shiroSecurity.shiroUtil.PropertiesConfigurationLoader" >
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+	</bean>
+	
+	
+	
+	<bean id="avicit.core.defaultFrameWorkContext"
+		class="avicit.platform6.api.sysshirolog.context.DefaultFrameworkContext"
+		scope="prototype">
+		<property name="loginFormUrl" value="${avicit.security.loginFormUrl}"></property>
+	</bean>
+	
+	
+	<bean id="workerThreadPool" class="avicit.platform6.core.threadPool.WorkerThreadPool">
+		  <constructor-arg index="0" value="100" /> 
+		  <constructor-arg index="1" value="100" /> 
+		  <constructor-arg index="2" value="50" /> 
+  </bean>
+	
+	
+	
+	  
+</beans>

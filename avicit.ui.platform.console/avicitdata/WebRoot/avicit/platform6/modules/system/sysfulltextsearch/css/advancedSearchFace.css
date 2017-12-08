@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+*{padding:0; margin:0;}
+img{border:0;}
+a{text-decoration:none;}
+/*body{font-family:Arial, Helvetica, sans-serif,"宋体"; font-size:12px;}*/
+body{font-family:Arial, Helvetica, sans-serif,"宋体"; font-size:12px; background:#fff;}
+li,dl,dt,dd{list-style:none;}
+table,tr,td{border-collapse:collapse;}
+.clear{clear:both;}
+
+#index-head {min-height:430px; background:top center no-repeat; margin:0 auto; width:100%; border-bottom:1px solid #fff}
+/*.headsearch{min-height:420px;margin:0 auto; padding:38px 0 12px; position:relative;}*/
+.headsearch{min-height:420px;margin:0 auto; padding:0px 0 12px; position:relative;}
+.headslogo{text-align:center}
+
+#zhsh_foot{height:39px; line-height:39px; font-size:12px; color:#666; text-align:center}

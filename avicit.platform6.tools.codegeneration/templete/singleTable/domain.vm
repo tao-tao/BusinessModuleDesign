@@ -1,0 +1,79 @@
+package ${packageName};
+
+import javax.persistence.Id;
+//import javax.persistence.Transient;
+
+import avicit.platform6.core.domain.BeanDTO;
+import avicit.platform6.core.properties.PlatformConstant.LogType;
+import avicit.platform6.core.annotation.log.LogField;
+import avicit.platform6.core.annotation.log.FieldRemark;
+import avicit.platform6.core.annotation.log.PojoRemark;
+/**
+ * bean ${tableInfo.entityBean.standName}
+ * Title: 表${tableInfo.tableName}的PoJo类，也就是数据库映射类
+ * Description: ${tableInfo.tableComment}
+ * Copyriht: ${copyright}
+ * Company: ${company}
+ * @author ${author}
+ * @version 1.0 Date: ${date}
+ *
+ */
+ @PojoRemark(table="${tableInfo.lowerTableName}",object="${tableInfo.entityBean.standName}DTO",name="${tableInfo.tableComment}")
+ public class ${tableInfo.entityBean.standName}DTO extends BeanDTO{
+    private static final long serialVersionUID = 1L;
+#foreach ($param in ${tableInfo.entityBean.params})## 
+#if($param.standName!="createdBy" && $param.standName!="creationDate" && $param.standName!="lastUpdatedBy" && $param.standName!="lastUpdateDate" && $param.standName!="lastUpdateIp" && $param.standName!="version")##
+#if($param.field.fieldName.equals(${tableInfo.primaryField.fieldName}))##
+    @Id
+#else## 
+#end##
+#if($param.field.isNullable==false)##
+    @LogField
+#end##
+    @FieldRemark(column="${param.field.lowerFildName}",field="${param.standName}",name="${param.field.comment}")
+    private ${param.paramType} ${param.standName};
+#end##
+#end##     
+
+
+  #foreach ($param in ${tableInfo.entityBean.params}) 
+  	#if($param.standName!="createdBy" && $param.standName!="creationDate" && $param.standName!="lastUpdatedBy" && $param.standName!="lastUpdateDate" && $param.standName!="lastUpdateIp" && $param.standName!="version")
+  
+    public ${param.paramType} get${param.upperFirstCharName}(){
+	  return ${param.standName};
+	}
+		
+	public void set${param.upperFirstCharName}(${param.paramType} ${param.standName}){
+	  this.${param.standName} = ${param.standName};
+	}
+ 	#end  
+  #end  
+
+       
+ 
+	public String getLogFormName() {
+		if(super.logFormName==null||super.logFormName.equals("")){
+			return "${tableInfo.tableComment}";
+		}else{
+			return super.logFormName;
+		}
+	}
+
+	public String getLogTitle() {
+		if(super.logTitle==null||super.logTitle.equals("")){
+			return "${tableInfo.tableComment}";
+		}else{
+			return super.logTitle;
+		}
+	}
+	
+
+	public LogType getLogType() {
+		if (super.logType == null || super.logType.equals("")) {
+			return LogType.module_operate;
+		} else {
+			return super.logType;
+		}
+	}
+        
+}

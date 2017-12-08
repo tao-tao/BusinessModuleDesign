@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.jvisio.flowchart.diagram.custom
+Bundle-Version: 0.0.1
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.draw2d
+Export-Package: com.jvisio.flowchart.diagram.custom.figures

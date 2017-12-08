@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<layout name="模板一" enName="template1">
+		<layout-columns>
+			<layout-column id="column_1" width="24.5%" />
+			<layout-column id="column_2" width="49.5%"/>
+			<layout-column id="column_3" width="24.5%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_4" width="33%" />
+			<layout-column id="column_5" width="33%"/>
+			<layout-column id="column_6" width="33%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_7" width="69%" />
+			<layout-column id="column_8" width="30%"/>
+		</layout-columns>
+		
+	</layout>

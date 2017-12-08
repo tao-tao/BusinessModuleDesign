@@ -1,0 +1,237 @@
+body, input, textarea {
+    font-family: verdana;
+}
+body {
+    color: #222222;
+    font-size: 12px;
+    line-height: 1.666;
+}
+.fn-transition, .s, .ek, .fA, .J, .gm, .oZ {
+    transition-duration: 0.2s;
+    transition-property: all;
+}
+a {
+    color: #003399;
+    text-decoration: none;
+	cursor:pointer;
+}
+
+.cl .nui-txt-tips, .qy {
+    line-height: 22px;
+    margin-left: 5px;
+}
+.nui-txt-tips {
+    color: #999999 !important;
+}
+.L {
+    display : none;
+}
+.j {
+    color: #666666;
+    height: 16px;
+    left: 41px;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    top: 5px;
+    white-space: nowrap;
+    width: 200px;
+}
+.l {
+    position: absolute;
+    right: 6px;
+    top: 5px;
+}
+.k {
+    color: #B0B0B0;
+    height: 16px;
+    left: 41px;
+    line-height: 160%;
+    overflow: visible;
+    position: absolute;
+    text-overflow: ellipsis;
+    top: 21px;
+    white-space: nowrap;
+}
+.X .nui-bg-dark {
+    background-color: #E6ECF5;
+}
+.v {
+    border-radius: 3px 3px 3px 3px;
+    float: left;
+    height: 44px;
+    line-height: 16px;
+    margin: 0 4px 4px 0;
+    position: relative;
+    width: 280px;
+}
+.nui-bg-dark {
+    background-color: #E6ECF5;
+}
+
+/* -- uploading ---- */
+div.fieldset {
+	border:  1px solid #afe14c;
+	margin: 10px 0;
+	padding: 20px 10px;
+}
+div.fieldset span.legend {
+	position: relative;
+	background-color: #FFF;
+	padding: 3px;
+	top: -30px;
+	font: 700 14px Arial, Helvetica, sans-serif;
+	color: #73b304;
+}
+
+div.flash {
+	 width: 375px;
+	 margin: 110px 5px;
+	 border-color: #D9E4FF;
+	-moz-border-radius-topleft : 5px;
+	-webkit-border-top-left-radius : 5px;
+    -moz-border-radius-topright : 5px;
+    -webkit-border-top-right-radius : 5px;
+    -moz-border-radius-bottomleft : 5px;
+    -webkit-border-bottom-left-radius : 5px;
+    -moz-border-radius-bottomright : 5px;
+    -webkit-border-bottom-right-radius : 5px;
+}
+.progressWrapper {
+    margin: -13px 0 0 39px;
+    position: relative;
+    width: 190px;
+}
+.progressContainer {
+	position: relative;
+	background-color: #F7F7F7;
+    border: 1px solid #E8E8E8;
+    overflow: hidden;
+    padding: 1px;
+    width: 150px;
+    float : left;
+}
+.progressPercent{
+    float: right;
+    height: 8px;
+    width: 33px;
+    line-height: 10px;
+}
+.progressPercent span{
+	text-align: center;
+	font-size: 10px;
+}
+.progressContainer div{
+	background: none repeat scroll 0 0 #0000FF;
+    color: #333333;
+    display: block;
+    height: 8px;
+    line-height: 20px;
+    position: relative;
+    width : 0px
+}
+
+.progressBarError {
+	font-size:10px; 
+	color:red
+}
+
+.progressBarStatus {
+	margin-top: 2px;
+	width: 337px;
+	font-size: 7pt;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+a.progressCancel {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url(../images/cancelbutton.gif);
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel:hover {
+	background-position: 0px 0px;
+}
+
+
+/* -- SWFUpload Object Styles ------------------------------- */
+.swfupload {
+/* 	vertical-align: top; */
+}
+#swfupload-control{
+	width : 100%;
+}
+#log{
+	margin: 100px 5px;
+	width : 100%;
+}
+/* file type ico*/
+.nui-ico-file{
+	font-weight: normal;
+    line-height: normal;
+    overflow: hidden;
+    text-align: center;
+    background-image: url("avicit/platform6/modules/system/sysfileupload/img/fileico.png");
+    background-repeat: no-repeat;
+    height: 32px;
+    width: 32px;
+    margin: 7px 0 0 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.nui-ico-file-xls, .nui-ico-file-xlsx{
+    background-position: -32px -64px;
+}
+.nui-ico-file-doc, .nui-ico-file-docx{
+    background-position: -64px -64px;
+}
+.nui-ico-file-ppt, .nui-ico-file-pptx{
+    background-position: -96px -64px;
+}
+.nui-ico-file-rar{
+    background-position: -160px -64px;
+}
+.nui-ico-file-zip{
+    background-position: -192px -64px;
+}
+
+.nui-ico-file-html{
+    background-position: -288px -64px;
+}
+.nui-ico-file-js{
+    background-position: -320px -64px;
+}
+.nui-ico-file-xml, .nui-ico-file-css{
+    background-position: -352px -64px;
+}
+.nui-ico-file-pdf{
+    background-position: -512px -64px;
+}
+.nui-ico-file-txt{
+    background-position: -672px -64px;
+}
+.nui-ico-file-jpg{
+    background-position: 0 -32px;
+}
+.nui-ico-file-gif{
+    background-position: -32px -32px;
+}
+.nui-ico-file-png{
+    background-position: -64px -96px;
+}
+.nui-ico-file-bmp{
+    background-position: -96px -32px;
+}
+.nui-ico-file-dir{
+    background-position: -896px -32px;
+}
+.nui-ico-file-default{
+    background-position: -384px -64px;
+}

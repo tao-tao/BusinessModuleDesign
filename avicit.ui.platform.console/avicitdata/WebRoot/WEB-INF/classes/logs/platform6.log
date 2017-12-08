@@ -1,0 +1,642 @@
+15:24:40.299 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@102799c: startup date [Tue Mar 31 15:24:40 CST 2015]; root of context hierarchy
+15:24:40.455 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-netty.xml]
+15:24:40.674 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-hibernate.xml]
+15:24:40.798 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [jar:file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/lib/avicit-platform6-api-6.3.0.jar!/spring-api.xml]
+15:24:40.814 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-redis.xml]
+15:24:40.845 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]
+15:24:40.892 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-shiro.xml]
+15:24:40.908 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-common.xml]
+15:24:40.954 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [jar:file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/lib/avicit-platform6-component-6.3.0.jar!/avicit/platform6/modules/system/quartz/core/configuration/spring-module.xml]
+15:24:41.001 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [jar:file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/lib/avicit-platform6-system-6.3.0.jar!/avicit/platform6/modules/system/sysprofile/configuration/spring-module.xml]
+15:24:41.017 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [jar:file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/lib/avicit-platform6-system-6.3.0.jar!/avicit/platform6/modules/system/sysprofile/service/impl/format/configuration/spring-module.xml]
+15:24:41.017 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'formatFactory': replacing [Generic bean: class [avicit.platform6.modules.system.sysprofile.service.impl.format.ProfileValueFormatterFactory]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/lib/avicit-platform6-system-6.3.0.jar!/avicit/platform6/modules/system/sysprofile/configuration/spring-module.xml]] with [Generic bean: class [avicit.platform6.modules.system.sysprofile.service.impl.format.ProfileValueFormatterFactory]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/lib/avicit-platform6-system-6.3.0.jar!/avicit/platform6/modules/system/sysprofile/service/impl/format/configuration/spring-module.xml]]
+15:24:41.032 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [jar:file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/lib/avicit-platform6-bpmengine-6.3.0.jar!/configuration/spring/spring-assembly-bpm.xml]
+15:24:41.032 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [jar:file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/lib/avicit-platform6-search-6.3.0.jar!/configuration/spring/spring-assembly-solr.xml]
+15:24:41.079 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]
+15:24:41.110 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'dataSourceMybatis': replacing [Generic bean: class [com.jolbox.bonecp.BoneCPDataSource]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=close; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]] with [Generic bean: class [com.jolbox.bonecp.BoneCPDataSource]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=close; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]]
+15:24:41.110 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'vendorProperties': replacing [Generic bean: class [org.springframework.beans.factory.config.PropertiesFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]] with [Generic bean: class [org.springframework.beans.factory.config.PropertiesFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]]
+15:24:41.110 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'databaseIdProvider': replacing [Generic bean: class [org.apache.ibatis.mapping.VendorDatabaseIdProvider]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]] with [Generic bean: class [org.apache.ibatis.mapping.VendorDatabaseIdProvider]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]]
+15:24:41.110 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'sqlSessionFactory': replacing [Generic bean: class [org.mybatis.spring.SqlSessionFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]] with [Generic bean: class [org.mybatis.spring.SqlSessionFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]]
+15:24:41.110 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'transactionManagerMybatis': replacing [Generic bean: class [org.springframework.jdbc.datasource.DataSourceTransactionManager]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]] with [Generic bean: class [org.springframework.jdbc.datasource.DataSourceTransactionManager]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/spring-mybatis.xml]]
+15:24:41.110 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'txAdviceMybatis': replacing [Generic bean: class [org.springframework.transaction.interceptor.TransactionInterceptor]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.springframework.transaction.interceptor.TransactionInterceptor]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+15:24:46.461 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demoBusinessFlowR3Dao' and 'avicit.platform6.demo.demobusinessflowr3.dao.DemoBusinessFlowR3Dao' mapperInterface. Bean already defined with the same name!
+15:24:46.461 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demoBusinessTripDao' and 'avicit.platform6.demo.demobusinesstrip.dao.DemoBusinessTripDao' mapperInterface. Bean already defined with the same name!
+15:24:46.461 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demoBusinessTripMainDao' and 'avicit.platform6.demo.mainsub.demobusinesstrip.dao.DemoBusinessTripMainDao' mapperInterface. Bean already defined with the same name!
+15:24:46.461 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demoBusinessTripSubDao' and 'avicit.platform6.demo.mainsub.demobusinesstrip.dao.DemoBusinessTripSubDao' mapperInterface. Bean already defined with the same name!
+15:24:46.461 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'resteasyAuthorizationDao' and 'avicit.platform6.restmanage.dao.ResteasyAuthorizationDao' mapperInterface. Bean already defined with the same name!
+15:24:46.461 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'resteasyOrgDao' and 'avicit.platform6.restmanage.dao.ResteasyOrgDao' mapperInterface. Bean already defined with the same name!
+15:24:46.477 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'resteasyResourcesDao' and 'avicit.platform6.restmanage.dao.ResteasyResourcesDao' mapperInterface. Bean already defined with the same name!
+15:24:46.477 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'resteasySystemDao' and 'avicit.platform6.restmanage.dao.ResteasySystemDao' mapperInterface. Bean already defined with the same name!
+15:24:46.477 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'resteasyUserDao' and 'avicit.platform6.restmanage.dao.ResteasyUserDao' mapperInterface. Bean already defined with the same name!
+15:24:46.477 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'searchConnectionDao' and 'avicit.platform6.search.dao.SearchConnectionDao' mapperInterface. Bean already defined with the same name!
+15:24:46.477 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'searchDatasourcesDao' and 'avicit.platform6.search.dao.SearchDatasourcesDao' mapperInterface. Bean already defined with the same name!
+15:24:46.477 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'searchDetailsDao' and 'avicit.platform6.search.dao.SearchDetailsDao' mapperInterface. Bean already defined with the same name!
+15:24:46.477 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[avicit]' package. Please check your configuration.
+15:24:46.524 [main] INFO  o.s.b.f.c.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/platform6.properties]
+15:24:46.524 [main] INFO  o.s.b.f.c.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/jdbc.properties]
+15:24:46.524 [main] INFO  o.s.b.f.c.PropertyPlaceholderConfigurer - Loading properties file from URL [file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/classes/quartz.properties]
+15:24:46.555 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+15:24:46.695 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:46.695 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:46.695 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#2' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:46.695 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#3' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:46.695 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#4' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:46.711 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#5' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:46.804 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:47.132 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:47.194 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'avicit.shirorolefilter' of type [class avicit.platform6.api.sysshirolog.filter.ShiroRolesOrFilterAPI] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:47.662 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceMybatis' of type [class com.jolbox.bonecp.BoneCPDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:47.943 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'vendorProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:47.974 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'vendorProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:48.084 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'databaseIdProvider' of type [class org.apache.ibatis.mapping.VendorDatabaseIdProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:48.177 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'avicit.platform6.core.mybatis.pagehelper.PageHelper#20fa83' of type [class avicit.platform6.core.mybatis.pagehelper.PageHelper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:49.987 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [class org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.018 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [class org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.080 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'searchDetailsDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.080 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'searchDatasourcesDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.096 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'searchConnectionDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.096 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'resteasyUserDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.112 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'resteasySystemDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.112 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'resteasyResourcesDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.127 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'resteasyOrgDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.127 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'resteasyAuthorizationDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.127 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'demoBusinessTripSubDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.143 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'demoBusinessTripMainDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.158 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'demoBusinessTripDao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.158 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'demoBusinessFlowR3Dao' of type [class org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.205 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jedisPoolConfig' of type [class redis.clients.jedis.JedisPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.268 [main] INFO  a.p.core.redis.JedisSentinelPool - Created ShardedJedisPool to master at [127.0.0.1:6379 ]
+15:24:50.314 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jedisSentinelPool' of type [class avicit.platform6.core.redis.JedisSentinelPool] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.330 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+15:24:50.330 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dbAuthRealm' of type [class avicit.platform6.api.sysshirolog.impl.ShiroSecurityAPIDbAuthRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.408 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroCacheManager' of type [class avicit.platform6.core.shiroSecurity.shiroCache.ShiroCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.455 [main] INFO  a.p.c.s.shiroCache.ShiroCacheManager - Using existing jedisSentinelPool named [[127.0.0.1:6379]]
+15:24:50.455 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.782 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultDataSource' of type [class com.jolbox.bonecp.BoneCPDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.829 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'nativeJdbcExtractor' of type [class org.springframework.jdbc.support.nativejdbc.SimpleNativeJdbcExtractor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:50.845 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'oracleLobHandler' of type [class org.springframework.jdbc.support.lob.OracleLobHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:51.126 [main] INFO  o.h.annotations.common.Version - Hibernate Commons Annotations 3.2.0.Final
+15:24:51.157 [main] INFO  org.hibernate.cfg.Environment - Hibernate 3.6.10.Final
+15:24:51.157 [main] INFO  org.hibernate.cfg.Environment - hibernate.properties not found
+15:24:51.172 [main] INFO  org.hibernate.cfg.Environment - Bytecode provider name : javassist
+15:24:51.219 [main] INFO  org.hibernate.cfg.Environment - using JDK 1.4 java.sql.Timestamp handling
+15:24:51.750 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.model.ExecutionImpl -> BPM_EXECUTION
+15:24:51.859 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.type.Variable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.type.variable.BlobVariable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.type.variable.DateVariable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.type.variable.DoubleVariable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.type.variable.HibernateLongVariable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.type.variable.HibernateStringVariable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.type.variable.LongVariable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.type.variable.NullVariable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.type.variable.StringVariable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.type.variable.TextVariable -> BPM_VARIABLE
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.lob.Lob -> BPM_LOB
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.job.JobImpl -> BPM_JOB
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.job.MessageImpl -> BPM_JOB
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.model.op.ExecuteActivityMessage -> BPM_JOB
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.model.op.ExecuteEventListenerMessage -> BPM_JOB
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.job.CommandMessage -> BPM_JOB
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.job.TimerImpl -> BPM_JOB
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.job.StartProcessTimer -> BPM_JOB
+15:24:51.890 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.model.ExceptionImpl -> BPM_EXCEPTION
+15:24:51.906 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.history.model.HistoryProcessInstanceImpl -> BPM_HIST_PROCINST
+15:24:51.921 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.history.model.HistoryActivityInstanceImpl -> BPM_HIST_ACTINST
+15:24:51.921 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.history.model.HistoryAutomaticInstanceImpl -> BPM_HIST_ACTINST
+15:24:51.921 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.history.model.HistoryDecisionInstanceImpl -> BPM_HIST_ACTINST
+15:24:51.921 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.history.model.HistoryActInstPrevioImpl -> BPM_HIST_ACTINST_PREV
+15:24:51.921 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.history.model.HistoryTaskImpl -> BPM_HIST_TASK
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.history.model.HistoryVariableImpl -> BPM_HIST_VAR
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.history.model.TrackImpl -> BPM_TRACK
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.history.model.FocusedTaskImpl -> BPM_FOCUSED_TASK
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.history.model.HistoryDetailImpl -> BPM_HIST_DETAIL
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.history.model.HistoryProcessInstanceMigrationImpl -> BPM_HIST_DETAIL
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.history.model.HistoryPriorityUpdateImpl -> BPM_HIST_DETAIL
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.history.model.HistoryTaskAssignmentImpl -> BPM_HIST_DETAIL
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.history.model.HistoryTaskDuedateUpdateImpl -> BPM_HIST_DETAIL
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping subclass: avicit.platform6.bpm.pvm.internal.history.model.HistoryVariableUpdateImpl -> BPM_HIST_DETAIL
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.repository.DeploymentImpl -> BPM_DEPLOYMENT
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.repository.DeploymentProperty -> BPM_DEPLOYPROP
+15:24:51.937 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.id.PropertyImpl -> BPM_PROPERTY
+15:24:51.952 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.moudle.ProcessDefImpl -> BPM_PROCESS_DEF
+15:24:51.952 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.moudle.FromsRelationImpl -> BPM_FROMS_RELATION
+15:24:51.952 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.moudle.Button -> BPM_BUTTON
+15:24:51.952 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.repository.DeploymentAccess -> BPM_ACCESS
+15:24:51.952 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.task.TaskImpl -> BPM_TASK
+15:24:51.952 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.task.ParticipationImpl -> BPM_PARTICIPATION
+15:24:51.952 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping class: avicit.platform6.bpm.pvm.internal.task.SwimlaneImpl -> BPM_SWIMLANE
+15:24:51.968 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmAccess
+15:24:52.015 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmAccess on table BPM_ACCESS
+15:24:52.046 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmActinstConsoleV
+15:24:52.046 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmActinstConsoleV on table BPM_ACTINST_CONSOLE_V
+15:24:52.046 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmCatalog
+15:24:52.046 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmCatalog on table BPM_CATALOG
+15:24:52.062 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmCatalogProcessRelation
+15:24:52.062 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmCatalogProcessRelation on table BPM_CATALOG_PROCESS_RELATION
+15:24:52.062 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmDeployprop
+15:24:52.062 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmDeployprop on table BPM_DEPLOYPROP
+15:24:52.062 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmEntryConsole
+15:24:52.062 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmEntryConsole on table BPM_ENTRY_CONSOLE_V
+15:24:52.062 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmException
+15:24:52.062 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmException on table BPM_EXCEPTION
+15:24:52.062 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmExecutionCn
+15:24:52.062 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmExecutionCn on table BPM_EXECUTION
+15:24:52.062 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmExtTaskAttribute
+15:24:52.062 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmExtTaskAttribute on table BPM_EXT_TASK_ATTRIBUTE
+15:24:52.077 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmFormsImpl
+15:24:52.077 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmFormsImpl on table BPM_FORMS
+15:24:52.077 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmHistActinst
+15:24:52.077 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmHistActinst on table BPM_HIST_ACTINST
+15:24:52.077 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmHistProcinst
+15:24:52.077 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmHistProcinst on table BPM_HIST_PROCINST
+15:24:52.077 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmHistTask
+15:24:52.077 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmHistTask on table BPM_HIST_TASK
+15:24:52.093 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmHistTaskV
+15:24:52.093 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmHistTaskV on table BPM_HIST_TASK_V
+15:24:52.093 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmIdeaStyle
+15:24:52.093 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmIdeaStyle on table BPM_IDEA_STYLE
+15:24:52.093 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmSelectPerson
+15:24:52.093 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmSelectPerson on table BPM_SELECT_PERSON
+15:24:52.093 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmVariable
+15:24:52.093 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmVariable on table BPM_VARIABLE
+15:24:52.108 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.BpmWaring
+15:24:52.108 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.BpmWaring on table BPM_WARING
+15:24:52.108 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.FormSecurity
+15:24:52.108 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.FormSecurity on table BPM_EXT_FORM_SECURITY
+15:24:52.108 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.NextActivity
+15:24:52.108 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.NextActivity on table BPM_EXT_NEXT_ACTIVITY
+15:24:52.108 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.ext.domain.TaskAttribute
+15:24:52.108 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.ext.domain.TaskAttribute on table BPM_EXT_TASK_ATTRIBUTE
+15:24:52.108 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.word.domain.SysWord
+15:24:52.108 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.word.domain.SysWord on table SYS_WORD
+15:24:52.124 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.word.domain.SysWordSeal
+15:24:52.124 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.word.domain.SysWordSeal on table SYS_WORD_SEAL
+15:24:52.124 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.word.domain.SysWordTemplet
+15:24:52.124 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.word.domain.SysWordTemplet on table SYS_WORD_TEMPLET
+15:24:52.124 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.workhand.domain.BpmWorkHandTask
+15:24:52.124 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.workhand.domain.BpmWorkHandTask on table BPM_WORK_HAND_TASK
+15:24:52.124 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.workhand.domain.BpmWorkHandTaskPass
+15:24:52.124 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.workhand.domain.BpmWorkHandTaskPass on table BPM_WORK_HAND_TASK_PASS
+15:24:52.124 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpm.workhand.domain.SysWorkHand
+15:24:52.124 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpm.workhand.domain.SysWorkHand on table SYS_WORK_HAND
+15:24:52.124 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpmclient.bpm.domain.SysBpmHistProcinst
+15:24:52.124 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpmclient.bpm.domain.SysBpmHistProcinst on table SYS_BPM_HIST_PROCINST
+15:24:52.140 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.bpmclient.bpm.domain.SysBpmHistTask
+15:24:52.140 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.bpmclient.bpm.domain.SysBpmHistTask on table SYS_BPM_HIST_TASK
+15:24:52.140 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.demo.demobusinessflow.domain.DemoBusinessFlow
+15:24:52.140 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.demo.demobusinessflow.domain.DemoBusinessFlow on table DEMO_BUSINESS_FLOW
+15:24:52.140 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.centralizedauthorization.domain.SysAccesscontrol
+15:24:52.140 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.centralizedauthorization.domain.SysAccesscontrol on table SYS_ACCESSCONTROL
+15:24:52.140 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.centralizedauthorization.domain.SysResource
+15:24:52.140 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.centralizedauthorization.domain.SysResource on table SYS_RESOURCE
+15:24:52.155 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyApps
+15:24:52.155 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyApps on table SYS_SYNCHRONY_APPS
+15:24:52.155 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyAppsTaskLog
+15:24:52.155 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyAppsTaskLog on table SYS_SYNCHRONY_APPS_TASK_LOG
+15:24:52.155 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyAttr
+15:24:52.155 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyAttr on table SYS_SYNCHRONY_ATTR
+15:24:52.155 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyBatch
+15:24:52.155 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyBatch on table SYS_SYNCHRONY_BATCH
+15:24:52.155 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyDataSource
+15:24:52.155 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyDataSource on table SYS_SYNCHRONY_DATA_SOURCE
+15:24:52.155 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyFieldMapping
+15:24:52.155 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyFieldMapping on table SYS_SYNCHRONY_FIELD_MAPPING
+15:24:52.155 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyFieldParams
+15:24:52.155 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyFieldParams on table SYS_SYNCHRONY_FIELD_PARAMS
+15:24:52.171 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyFunction
+15:24:52.171 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyFunction on table SYS_SYNCHRONY_FUNCTION
+15:24:52.171 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyLog
+15:24:52.171 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyLog on table SYS_SYNCHRONY_LOG
+15:24:52.186 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sync.domain.SysSynchronyTableMapping
+15:24:52.186 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sync.domain.SysSynchronyTableMapping on table SYS_SYNCHRONY_TABLE_MAPPING
+15:24:52.202 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysapplication.domain.SysApplication
+15:24:52.202 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysapplication.domain.SysApplication on table SYS_APPLICATION
+15:24:52.202 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syscustomed.domain.SysCustomed
+15:24:52.202 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syscustomed.domain.SysCustomed on table SYS_CUSTOMED
+15:24:52.202 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionAccess
+15:24:52.202 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionAccess on table SYS_PERMISSION_ACCESS
+15:24:52.218 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionResource
+15:24:52.218 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionResource on table SYS_PERMISSION_RESOURCE
+15:24:52.233 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysdatapermission.leaddept.domain.SysPermissionLeaddept
+15:24:52.233 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysdatapermission.leaddept.domain.SysPermissionLeaddept on table SYS_PERMISSION_LEADDEPT
+15:24:52.233 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysexcelimporthistory.domain.SysExcelImportHistory
+15:24:52.233 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysexcelimporthistory.domain.SysExcelImportHistory on table SYS_EXCEL_IMPORT_HISTORY
+15:24:52.233 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysfileupload.domain.SysFileUpload
+15:24:52.233 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysfileupload.domain.SysFileUpload on table SYS_ATTACHMENT
+15:24:52.233 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syslanguage.domain.SysLanguage
+15:24:52.233 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syslanguage.domain.SysLanguage on table SYS_LANGUAGE
+15:24:52.249 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syslog.domain.SysLog
+15:24:52.249 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syslog.domain.SysLog on table SYS_LOG
+15:24:52.249 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syslookup.domain.SysLookup
+15:24:52.249 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syslookup.domain.SysLookup on table SYS_LOOKUP
+15:24:52.249 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syslookup.domain.SysLookupHibearchy
+15:24:52.249 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syslookup.domain.SysLookupHibearchy on table SYS_LOOKUP_HIBERARCHY
+15:24:52.249 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syslookup.domain.SysLookupTl
+15:24:52.249 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syslookup.domain.SysLookupTl on table SYS_LOOKUP_TL
+15:24:52.249 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syslookup.domain.SysLookupType
+15:24:52.249 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syslookup.domain.SysLookupType on table SYS_LOOKUP_TYPE
+15:24:52.264 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syslookup.domain.SysLookupTypeTl
+15:24:52.264 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syslookup.domain.SysLookupTypeTl on table SYS_LOOKUP_TYPE_TL
+15:24:52.264 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysmenu.domain.SysMenu
+15:24:52.264 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysmenu.domain.SysMenu on table SYS_MENU
+15:24:52.264 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysmenu.domain.SysMenuPersonal
+15:24:52.264 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysmenu.domain.SysMenuPersonal on table SYS_MENU_PERSONAL
+15:24:52.264 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysmenu.domain.SysMenuTl
+15:24:52.264 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysmenu.domain.SysMenuTl on table SYS_MENU_TL
+15:24:52.264 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysmessage.domain.SysMessage
+15:24:52.264 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysmessage.domain.SysMessage on table SYS_MESSAGE
+15:24:52.280 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDept
+15:24:52.280 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDept on table SYS_DEPT
+15:24:52.280 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDeptTl
+15:24:52.280 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDeptTl on table SYS_DEPT_TL
+15:24:52.280 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroup
+15:24:52.280 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroup on table SYS_GROUP
+15:24:52.280 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroupTl
+15:24:52.280 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroupTl on table SYS_GROUP_TL
+15:24:52.280 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrg
+15:24:52.280 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrg on table SYS_ORG
+15:24:52.296 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrgTl
+15:24:52.296 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrgTl on table SYS_ORG_TL
+15:24:52.296 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPosition
+15:24:52.296 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPosition on table SYS_POSITION
+15:24:52.296 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPositionTl
+15:24:52.296 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPositionTl on table SYS_POSITION_TL
+15:24:52.296 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysrole.domain.SysRole
+15:24:52.296 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysrole.domain.SysRole on table SYS_ROLE
+15:24:52.296 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUser
+15:24:52.296 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUser on table SYS_USER
+15:24:52.311 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserDeptPosition
+15:24:52.311 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserDeptPosition on table SYS_USER_DEPT_POSITION
+15:24:52.311 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserGroup
+15:24:52.311 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserGroup on table SYS_USER_GROUP
+15:24:52.311 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRelation
+15:24:52.311 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRelation on table SYS_USER_RELATION
+15:24:52.311 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRole
+15:24:52.311 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRole on table SYS_USER_ROLE
+15:24:52.327 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordConfigure
+15:24:52.327 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordConfigure on table SYS_PASSWORD_CONFIGURE
+15:24:52.327 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTemplet
+15:24:52.327 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTemplet on table SYS_PASSWORD_TEMPLET
+15:24:52.327 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTempletLevel
+15:24:52.327 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTempletLevel on table SYS_PASSWORD_TEMPLET_LEVEL
+15:24:52.327 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syspassword.sysuseroldpassword.domain.SysUserOldPassword
+15:24:52.327 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syspassword.sysuseroldpassword.domain.SysUserOldPassword on table SYS_USER_OLD_PASSWORD
+15:24:52.327 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysportal.domain.SysPortal
+15:24:52.327 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysportal.domain.SysPortal on table SYS_PORTAL
+15:24:52.327 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysportal.domain.SysPortletConfig
+15:24:52.327 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysportal.domain.SysPortletConfig on table SYS_PORTLET_CONFIG
+15:24:52.342 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysprofile.domain.SysProfileOption
+15:24:52.342 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysprofile.domain.SysProfileOption on table SYS_PROFILE_OPTION
+15:24:52.342 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysprofile.domain.SysProfileOptionValue
+15:24:52.342 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysprofile.domain.SysProfileOptionValue on table SYS_PROFILE_OPTION_VALUE
+15:24:52.342 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syssso.domain.SysFilterConfig
+15:24:52.342 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syssso.domain.SysFilterConfig on table SYS_FILTER_CONFIG
+15:24:52.342 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.syssso.domain.SysSsoConfig
+15:24:52.342 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.syssso.domain.SysSsoConfig on table SYS_SSO_CONFIG
+15:24:52.342 [main] INFO  org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: avicit.platform6.modules.system.sysuserlimitip.domain.SysUserLimitIp
+15:24:52.342 [main] INFO  o.h.cfg.annotations.EntityBinder - Bind entity avicit.platform6.modules.system.sysuserlimitip.domain.SysUserLimitIp on table SYS_USER_LIMIT_IP
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.model.ExecutionImpl.variables -> BPM_VARIABLE
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.model.ExecutionImpl.systemVariables -> BPM_VARIABLE
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.model.ExecutionImpl.executions -> BPM_EXECUTION
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.model.ExecutionImpl.swimlanes -> BPM_SWIMLANE
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.history.model.HistoryProcessInstanceImpl.historyActivityInstances -> BPM_HIST_ACTINST
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.history.model.HistoryProcessInstanceImpl.historyActinstPrevio -> BPM_HIST_ACTINST_PREV
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.history.model.HistoryProcessInstanceImpl.historyVariables -> BPM_HIST_VAR
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.history.model.HistoryProcessInstanceImpl.details -> BPM_HIST_DETAIL
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.history.model.HistoryActivityInstanceImpl.details -> BPM_HIST_DETAIL
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.history.model.HistoryTaskImpl.historyVariables -> BPM_HIST_VAR
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.history.model.HistoryTaskImpl.subTasks -> BPM_HIST_TASK
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.history.model.HistoryTaskImpl.details -> BPM_HIST_DETAIL
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.history.model.HistoryVariableImpl.details -> BPM_HIST_DETAIL
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.repository.DeploymentImpl.resourcesXml -> BPM_LOB
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.repository.DeploymentImpl.resourcesPng -> BPM_LOB
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.repository.DeploymentImpl.objectProperties -> BPM_DEPLOYPROP
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.moudle.ProcessDefImpl.fromsRelations -> BPM_FROMS_RELATION
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.task.TaskImpl.participations -> BPM_PARTICIPATION
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.task.TaskImpl.variables -> BPM_VARIABLE
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.task.TaskImpl.subTasks -> BPM_TASK
+15:24:52.358 [main] INFO  org.hibernate.cfg.HbmBinder - Mapping collection: avicit.platform6.bpm.pvm.internal.task.SwimlaneImpl.participations -> BPM_PARTICIPATION
+15:24:52.358 [main] INFO  o.h.cfg.annotations.CollectionBinder - Mapping collection: avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionResource.sysPermissionAccess -> SYS_PERMISSION_ACCESS
+15:24:52.358 [main] INFO  org.hibernate.cfg.Configuration - Hibernate Validator not found: ignoring
+15:24:53.216 [main] INFO  o.s.o.h.a.AnnotationSessionFactoryBean - Building new Hibernate SessionFactory
+15:24:53.512 [main] INFO  o.h.c.s.HibernateSearchEventListenerRegister - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+15:24:53.637 [main] INFO  o.h.c.ConnectionProviderFactory - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+15:24:54.168 [main] INFO  org.hibernate.dialect.Dialect - Using dialect: org.hibernate.dialect.Oracle10gDialect
+15:24:54.183 [main] INFO  o.h.engine.jdbc.JdbcSupportLoader - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+15:24:54.183 [main] INFO  org.hibernate.cfg.SettingsFactory - Database ->
+       name : Oracle
+    version : Oracle Database 11g Release 11.1.0.0.0 - Production
+      major : 11
+      minor : 1
+15:24:54.183 [main] INFO  org.hibernate.cfg.SettingsFactory - Driver ->
+       name : Oracle JDBC driver
+    version : 10.2.0.3.0
+      major : 10
+      minor : 2
+15:24:54.214 [main] INFO  o.h.t.TransactionFactoryFactory - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+15:24:54.214 [main] INFO  o.h.t.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - Automatic flush during beforeCompletion(): disabled
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - Automatic session close at end of transaction: disabled
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - JDBC batch size: 15
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - JDBC batch updates for versioned data: enabled
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - Scrollable result sets: enabled
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - JDBC3 getGeneratedKeys(): disabled
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - Connection release mode: after_statement
+15:24:54.214 [main] WARN  org.hibernate.cfg.SettingsFactory - Overriding release mode as connection provider does not support 'after_statement'
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - Default batch fetch size: 1
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - Generate SQL with comments: disabled
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - Order SQL updates by primary key: enabled
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - Order SQL inserts for batching: disabled
+15:24:54.214 [main] INFO  org.hibernate.cfg.SettingsFactory - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+15:24:54.230 [main] INFO  o.h.h.ast.ASTQueryTranslatorFactory - Using ASTQueryTranslatorFactory
+15:24:54.230 [main] INFO  org.hibernate.cfg.SettingsFactory - Query language substitutions: {}
+15:24:54.230 [main] INFO  org.hibernate.cfg.SettingsFactory - JPA-QL strict compliance: disabled
+15:24:54.230 [main] INFO  org.hibernate.cfg.SettingsFactory - Second-level cache: enabled
+15:24:54.230 [main] INFO  org.hibernate.cfg.SettingsFactory - Query cache: disabled
+15:24:54.230 [main] INFO  org.hibernate.cfg.SettingsFactory - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+15:24:54.230 [main] INFO  org.hibernate.cfg.SettingsFactory - Optimize cache for minimal puts: disabled
+15:24:54.230 [main] INFO  org.hibernate.cfg.SettingsFactory - Structured second-level cache entries: disabled
+15:24:54.230 [main] INFO  org.hibernate.cfg.SettingsFactory - Statistics: enabled
+15:24:54.246 [main] INFO  org.hibernate.cfg.SettingsFactory - Deleted entity synthetic identifier rollback: disabled
+15:24:54.246 [main] INFO  org.hibernate.cfg.SettingsFactory - Default entity-mode: pojo
+15:24:54.246 [main] INFO  org.hibernate.cfg.SettingsFactory - Named query checking : enabled
+15:24:54.246 [main] INFO  org.hibernate.cfg.SettingsFactory - Check Nullability in Core (should be disabled when Bean Validation is on): disabled
+15:24:54.292 [main] INFO  o.hibernate.impl.SessionFactoryImpl - building session factory
+15:24:54.292 [main] INFO  org.hibernate.type.BasicTypeRegistry - Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@590ff7
+15:24:54.292 [main] INFO  org.hibernate.type.BasicTypeRegistry - Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@127507e
+15:24:54.292 [main] INFO  org.hibernate.type.BasicTypeRegistry - Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@15aef2
+15:24:54.292 [main] INFO  org.hibernate.type.BasicTypeRegistry - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@190cc61
+15:24:54.292 [main] INFO  org.hibernate.type.BasicTypeRegistry - Type registration [clob] overrides previous : org.hibernate.type.ClobType@15a2c79
+15:24:54.292 [main] INFO  org.hibernate.type.BasicTypeRegistry - Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@15a2c79
+15:24:54.292 [main] INFO  org.hibernate.type.BasicTypeRegistry - Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@11ddb66
+15:24:54.292 [main] INFO  org.hibernate.type.BasicTypeRegistry - Type registration [blob] overrides previous : org.hibernate.type.BlobType@12f3c7a
+15:24:54.292 [main] INFO  org.hibernate.type.BasicTypeRegistry - Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@12f3c7a
+15:24:55.369 [main] INFO  o.h.impl.SessionFactoryObjectFactory - Not binding factory to JNDI, no JNDI name configured
+15:24:55.634 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionFactory' of type [class org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:55.696 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionFactory' of type [class org.hibernate.impl.SessionFactoryImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:55.868 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hibernateTemplate' of type [class org.springframework.orm.hibernate3.HibernateTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:56.040 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'commonHibernateDao2' of type [class avicit.platform6.core.dao.hibernate.CommonHibernateDao2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:56.242 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'baseCacheManager' of type [class avicit.platform6.core.redisCacheManager.BaseCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:56.274 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroAuthServiceapi' of type [class avicit.platform6.api.sysshirolog.impl.ShiroAuthAPIServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:24:56.430 [main] INFO  o.s.o.h.HibernateTransactionManager - Using DataSource [JDBC URL = jdbc:oracle:thin:@10.216.38.51:1521:orcl, Username = pt6, partitions = 1, max (per partition) = 30, min (per partition) = 10, helper threads = 3, idle max age = 4 min, idle test period = 1 min] of Hibernate SessionFactory for HibernateTransactionManager
+15:24:57.381 [main] INFO  a.p.core.spring.SpringFactory - 注入ApplicationContext到SpringFactory:org.springframework.context.support.ClassPathXmlApplicationContext@102799c: startup date [Tue Mar 31 15:24:40 CST 2015]; root of context hierarchy
+15:24:57.412 [main] INFO  a.p.c.properties.PlatformProperties - 开始加载系统参数信息
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - rmi.host = 127.0.0.1
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - log.update = true
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - mail.from = avicit100@163.com
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - platform.enable.unitCode = false
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - mail.username = avicit100@163.com
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - doccenter.path = d:/doccenter
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - netty.server.thread = 2000
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - rmi.start = false
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - log.delete = true
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - platform.unableModify.application.sysRole = 
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - platform.sso.http.header = cfte+avicit+630
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - log.select = true
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - netty.server.port = 10001
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - log.login = true
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - log.insert = true
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - mail.host = smtp.163.com
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - platform.default.createSysuser.sysRoleId = 40288a46384feb2101384ff1ce8e0017
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - platform.enable.loginLog = true
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - mail.port = 25
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - rmi.port = 8099
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - platform.default.languageCode = zh_CN
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - koal_gateway_address = 
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - log.logout = true;
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - platform.unableModify.system.sysRole = platform_manager,system_manager,safety_auditor,comm_user,safe_manager
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - solr.host = http://localhost:10002/solr/core0
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - mail.validate = true
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - netty.server.switch = on
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - platform.console.persistence.interval = 300000
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - mail.password = password
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - avicit.security.loginFormUrl = /login/login.jsp
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - platform.default.createSysuser.sysPositionId = 1
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - avicit.security.defaultPageAuthIsGranted = false
+15:24:57.444 [main] INFO  a.p.c.properties.PlatformProperties - 完成加载系统参数信息
+15:24:57.740 [main] DEBUG a.p.m.s.q.c.s.i.InstanceServiceImpl - Generating instance name, try to use hostname + HHmmss ...
+15:24:58.036 [main] INFO  a.p.m.s.q.c.q.starter.SpringStarter - Not job server defined.But will also schedule jobs, because cluster mode is ALL
+15:24:58.130 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+15:24:58.130 [main] INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+15:24:58.146 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+15:24:58.146 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.1.3 created.
+15:24:58.161 [main] INFO  a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Using db table-based data access locking (synchronization).
+15:24:58.177 [main] INFO  a.p.m.s.q.c.q.j.SpringDataSourceJobStore - JobStoreCMT initialized.
+15:24:58.192 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.1.3) 'avicit.quartz.starter' with instanceId 'zhaoqin-PC152457'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'avicit.platform6.modules.system.quartz.core.qvm.jobstore.SpringDataSourceJobStore' - which supports persistence. and is not clustered.
+
+15:24:58.192 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'avicit.quartz.starter' initialized from an externally provided properties instance.
+15:24:58.192 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.1.3
+15:24:58.192 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.quartz.simpl.SimpleJobFactory@1dcb254
+15:24:58.317 [main] INFO  a.p.b.p.i.cfg.ConfigurationImpl - 系统启动ioc系统配置文件：resource://avicit/platform6/bpm/cfg/bpm.cfg.xml
+15:24:58.598 [main] DEBUG a.p.b.pvm.internal.wire.WireContext - eagerly initializing avicit.platform6.bpm.pvm.internal.id.DatabaseIdComposer
+15:24:58.598 [main] DEBUG a.p.b.pvm.internal.wire.WireContext - eagerly initializing avicit.platform6.bpm.pvm.internal.jobexecutor.JobExecutor
+15:24:58.598 [DispatcherThread] INFO  a.p.b.p.i.j.DispatcherThread - starting DispatcherThread
+15:24:58.848 [main] INFO  a.p.bpm.pvm.internal.cmd.CheckDbCmd - BPM version info: library[4.4-SNAPSHOT], schema[null]
+15:25:00.361 [main] INFO  a.p.bpm.load.BpmButtonsLoader - =====开始加载流程按钮数据
+15:25:00.361 [main] INFO  a.p.bpm.load.BpmButtonsLoader - =====完成加载流程按钮数据
+15:25:00.376 [main] INFO  a.p.bpm.load.BpmButtonsLoader - =====开始加载流程业务目录
+15:25:00.766 [main] INFO  a.p.bpm.load.BpmButtonsLoader - =====完成加载流程业务目录
+15:25:00.766 [main] INFO  a.p.bpm.load.BpmButtonsLoader - =====开始加载流程业务目录关系
+15:25:00.766 [main] INFO  a.p.bpm.load.BpmButtonsLoader - =====完成加载流程业务目录关系
+15:25:00.938 [main] INFO  a.platform6.bpm.load.BpmFormsLoader - =====开始加载流程定义表单
+15:25:00.969 [main] INFO  a.platform6.bpm.load.BpmFormsLoader - =====表单Code=demoBusinessFlowR3,表单名称=出差流程表单
+15:25:01.000 [main] INFO  a.platform6.bpm.load.BpmFormsLoader - =====完成加载流程定义表单
+15:25:01.000 [main] INFO  a.platform6.bpm.load.BpmFormsLoader - =====开始加载流程表单配置信息
+15:25:01.016 [main] INFO  a.platform6.bpm.load.BpmFormsLoader - =====完成加载流程表单配置信息
+15:25:01.016 [main] INFO  a.platform6.bpm.load.BpmFormsLoader - =====开始加载流程表单权限配置信息
+15:25:01.032 [main] INFO  a.platform6.bpm.load.BpmFormsLoader - =====完成加载流程表单权限配置信息
+15:25:01.156 [main] INFO  a.platform6.bpm.load.BpmProperties - =====开始加载BPM参数信息
+15:25:01.156 [main] INFO  a.platform6.bpm.load.BpmProperties - =====完成加载BPM参数信息
+15:25:01.172 [main] INFO  a.p.bpm.jpdl.internal.xml.JpdlParser - 系统加载binding文件resourceUrl=file:/E:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/avicit-platform6-main/WEB-INF/lib/avicit-platform6-bpmengine-6.3.0.jar!/avicit/platform6/bpm/cfg/bpm.jpdl.bindings.xml
+15:25:01.188 [main] INFO  a.p.bpm.pvm.internal.xml.Parser - loading schema resource: avicit/platform6/bpm/cfg/jpdl-4.0.xsd
+15:25:01.188 [main] INFO  a.p.bpm.pvm.internal.xml.Parser - loading schema resource: avicit/platform6/bpm/cfg/jpdl-4.2.xsd
+15:25:01.188 [main] INFO  a.p.bpm.pvm.internal.xml.Parser - loading schema resource: avicit/platform6/bpm/cfg/jpdl-4.3.xsd
+15:25:01.188 [main] INFO  a.p.bpm.pvm.internal.xml.Parser - loading schema resource: avicit/platform6/bpm/cfg/jpdl-4.4.xsd
+15:25:01.219 [main] INFO  a.p.b.p.i.q.ProcessDefinitionQueryImpl - =====开始加载流程定义文件
+15:25:01.671 [main] INFO  a.p.bpm.load.BpmRepositoryLoader - 加载流程文件：部署Id=8a58a6b44c30ca69014c30ca696c0000,流程名称=出差流程001,流程ID=20140401095606-1
+15:25:01.718 [main] INFO  a.p.bpm.load.BpmRepositoryLoader - 加载流程文件：部署Id=8a58ab5e4c31a01c014c31a33a0d007a,流程名称=压力测试流程1,流程ID=20150319183801-1
+15:25:01.718 [main] INFO  a.p.b.p.i.q.ProcessDefinitionQueryImpl - =====完成加载流程定义文件
+15:25:02.701 [main] INFO  a.p.c.r.r.NettyServerAutoStart - 开始启动内嵌netty服务，端口=10001
+15:25:03.684 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.centralizedauthorization.domain.SysResource】......
+15:25:03.699 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.centralizedauthorization.domain.SysResource】原缓存key长度=2
+15:25:03.762 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.centralizedauthorization.domain.SysResource】总长度=71
+15:25:03.793 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.centralizedauthorization.domain.SysResource】加载完成。
+15:25:03.793 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.centralizedauthorization.domain.SysAccesscontrol】......
+15:25:03.793 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.centralizedauthorization.domain.SysAccesscontrol】原缓存key长度=10
+15:25:03.855 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.centralizedauthorization.domain.SysAccesscontrol】总长度=162
+15:25:03.918 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.centralizedauthorization.domain.SysAccesscontrol】加载完成。
+15:25:05.743 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysapplication.domain.SysApplication】......
+15:25:05.743 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysapplication.domain.SysApplication】原缓存key长度=1
+15:25:05.758 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysapplication.domain.SysApplication】总长度=2
+15:25:05.758 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysapplication.domain.SysApplication】加载完成。
+15:25:06.460 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.syscustomed.domain.SysCustomed】......
+15:25:06.460 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syscustomed.domain.SysCustomed】原缓存key长度=23
+15:25:06.476 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syscustomed.domain.SysCustomed】总长度=9
+15:25:06.476 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syscustomed.domain.SysCustomed】加载完成。
+15:25:06.570 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionAccess】......
+15:25:06.570 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionAccess】原缓存key长度=0
+15:25:06.570 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionAccess】总长度=0
+15:25:06.585 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionAccess】加载完成。
+15:25:06.585 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionResource】......
+15:25:06.585 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionResource】原缓存key长度=0
+15:25:06.585 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionResource】总长度=0
+15:25:06.585 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysdatapermission.allowrance.domain.SysPermissionResource】加载完成。
+15:25:06.585 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysdatapermission.leaddept.domain.SysPermissionLeaddept】......
+15:25:06.601 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysdatapermission.leaddept.domain.SysPermissionLeaddept】原缓存key长度=2
+15:25:06.601 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysdatapermission.leaddept.domain.SysPermissionLeaddept】总长度=1
+15:25:06.601 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysdatapermission.leaddept.domain.SysPermissionLeaddept】加载完成。
+15:25:06.663 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.syslanguage.domain.SysLanguage】......
+15:25:06.663 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslanguage.domain.SysLanguage】原缓存key长度=2
+15:25:06.679 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslanguage.domain.SysLanguage】总长度=1
+15:25:06.679 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslanguage.domain.SysLanguage】加载完成。
+15:25:06.710 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.syslookup.domain.SysLookup】......
+15:25:06.726 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslookup.domain.SysLookup】原缓存key长度=108
+15:25:06.788 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslookup.domain.SysLookup】总长度=321
+15:25:06.897 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslookup.domain.SysLookup】加载完成。
+15:25:06.897 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.syslookup.domain.SysLookupTl】......
+15:25:06.897 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslookup.domain.SysLookupTl】原缓存key长度=327
+15:25:06.975 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslookup.domain.SysLookupTl】总长度=346
+15:25:07.069 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslookup.domain.SysLookupTl】加载完成。
+15:25:07.069 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.syslookup.domain.SysLookupType】......
+15:25:07.084 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslookup.domain.SysLookupType】原缓存key长度=59
+15:25:07.100 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslookup.domain.SysLookupType】总长度=58
+15:25:07.116 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syslookup.domain.SysLookupType】加载完成。
+15:25:07.147 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysmenu.domain.SysMenu】......
+15:25:07.147 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysmenu.domain.SysMenu】原缓存key长度=17
+15:25:07.443 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysmenu.domain.SysMenu】总长度=70
+15:25:07.459 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysmenu.domain.SysMenu】加载完成。
+15:25:07.459 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysmenu.domain.SysMenuTl】......
+15:25:07.459 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysmenu.domain.SysMenuTl】原缓存key长度=2
+15:25:07.474 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysmenu.domain.SysMenuTl】总长度=70
+15:25:07.506 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysmenu.domain.SysMenuTl】加载完成。
+15:25:07.506 [main] INFO  a.p.m.s.s.s.impl.SysMenuLoaderImpl - 文件加载:::正在加载PORTLETFILE...
+15:25:07.568 [main] INFO  a.p.m.s.s.s.impl.SysMenuLoaderImpl - 文件加载:::加载PORTLETFILE完成。
+15:25:07.833 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysmessage.domain.SysMessage】......
+15:25:07.833 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysmessage.domain.SysMessage】原缓存key长度=147
+15:25:07.927 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysmessage.domain.SysMessage】总长度=383
+15:25:08.020 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysmessage.domain.SysMessage】加载完成。
+15:25:08.894 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUser】......
+15:25:08.894 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUser】原缓存key长度=4
+15:25:19.611 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUser】总长度=40015
+15:25:39.056 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUser】加载完成。
+15:25:39.056 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDept】......
+15:25:39.056 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDept】原缓存key长度=15
+15:25:39.103 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDept】总长度=212
+15:25:39.228 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDept】加载完成。
+15:25:39.228 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDeptTl】......
+15:25:39.228 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDeptTl】原缓存key长度=2
+15:25:39.274 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDeptTl】总长度=212
+15:25:39.337 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysdept.domain.SysDeptTl】加载完成。
+15:25:39.337 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroup】......
+15:25:39.337 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroup】原缓存key长度=2
+15:25:39.337 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroup】总长度=1
+15:25:39.337 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroup】加载完成。
+15:25:39.337 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroupTl】......
+15:25:39.337 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroupTl】原缓存key长度=2
+15:25:39.352 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroupTl】总长度=1
+15:25:39.352 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysgroup.domain.SysGroupTl】加载完成。
+15:25:39.352 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrg】......
+15:25:39.352 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrg】原缓存key长度=5
+15:25:39.352 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrg】总长度=4
+15:25:39.368 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrg】加载完成。
+15:25:39.368 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrgTl】......
+15:25:39.368 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrgTl】原缓存key长度=2
+15:25:39.368 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrgTl】总长度=4
+15:25:39.368 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysorg.domain.SysOrgTl】加载完成。
+15:25:39.368 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPosition】......
+15:25:39.368 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPosition】原缓存key长度=2
+15:25:39.399 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPosition】总长度=102
+15:25:39.462 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPosition】加载完成。
+15:25:39.462 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPositionTl】......
+15:25:39.462 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPositionTl】原缓存key长度=2
+15:25:39.508 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPositionTl】总长度=108
+15:25:39.576 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysposition.domain.SysPositionTl】加载完成。
+15:25:39.576 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysrole.domain.SysRole】......
+15:25:39.577 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysrole.domain.SysRole】原缓存key长度=2
+15:25:39.581 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysrole.domain.SysRole】总长度=9
+15:25:39.587 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysrole.domain.SysRole】加载完成。
+15:25:39.587 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRole】......
+15:25:39.678 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRole】原缓存key长度=40024
+15:25:49.089 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRole】总长度=40021
+15:26:01.554 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRole】加载完成。
+15:26:01.554 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserGroup】......
+15:26:01.554 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserGroup】原缓存key长度=0
+15:26:01.554 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserGroup】总长度=0
+15:26:01.554 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserGroup】加载完成。
+15:26:01.554 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserDeptPosition】......
+15:26:01.757 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserDeptPosition】原缓存key长度=120656
+15:26:14.564 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserDeptPosition】总长度=40015
+15:26:49.539 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserDeptPosition】加载完成。
+15:26:49.539 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRelation】......
+15:26:49.539 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRelation】原缓存key长度=0
+15:26:49.539 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRelation】总长度=0
+15:26:49.539 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysorguser.sysuser.domain.SysUserRelation】加载完成。
+15:26:49.586 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTempletLevel】......
+15:26:49.586 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTempletLevel】原缓存key长度=4
+15:26:49.602 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTempletLevel】总长度=3
+15:26:49.602 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTempletLevel】加载完成。
+15:26:49.602 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTemplet】......
+15:26:49.602 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTemplet】原缓存key长度=45
+15:26:49.617 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTemplet】总长度=40
+15:26:49.633 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordTemplet】加载完成。
+15:26:49.633 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordConfigure】......
+15:26:49.633 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordConfigure】原缓存key长度=1
+15:26:49.633 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordConfigure】总长度=10
+15:26:49.633 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.syspasswordconfigure.domain.SysPasswordConfigure】加载完成。
+15:26:49.633 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.syspassword.sysuseroldpassword.domain.SysUserOldPassword】......
+15:26:49.633 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.sysuseroldpassword.domain.SysUserOldPassword】原缓存key长度=617
+15:26:49.867 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.sysuseroldpassword.domain.SysUserOldPassword】总长度=1064
+15:26:50.132 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.syspassword.sysuseroldpassword.domain.SysUserOldPassword】加载完成。
+15:26:50.257 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysprofile.domain.SysProfileOption】......
+15:26:50.257 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysprofile.domain.SysProfileOption】原缓存key长度=25
+15:26:50.273 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysprofile.domain.SysProfileOption】总长度=24
+15:26:50.288 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysprofile.domain.SysProfileOption】加载完成。
+15:26:50.288 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysprofile.domain.SysProfileOptionValue】......
+15:26:50.288 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysprofile.domain.SysProfileOptionValue】原缓存key长度=42
+15:26:50.335 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysprofile.domain.SysProfileOptionValue】总长度=41
+15:26:50.351 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysprofile.domain.SysProfileOptionValue】加载完成。
+15:26:50.538 [main] INFO  a.p.c.r.BaseCacheManager - 开始加载目标【avicit.platform6.modules.system.sysuserlimitip.domain.SysUserLimitIp】......
+15:26:50.538 [main] DEBUG a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysuserlimitip.domain.SysUserLimitIp】原缓存key长度=0
+15:26:50.538 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysuserlimitip.domain.SysUserLimitIp】总长度=0
+15:26:50.538 [main] INFO  a.p.c.r.BaseCacheManager - 目标【avicit.platform6.modules.system.sysuserlimitip.domain.SysUserLimitIp】加载完成。
+15:26:51.645 [main] INFO  a.p.c.r.r.NettyServerAutoStart - 启动内嵌netty服务完成
+15:26:52.800 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.d.d.i.AbstractDbDialect - {databaseProductName=Oracle,databaseMajorVersion=11}
+15:26:52.815 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.d.d.i.AbstractDbDialect - {databaseProductName=Oracle,databaseMajorVersion=11}
+15:26:52.815 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.d.d.i.AbstractDbDialect - {databaseProductName=Oracle,databaseMajorVersion=11}
+15:26:52.815 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.d.d.i.AbstractDbDialect - select * from ( select row_.*, rownum rownum_ from ( SELECT id_,name_,group_,program_,cron_,status_,description_,create_user_,create_date_,update_user_,update_date_,type_,last_state_,company_id_ FROM sys_job t WHERE status_ in  ( 'R') ) row_ where rownum <= 10) where rownum_ > 0
+15:26:52.831 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Adding TriggerPersistenceDelegate of type: org.quartz.impl.jdbcjobstore.SimpleTriggerPersistenceDelegate
+15:26:52.847 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Adding TriggerPersistenceDelegate of type: org.quartz.impl.jdbcjobstore.CronTriggerPersistenceDelegate
+15:26:52.847 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Adding TriggerPersistenceDelegate of type: org.quartz.impl.jdbcjobstore.CalendarIntervalTriggerPersistenceDelegate
+15:26:52.847 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Adding TriggerPersistenceDelegate of type: org.quartz.impl.jdbcjobstore.DailyTimeIntervalTriggerPersistenceDelegate
+15:26:52.847 [avicit.quartz.stater_CheckBeatCallbackImpl] INFO  a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Freed 0 triggers from 'acquired' / 'blocked' state.
+15:26:52.862 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Found 0 triggers that missed their scheduled fire-time.
+15:26:52.862 [avicit.quartz.stater_CheckBeatCallbackImpl] INFO  a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+15:26:52.878 [avicit.quartz.stater_CheckBeatCallbackImpl] INFO  a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Recovery complete.
+15:26:52.878 [avicit.quartz.stater_CheckBeatCallbackImpl] INFO  a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Removed 0 'complete' triggers.
+15:26:52.878 [avicit.quartz.stater_CheckBeatCallbackImpl] INFO  a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Removed 0 stale fired job entries.
+15:26:52.893 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - JobStore background threads started (as scheduler was started).
+15:26:52.893 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - MisfireHandler: scanning for misfires...
+15:26:52.893 [avicit.quartz.stater_CheckBeatCallbackImpl] INFO  org.quartz.core.QuartzScheduler - Scheduler avicit.quartz.starter_$_zhaoqin-PC152457 started.
+15:26:52.893 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Found 0 triggers that missed their scheduled fire-time.
+15:26:53.018 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Deleting job: DEFAULT.quartz_job_poll_job_key
+15:26:53.049 [avicit.quartz.stater_CheckBeatCallbackImpl] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Deleting job: DEFAULT.quartz_job_poll_job_key
+15:27:00.085 [avicit.quartz.starter_Worker-1] DEBUG a.p.m.s.q.c.d.d.i.AbstractDbDialect - {databaseProductName=Oracle,databaseMajorVersion=11}
+15:27:00.085 [avicit.quartz.starter_Worker-1] DEBUG a.p.m.s.q.c.d.d.i.AbstractDbDialect - {databaseProductName=Oracle,databaseMajorVersion=11}
+15:27:00.085 [avicit.quartz.starter_Worker-1] DEBUG a.p.m.s.q.c.d.d.i.AbstractDbDialect - {databaseProductName=Oracle,databaseMajorVersion=11}
+15:27:00.085 [avicit.quartz.starter_Worker-1] DEBUG a.p.m.s.q.c.d.d.i.AbstractDbDialect - select * from ( select row_.*, rownum rownum_ from ( SELECT id_,name_,group_,program_,cron_,status_,description_,create_user_,create_date_,update_user_,update_date_,type_,last_state_,company_id_ FROM sys_job t WHERE status_ in  ( 'C', 'D', 'S') ) row_ where rownum <= 10) where rownum_ > 0
+15:27:52.907 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - MisfireHandler: scanning for misfires...
+15:27:52.907 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Found 0 triggers that missed their scheduled fire-time.
+15:28:52.918 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - MisfireHandler: scanning for misfires...
+15:28:52.918 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Found 0 triggers that missed their scheduled fire-time.
+15:29:52.925 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - MisfireHandler: scanning for misfires...
+15:29:52.925 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Found 0 triggers that missed their scheduled fire-time.
+15:30:52.926 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - MisfireHandler: scanning for misfires...
+15:30:52.926 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Found 0 triggers that missed their scheduled fire-time.
+15:31:52.926 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - MisfireHandler: scanning for misfires...
+15:31:52.926 [QuartzScheduler_avicit.quartz.starter-zhaoqin-PC152457_MisfireHandler] DEBUG a.p.m.s.q.c.q.j.SpringDataSourceJobStore - Found 0 triggers that missed their scheduled fire-time.

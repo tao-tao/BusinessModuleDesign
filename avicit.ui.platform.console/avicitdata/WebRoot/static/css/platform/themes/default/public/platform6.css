@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+.required-icon {
+	maring:0px;
+	padding:0px;
+	width: 10px;
+	height: 23px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align:-4px;
+	background: url('static/css/platform/themes/default/public/images/required.gif') no-repeat center center;
+}
+.inputbox{
+	background-color: #fff;
+	border: 1px solid #95b8e7;
+	color: #000;
+	height: 18px;
+}
+fieldset{
+		border:1px #cccccc solid;
+		padding:10px;
+		margin:10px;
+}

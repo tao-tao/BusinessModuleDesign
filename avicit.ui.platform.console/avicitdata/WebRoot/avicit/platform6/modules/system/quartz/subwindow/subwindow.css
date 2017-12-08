@@ -1,0 +1,23 @@
+.subwindow-arrow {
+	width: 18px;
+	height: 20px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+.subwindow-arrow-hover {
+	opacity: 1.0;
+	filter: alpha(opacity=100);
+}
+.subwindow-arrow {
+	background: url('images/subwindow_arrow.gif') no-repeat center right;
+}
+.subwindow-arrow {
+	background-color: #E0ECFF;
+}
+.subwindow-arrow-hover {
+	background-color: #eaf2ff;
+}

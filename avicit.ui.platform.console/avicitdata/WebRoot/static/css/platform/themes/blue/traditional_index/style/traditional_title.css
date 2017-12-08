@@ -1,0 +1,548 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: Microsoft Yahei, sans-serif, Arial, Helvetica;
+	margin:0;
+	padding:0;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.user {
+	background: url(images/contact_blue.png) no-repeat;
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-top: 8px;
+	font-weight: bold;
+	font-coler: red;
+}
+
+/* 不需要设置宽度值，自动的向左扩展就行 */
+.info {
+	height: 35px;
+	float: right;
+	/* 	min-width: 300px; */
+}
+
+.info li {
+	float: left;
+	list-style: none;
+	color: #fff;
+	margin-right: 10px;
+	line-height: 30px;
+	display: block;
+	font-weight: bold;
+}
+
+.info li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.info li a:hover {
+	color: #acb5bf;
+}
+
+.info .msgbg {
+	background: url(images/msgBg2.png) no-repeat;
+	width: 17px;
+	height: 13px;
+	line-height: 13px;
+	float: left;
+	margin-top: 8px;
+	font-size: 8px;
+	text-align: center;
+	color: #fff;
+	display: none;
+}
+
+.info .msgbg  a {
+	color: #fff;
+	font-size: 8px;
+}
+
+#header {
+	width: 100%;
+	height: 58px;
+	background: #287CE7;
+	overflow: hidden;
+	position: relative;
+	z-index: 1
+}
+
+.logo {
+	margin-top: 1px;
+	width: 100%;
+	height: 62px;
+	background: url(images/logo.jpg) no-repeat;
+	float: left;
+}
+
+
+/* 向上向下的箭头样式 */
+.arrowFrame {
+	position: absolute;
+	right: 2px;
+	top: 5px;
+}
+
+/* 向上的箭头样式 */
+.arrowUp{
+	cursor: pointer;
+	display:block;
+	height:20px;
+	width:13px;
+	background:url('images/arrowup01.gif') left no-repeat;
+}
+
+/* 向下的箭头样式 */
+.arrowDown{
+	cursor: pointer;
+	display:block;
+	height:20px;
+	width:13px;
+	background:url('images/arrowdown01.gif') left no-repeat;
+}
+
+.portlet{
+	background: url(images/mywork.gif) no-repeat;
+	position:absolute;
+    font-size: 12px;
+    height: 20px;
+    width:25px;
+    right: 10px;
+    margin-top : 5px;
+	float:right;
+	width:25px;
+	cursor: pointer;
+}
+/* portlet config menu css*/
+#menu {
+    top: 110px;
+    right:5px;
+    display: none;
+    position:absolute;
+    z-index:1000;
+}
+#triangle {
+    border-width: 2px 0 0 2px;
+    width:10px;
+    height:8px;
+    /* for firefox, safari, chrome, etc. */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform:rotate(45deg);
+    border-top: 1px solid #E7E7E7;
+    border-left: 1px solid #E7E7E7;
+/*     -moz-box-shadow: 2px 2px 10px #06C; */
+/* 	-webkit-box-shadow: 2px 2px 10px #06C; */
+/* 	box-shadow: 2px 2px 10px #06C; */
+/* 	filter: progid:DXImageTransform.Microsoft.Shadow(color='#bdbdbd',Direction=135, Strength=5 ); */
+    z-index: 1;
+    position: relative;
+    bottom: -4px;
+    margin-left: 114px;
+    background-color: white;
+}
+#tooltip_menu {
+	margin-top:5px;
+/*     -webkit-border-radius: .5em; */
+/*     -moz-border-radius: .5em; */
+/*     border-radius: .5em; */
+    width: 160px;
+    background-color: white;
+	color: black;
+	font: 12px;
+	-moz-box-shadow: 2px 2px 10px #06C;
+	-webkit-box-shadow: 2px 2px 10px #06C;
+	box-shadow: 2px 2px 10px #06C;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#bdbdbd',Direction=135, Strength=5 );
+	border: 1px solid #E7E7E7;
+}
+#tooltip_menu a {
+    z-index: 2;
+    padding: 0 0 7px 2px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    padding-left : 20px;
+    margin-top : 1px;
+    line-height: 22px;
+/*     vertical-align:bottom; */
+}
+#tooltip_menu a img{
+/*     line-height: 22px; */
+/*     vertical-align:top; */
+}
+#tooltip_menu .mouseover {
+    background: #9ec5ec;
+    -webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+/*     color: #5ab5dc; */
+}
+#tooltip_menu a img {
+    position: relative;
+    top: 5px;
+    border: 0;
+}
+.menu_top {
+    -webkit-border-radius: .5em .5em 0 0;
+    -moz-border-radius: .5em .5em 0 0;
+    border-radius: .5em .5em 0 0;
+   	margin-top : 15px;
+}
+.menu_bottom {
+    -webkit-border-radius: 0 0 .5em .5em;
+    -moz-border-radius: 0 0 .5em .5em;
+    border-radius: 0 0 .5em .5em;
+}
+/* end portlet config menu css*/
+/*portlet dialog*/
+.web_dialog {
+	display: none;
+	position: absolute;
+	width: 380px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	background-color: #ffffff;
+	border: 2px solid #336699;
+	padding: 0px;
+	z-index: 102;
+	font-family: Verdana;
+	font-size: 10pt;
+	border-radius: 4px 4px 4px 4px;
+	-moz-box-shadow: 2px 2px 10px #06C;
+	-webkit-box-shadow: 2px 2px 10px #06C;
+	box-shadow: 2px 2px 10px #06C;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#bdbdbd',Direction=135, Strength=5 );
+	border: 1px solid #E7E7E7;
+}
+.web_dialog #cancel{
+	cursor: pointer;
+}
+.web_dialog #save{
+	background-color: #336699;
+    background-image: -moz-linear-gradient(center top , #6c8aa8, #0e81f3);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #113860;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 30px;
+    margin-right: 3px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    width:80px;
+}
+.web_dialog #cancel{
+	background-color: #336699;
+    background-image: -moz-linear-gradient(center top , #0e81f3, #6c8aa8);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #113860;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 30px;
+    margin-right: 2px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    width:80px;
+}
+.web_dialog_title {
+	border-bottom: solid 1px #336699;
+	padding: 4px;
+	font-weight:bold;
+	cursor: move;
+}
+.web_dialog_title a {
+	color: #336699;
+	padding-right:4px;
+	text-decoration: none;
+}
+.web_dialog_title a:hover {
+	color: #336699;
+	padding-right:4px;
+	text-decoration: none;
+}
+.align_right {
+	text-align: right;
+}
+.window-mask{
+	background:#FFFFFF;
+	position:absolute;
+	width:100%;
+	top:0px;
+	left:0px;
+	opacity:0.6; 
+	filter:alpha(opacity=60);
+	z-index:2;
+}
+/* 利用dorado7自带的图标，集成到平台V6中来的样式 */
+/*.icon {
+	background-repeat: no-repeat;
+	padding-left: 15px;
+	width: 0;
+	height: 21px;
+	line-height: 16px;
+	padding-right: 4px;
+	margin-top: 7px;
+}*/
+
+.search_subject {
+	background: white;
+	height: 18px;
+	width: 150px;
+	line-height: 18px;
+	font-size: 12px;
+	border: 0;
+	outline: none;
+	position: absolute;
+	right: 30px;
+	top: 5px;
+}
+
+.icon_search {
+	height: 18px;
+	width: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url('images/search.png') no-repeat 100% 100%;
+	position: absolute;
+	right: 30px;
+	top: 5px;
+}
+
+/* 甘特图遮罩使用的样式 */
+.platform6BackgroundIframe {
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	*height: 1200px;
+	*width: 1800px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	border-top-color: currentColor;
+	border-right-color: currentColor;
+	border-bottom-color: currentColor;
+	border-left-color: currentColor;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	position: absolute;
+	z-index: -1;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+}
+
+/* 以下是传统菜单样式 */
+
+.clear {
+	clear: both;
+}
+
+.headtop {
+	height: 31px;
+	line-height: 31px;
+	color: #758b9f;
+	font-size: 12px;
+	background: url(images/zhshtopnavbg.jpg) no-repeat;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	position: fixed;
+	z-index: 100000;
+	text-align: right
+}
+
+.headtop a {
+	
+}
+
+.headtoptc {
+	color: #c9ced3
+}
+
+.headtoptc a {
+	background: none;
+	text-decoration: none;
+	font-size: 12px;
+	padding: 0 12px;
+	color: #fff;
+	padding-bottom: 5px
+}
+
+.headtoptc span {
+	margin-right: 12px;
+}
+
+.headtoptc input {
+	background: #d9dde1;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #000;
+	vertical-align: middle
+}
+
+.headtoptc button {
+	width: 44px;
+	height: 22px;
+	background: url(images/zhshtopnav01.jpg) no-repeat;
+	border: 0;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-left: 3px
+}
+
+#navigation, #navigation li ul {
+	list-style-type: none;
+	position: relative;
+	z-index: 10000;
+	font-size: 12px;
+	color: #fff;
+}
+
+#navigation {
+	margin: 0px;
+	background: url(images/zhshtopnavbg.jpg) no-repeat;
+	padding-left: 10px;
+}
+
+#navigation li {
+	float: left;
+	position: relative;
+	height: 31px;
+	line-height: 31px;
+	_width: 114px;
+	text-align: left;
+}
+
+#navigation li.firstmenu{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#navigation li a {
+	padding: 0 14px;
+}
+
+#navigation li a:link, #navigation li a:visited {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	height: 31px;
+	line-height: 31px;
+	background: none;
+	background: url(images/headtop01.jpg) center 24px no-repeat;
+}
+
+#navigation li a:hover {
+	color: #fff;
+	background: background:url(images/headtop01.jpg) center 24px no-repeat;
+	height: 31px;
+	line-height: 31px;
+}
+
+#navigation li.navinbg a:link, #navigation li.navinbg a:visited {
+	background: none;
+}
+
+#navigation li ul li {
+	height: 35px;
+	border-bottom: 1px solid #d2d1d1;
+	line-height: 35px;
+	width: 156px;
+	_border-bottom: 0;
+}
+
+#navigation li ul li a:link, #navigation li ul li a:visited {
+	padding: 0;
+	color: #000;
+	display: block;
+	width: 128px;
+	height: 35px;
+	line-height: 35px;
+	border-bottom: 1px solid #d2d1d1;
+	background: url(images/ejcdlibg.jpg) no-repeat;
+	padding-left: 28px;
+}
+
+#navigation li ul li a:hover {
+	color: #fff;
+	background: url(images/ejcdalibg.jpg) no-repeat;
+	height: 35px;
+	border-bottom: 1px solid #173661 line-height:35px;
+	padding-left: 28px;
+}
+
+#navigation li ul li.navsanji a:link, #navigation li ul li.navsanji a:visited{
+	background: url(images/ejcdlibgsj.jpg) no-repeat;
+}
+
+#navigation li ul li.navsanji a:hover {
+	background: url(images/ejcdalibgsj.jpg) no-repeat;
+}
+
+#navigation li ul {
+	display: none;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	margin-top: 1px;
+	width: 156px;
+	border: 1px solid #d2d1d1;
+	border-bottom: 0;
+}
+
+#navigation li ul li ul {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 155px;
+	margin-top: -1px;
+	margin-left: 1px;
+	width: 156px;
+}
+
+#navigation li ul li.navsanji ul li a:link, #navigation li ul li.navsanji ul li a:visited
+	{
+	background: url(images/ejcdlibg02.jpg) no-repeat;
+}
+
+#navigation li ul li.navsanji ul li a:hover {
+	background: url(images/ejcdalibg02.jpg) no-repeat;
+}
+
+#zhsh_foot {
+	background: url(images/zhshfootbg.jpg) center top no-repeat;
+	height: 39px;
+	line-height: 39px;
+	font-size: 12px;
+	color: #666;
+	text-align: center
+}

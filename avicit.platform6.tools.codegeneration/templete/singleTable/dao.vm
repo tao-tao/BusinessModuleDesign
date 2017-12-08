@@ -1,0 +1,80 @@
+package ${packageName};
+
+import java.util.List;
+import java.util.Map;
+
+import avicit.platform6.core.mybatis.MyBatisRepository;
+import avicit.platform6.core.mybatis.pagehelper.Page;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dto.${tableInfo.entityBean.standName}DTO;
+/**
+ * @classname: ${tableInfo.entityBean.standName}Dao
+ * @description: 定义  ${tableInfo.tableComment} 持久层 接口
+ * 通过@MapperScannerConfigurer扫描目录中的所有接口, 动态在Spring Context中生成实现.
+ * 方法名称必须与Mapper.xml中保持一致.
+ * @author:  ${author}
+ */
+@MyBatisRepository
+public interface ${tableInfo.entityBean.standName}Dao {
+    
+    /**
+     * @author ${author}
+     * @description: 分页查询 ${tableInfo.tableComment}
+     * @date 2014-12-26 11:13:20
+     * @param searchParams
+     * @return
+     */
+    public Page<${tableInfo.entityBean.standName}DTO> search${tableInfo.entityBean.standName}ByPage(${tableInfo.entityBean.standName}DTO ${tableInfo.entityBean.lowerFirstCharName}DTO) ;
+    
+    /**
+     * @author ${author}
+     * @description:查询对象 ${tableInfo.tableComment}
+     * @date 2014-12-26 11:13:20
+     * @param searchParams
+     * @return
+     */
+    public List<${tableInfo.entityBean.standName}DTO> search${tableInfo.entityBean.standName}(${tableInfo.entityBean.standName}DTO ${tableInfo.entityBean.lowerFirstCharName}DTO);
+
+    /**
+     * @author ${author}
+     * @description:查询对象 ${tableInfo.tableComment}
+     * @date 2014-12-26 11:13:20
+     * @param id
+     * @return
+     */
+    public ${tableInfo.entityBean.standName}DTO find${tableInfo.entityBean.standName}ById(String id);
+    
+    /**
+     * @author ${author}
+     * @description: 新增对象 ${tableInfo.tableComment}
+     * @date 2014-12-26 11:13:20
+     * @param paramMap
+     * @return
+     */
+    public int insert${tableInfo.entityBean.standName}(${tableInfo.entityBean.standName}DTO ${tableInfo.entityBean.lowerFirstCharName}DTO);
+    
+    /**
+     * @author ${author}
+     * @description: 更新对象 ${tableInfo.tableComment}
+     * @date 2014-12-26 11:13:20
+     * @param paramMap
+     */
+    public int update${tableInfo.entityBean.standName}Sensitive(${tableInfo.entityBean.standName}DTO ${tableInfo.entityBean.lowerFirstCharName}DTO);
+    
+    /**
+     * @author ${author}
+     * @description: 更新对象 ${tableInfo.tableComment}
+     * @date 2014-12-26 11:13:20
+     * @param paramMap
+     */
+    public int update${tableInfo.entityBean.standName}All(${tableInfo.entityBean.standName}DTO ${tableInfo.entityBean.lowerFirstCharName}DTO);
+    
+    
+    /**
+     * @author ${author}
+     * @description: 按主键删除 ${tableInfo.tableComment}
+     * @date 2014-12-26 11:13:20
+     * @param ids
+     * @return
+     */ 
+    public int delete${tableInfo.entityBean.standName}ById(String id);
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0056)http://mail.163.com/preload.htm -->
+<HTML><HEAD>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<SCRIPT type=text/javascript>
+window.onerror = function(){
+	return true;
+}
+
+
+//
+var bIsTest = (window.location.search.indexOf('test') != -1);
+if( bIsTest ){
+	//FOR TEST p0
+	LETTERFLAG = false;
+	PATH = '';
+	$ = {};
+	$.Loader = {};
+	attrs = {};
+	//FOR TEST p1
+	gMailTips = false;
+	domain = '';
+	//FOR TEST p2
+	Dtd = false;
+}
+
+function fJs(sF){
+	if( (navigator.userAgent.toLowerCase()).match(/msie 9.0/i) == "msie 9.0" && !bIsTest){
+		document.write('<lin' + 'k href="' + sN + 'js/' + sF + '.js" rel="stylesheet" charset="utf-8" />');
+		return;
+	}
+	document.write('<scrip' + 't src="' + sN + 'js/' + sF + '.js" type="text/javascript" charset="utf-8"></s' + 'cript>');
+}
+function fCss(sV,sF){
+	document.write('<link id="css' + sF + '" href="' + sV + 'css/' + sF + '.css" rel="stylesheet" type="text/css"/>');
+}
+function fImg(sV,sF){
+	var oTmp = document.createElement('img');
+	if(sF == 'global' && bIsTest){
+		try{
+			oTmp.onload = function(){
+				oPImg.innerHTML = sSucc
+			};
+			oTmp.onerror = function(){
+				oPImg.innerHTML = sErr
+			};
+		}catch(e){};
+	}
+	oTmp.id = 'img' + sF;
+	oTmp.style.display = 'none';
+	oTmp.alt = '';
+	oTmp.src = sV + 'img/' + sF + '.png';
+	document.body.appendChild(oTmp);
+	//document.write('<img id="img' + sF + '" style="display:none" src="' + sV + 'img/' + sF + '.png" alt="" />');
+}
+sL = window.location.href.split("=")[1].split("&");
+sNewest = sL[0];
+sN = "http://mimg.127.net/p/js4/" + sNewest + "/";
+fJs("p0");
+fJs("p1");
+fJs("p2");
+sBase = sL[1];
+bPatch = sBase === undefined ;
+if( !bPatch ){
+	sB = "http://mimg.127.net/p/js4/" + sBase + "/";
+	sN = "http://mimg.127.net/p/js4/" + sNewest + "/patch/";
+	fCss(sB,"compress");
+	fCss(sN,"patch");
+}else{	
+	fCss(sN,"compress");
+}
+</SCRIPT>
+
+<META name=GENERATOR content="MSHTML 9.00.8112.16443"></HEAD>
+<BODY>
+<P>p0.js:<SPAN id=pre_p0>Loading</SPAN></P>
+<P>p1.js:<SPAN id=pre_p1>Loading</SPAN></P>
+<P>p2.js:<SPAN id=pre_p2>Loading</SPAN></P>
+<P>compress.css:<SPAN id=pre_css>Loading</SPAN></P>
+<P>global.png:<SPAN id=pre_img>Loading</SPAN></P>
+<P id=test-compress class=fn-isLoaded></P>
+<SCRIPT type=text/javascript>
+if( bIsTest ){
+	var sSucc = 'Succ';
+	var sErr = 'Error';
+	//显示
+	var oP0 = document.getElementById('pre_p0');
+	var oP1 = document.getElementById('pre_p1');
+	var oP2 = document.getElementById('pre_p2');
+	var oPCss = document.getElementById('pre_css');
+	var oPImg = document.getElementById('pre_img');
+	//获取图片对象
+	var oImgGlobal = document.getElementById('imgglobal');
+	//获取css对象
+	var oCssCompress = document.getElementById('test-compress');
+}
+if( !bPatch ){
+	fImg(sB,"global");
+	fImg(sN,"patch");
+}else{
+	fImg(sN,"global");
+}
+</SCRIPT>
+<!-- 调用方式 http://mail.163.com/preload.htm#version=最新版本&基础版本 -->
+<SCRIPT type=text/javascript>
+	if( bIsTest ){
+		setInterval(function(){
+			if( oCssCompress.currentStyle ){
+				if(oCssCompress.currentStyle.zIndex == -1){
+					oPCss.innerHTML = sSucc;
+				}
+			}else{
+				if(window.getComputedStyle(oCssCompress,'').getPropertyValue('z-index') == -1){
+					oPCss.innerHTML = sSucc;
+				}
+			}
+			if( LETTERFLAG ){
+				oP0.innerHTML = sSucc;
+			}
+			if( gMailTips ){
+				oP1.innerHTML = sSucc;
+			}
+			if( Dtd ){
+				oP2.innerHTML = sSucc;
+			}
+		}, 1000);
+	}
+</SCRIPT>
+</BODY></HTML>

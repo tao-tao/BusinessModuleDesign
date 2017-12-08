@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<layout name = "产品标准模板" enName="product standard template">
+		<layout-columns>
+			<layout-column id="column_1_1" width="25%"/>
+			<layout-column id="column_1_2" width="49%"/>
+			<layout-column id="column_1_3" width="25%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_2_1" width="25%"/>
+			<layout-column id="column_2_2" width="49%"/>
+			<layout-column id="column_2_3" width="25%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_3_1" width="25%"/>
+			<layout-column id="column_3_2" width="49%"/>
+			<layout-column id="column_3_3" width="25%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_4_1" width="25%"/>
+			<layout-column id="column_4_2" width="49%"/>
+			<layout-column id="column_4_3" width="25%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_5_1" width="25%"/>
+			<layout-column id="column_5_2" width="49%"/>
+			<layout-column id="column_5_3" width="25%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_6_1" width="70%"/>
+			<layout-column id="column_6_2" width="49%"/>
+		</layout-columns>
+	</layout>

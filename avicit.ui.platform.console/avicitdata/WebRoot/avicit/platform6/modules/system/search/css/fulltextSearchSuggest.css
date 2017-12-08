@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+/*
+ * 搜索提示样式，即搜索框输入内容时，下拉框中的搜索热词。
+ */
+ 
+#suggest_ul {
+	width: 533px;
+	max-height: 1000px;
+	margin: 0px;
+	padding: 0px;
+	border-bottom: 1px solid #B6B6B6;
+	border-left: 1px solid #B6B6B6;
+	border-right: 1px solid #B6B6B6;
+	list-style-type: none;
+	background-color: white;
+	position: absolute;
+	z-index: 16;
+	display: none;
+}
+
+#suggest_ul li {
+	padding-left: 5px;
+	line-height: 22px;
+	font-size: 15px;
+	width: 528px;
+	height: 22px;
+	cursor: default;
+}

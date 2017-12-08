@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+.datagrid-row-editor-container  {
+	height:20px;
+	top:0px; 
+	border:1px solid #95b8e7;
+	/*position:relative;*/
+	white-space:normal;
+}
+.datagrid-row-editor {
+	height:20px;
+	top:0px;
+	border:0px;
+	left:0px;
+	readonly:readonly;
+	border:none; 
+	/*position:absolute;*/
+}
+.datagrid-row-editor-icon {
+	cursor:pointer;
+	vertical-align: top;
+	display:none ;
+}

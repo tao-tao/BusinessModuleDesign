@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Form Designer Plug-in
+Bundle-SymbolicName: com.tansun.form.designer;singleton:=true
+Bundle-Version: 1.1.0
+Bundle-Activator: com.tansun.form.designer.Activator
+Bundle-Vendor: TANSUN
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
+ org.eclipse.platform,
+ org.eclipse.core.resources
+Eclipse-LazyStart: true
+Bundle-ClassPath: .,
+ lib/el-api.jar,
+ lib/jasper-el.jar,
+ lib/jasper-jdt.jar,
+ lib/jasper.jar,
+ lib/jetty-all-server-8.1.7.v20120910.jar,
+ lib/jsp-api.jar,
+ lib/servlet-api-3.0.jar,
+ lib/tomcat-juli.jar,
+ lib/htmlparser.jar
+Export-Package: com.tansun.form.designer.editors

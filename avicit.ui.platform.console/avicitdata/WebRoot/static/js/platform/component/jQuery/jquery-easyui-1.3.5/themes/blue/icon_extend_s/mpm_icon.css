@@ -1,0 +1,113 @@
+.icon-blank{
+	background:url('icons/blank.gif') no-repeat center center;
+}
+.icon-mpm-org,.icon-mpm-person,.icon-mpm-root,.icon-mpm-projectgroup,.icon-mpm-project,.icon-mpm-wbs,.icon-mpm-task,.icon-mpm-milepost,.icon-mpm-pub,
+.icon-mpm-cancelpub,.icon-mpm-expandall,.icon-mpm-expand,.icon-mpm-collapse,.icon-mpm-base,.icon-mpm-edit,.icon-mpm-multiple,
+.icon-mpm-imp,.icon-mpm-exp,.icon-mpm-set,.icon-mpm-rank,.icon-mpm-selectAll.icon-compare{
+    display:inline-block; 
+	width:20px; 
+	height:20px;
+}
+.icon-mpm-org-root{
+	background:url('mpmiconselectors.gif') no-repeat -0px -40px;
+}
+.icon-mpm-org{
+background:url('mpmiconselectors.gif') no-repeat -20px -40px;
+}
+.icon-mpm-person{
+background:url('mpmiconselectors.gif') no-repeat -40px -40px;
+}
+
+.icon-mpm-milepost{
+background:url('mpmiconselectors.gif') no-repeat -60px -0px;
+}
+.icon-mpm-pro{
+background:url('mpmiconselectors.gif') no-repeat -80px -0px;
+}
+.icon-mpm-task{
+background:url('mpmiconselectors.gif') no-repeat -100px -0px;
+}
+.icon-mpm-wbs{
+background:url('mpmiconselectors.gif') no-repeat -120px -0px;
+}
+
+
+.icon-mpm-root{
+background:url('mpmiconselectors.gif') no-repeat -20px -20px;
+}
+.icon-mpm-projectgroup{
+background:url('mpmiconselectors.gif') no-repeat -40px -20px;
+}
+.icon-mpm-project{
+background:url('mpmiconselectors.gif') no-repeat -80px -0px;
+}
+.icon-mpm-wbs{
+background:url('mpmiconselectors.gif') no-repeat -120px -0px;
+}
+.icon-mpm-task{
+background:url('mpmiconselectors.gif') no-repeat -100px -0px;
+}
+.icon-mpm-milepost{
+background:url('mpmiconselectors.gif') no-repeat -60px -0px;
+}
+.icon-mpm-pub{
+background:url('mpmiconselectors.gif') no-repeat -140px -0px;
+}
+.icon-mpm-cancelpub{
+background:url('mpmiconselectors.gif') no-repeat -160px -0px;
+}
+.icon-mpm-expandall{
+background:url('mpmiconselectors.gif') no-repeat -0px -0px;
+}
+.icon-mpm-expand{
+background:url('mpmiconselectors.gif') no-repeat -20px -0px;
+}
+.icon-mpm-collapse{
+background:url('mpmiconselectors.gif') no-repeat -40px -0px;
+}
+.icon-wbs-moban{
+background:url('mpmiconselectors.gif') no-repeat -60px -20px;	
+}
+.icon-mpm-base{
+background:url('../icon_extend/iconselectors.gif') no-repeat -240px -160px;
+}
+.icon-mpm-edit{
+background:url('../icon_extend/iconselectors.gif') no-repeat -180px -100px;
+}
+.icon-mpm-multiple{
+background:url('../icon_extend/iconselectors.gif') no-repeat -180px -140px;
+}
+.icon-mpm-imp{
+background:url('../icon_extend/iconselectors.gif') no-repeat -160px -160px;
+}
+.icon-mpm-exp{
+background:url('../icon_extend/iconselectors.gif') no-repeat -180px -160px;
+}
+.icon-mpm-set{
+background:url('../icon_extend/iconselectors.gif') no-repeat -60px -20px;
+}
+.icon-mpm-rank{
+background:url('../icon_extend/iconselectors.gif') no-repeat -260px -40px;
+}
+.icon-mpm-selectAll{
+	background:url('mpmiconselectors.gif') no-repeat -60px -40px;
+}
+.icon-startdate{
+	background : url('icons.gif') no-repeat -80px -280px;	
+}
+.icon-enddate{
+	background : url('icons.gif') no-repeat -100px -280px;	
+}
+.icon-addmonth{
+	background : url('icons.gif') no-repeat -60px -280px;	
+}
+.icon-reducemonth{
+	background : url('icons.gif') no-repeat -40px -280px;	
+}
+.icon-refresh{
+	background : url('icons.gif') no-repeat -280px -220px;
+}
+
+.icon-compare{
+	background:url('icon_extend/iconselectors.gif') no-repeat -120px -140px;
+}

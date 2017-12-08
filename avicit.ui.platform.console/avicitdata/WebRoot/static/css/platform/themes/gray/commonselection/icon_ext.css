@@ -1,0 +1,62 @@
+.icon-org{
+	background:url('icons_ext/org.gif') no-repeat center center;
+}
+.icon-dept{
+	background:url('icons_ext/dept.gif') no-repeat center center;
+}
+.icon-home{
+	background:url('icons_ext/home.gif') no-repeat center center;
+}
+.icon-user{
+	background:url('icons_ext/user.png') no-repeat center center;
+}
+.icon-role{
+	background:url('icons_ext/role.gif') no-repeat center center;
+}
+.icon-group{
+	background:url('icons_ext/group.png') no-repeat center center;
+}
+.icon-position{
+	background:url('icons_ext/postion.gif') no-repeat center center;
+}
+.icon-addAll{
+	background:url('icons_ext/addAll.gif') no-repeat center center;
+}
+.icon-deleteAll{
+	background:url('icons_ext/deleteAll.gif') no-repeat center center;
+}
+.dialog-button-ex{
+	text-align:center;
+}
+
+
+.selector-div{
+	height:18px; 
+	border:1px solid #95b8e7;
+	position:relative;
+	float:left;
+}
+.selector-div-input{
+	border:none; 
+	background:#fff;
+	padding:0 1px; 
+/* 	float:left; */
+	height:18px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.input-right-icon{
+	position:absolute;
+	right:0px;
+    top:0px;
+    _right:1px; 
+    _top:1px;
+}
+.input-right-icon-comp{
+	 align:center;
+	 margin-top:1px;
+}
+.easyui-validatebox{
+	height:18px;
+}

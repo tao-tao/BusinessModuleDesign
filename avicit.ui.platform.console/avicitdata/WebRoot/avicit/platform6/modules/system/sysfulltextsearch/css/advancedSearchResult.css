@@ -1,0 +1,975 @@
+@CHARSET "UTF-8";
+
+/*
+ * 搜索主体样式，包括搜索框样式，搜索结果样式，以及一些字体样式
+ */
+ 
+#searchResult {
+	margin-top: 15px;
+	margin-left: 55px;	
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: none repeat scroll 0 0 #FFFFFF;
+	color: #000000;
+	margin: 0;
+	padding: 6px 0 0;
+	position: relative;
+	height: 100%;
+}
+
+body,th,td,.p1,.p2 {
+	font-family: arial;
+}
+
+p,form,ol,ul,li,dl,dt,dd,h3 {
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	-moz-box-sizing: border-box;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+table,img {
+	border: 0 none;
+}
+
+td {
+	font-size: 9pt;
+	line-height: 18px;
+}
+
+em {
+	color: #CC0000;
+	font-style: normal;
+}
+
+a em {
+	text-decoration: underline;
+}
+
+cite {
+	color: #008000;
+	font-style: normal;
+}
+
+.m,a.m {
+	color: #666666;
+}
+
+a.m:visited {
+	color: #660066;
+}
+
+.g,a.g {
+	color: #008000;
+}
+
+.c {
+	color: #7777CC;
+}
+
+.f14 {
+	font-size: 14px;
+}
+
+.f10 {
+	font-size: 10.5pt;
+}
+
+.f16 {
+	font-size: 16px;
+}
+
+#u,#head,#tool,#search,#foot {
+	font-size: 12px;
+}
+
+.p1 {
+	line-height: 120%;
+	margin-left: -12pt;
+}
+
+.p2 {
+	line-height: 120%;
+	margin-left: -12pt;
+	width: 100%;
+}
+
+#out {
+	min-height: 100%;
+	position: relative;
+}
+
+#in {
+	padding: 10px;
+	padding-bottom: 60px;
+}
+
+#wrapper {
+	min-width: 880px;
+}
+
+#container {
+	padding-left: 20px;
+}
+
+#u {
+	color: #999999;
+	position: absolute;
+	right: 10px;
+	top: 4px;
+	white-space: nowrap;
+	z-index: 299;
+}
+
+#u a {
+	color: #0000CC;
+	margin: 0 5px;
+}
+
+#u .reg {
+	margin: 0;
+}
+
+#u .last {
+	margin-right: 0;
+}
+
+#u .un {
+	background: url("http://www.baidu.com/cache/global/img/bg-1.0.2.gif")
+		no-repeat scroll right -195px transparent;
+	color: #0000CC;
+	cursor: pointer;
+	margin-right: 5px;
+	padding-right: 11px;
+	text-decoration: underline;
+}
+
+#u ul {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #9B9B9B;
+	width: 100%;
+}
+
+#u li {
+	height: 25px;
+}
+
+#u li a {
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	margin: 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 6px;
+	width: 100%;
+}
+
+#u li a:hover {
+	background: none repeat scroll 0 0 #EBEBEB;
+}
+
+#u li.nl {
+	border-top: 1px solid #EBEBEB;
+}
+
+#userMenu {
+	display: none;
+	padding-top: 4px;
+	position: absolute;
+	right: 7px;
+	top: 15px;
+	width: 64px;
+}
+
+#user {
+	display: inline-block;
+	position: relative;
+}
+
+#head {
+	padding-left: 20px;
+}
+
+.fm {
+	clear: both;
+	position: relative;
+	z-index: 297;
+}
+
+.nv a,.nv b,.btn,#page,#more {
+	font-size: 14px;
+}
+
+.s_nav {
+	height: 45px;
+}
+
+.s_nav .s_logo {
+	float: left;
+	margin-right: 20px;
+}
+
+.s_nav .s_logo img {
+	border: 0 none;
+	display: block;
+}
+
+.s_nav .s_tab {
+	float: left;
+	line-height: 18px;
+	padding: 20px 0 0;
+}
+
+.s_nav a {
+	color: #0000CC;
+	font-size: 14px;
+}
+
+.s_nav b {
+	font-size: 14px;
+}
+
+.s_ipt_wr {
+	-moz-border-bottom-colors: none;
+	-moz-border-image: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background: url("http://s1.bdstatic.com/r/www/img/i-1.0.0.png")
+		no-repeat scroll -304px 0 transparent;
+	border-color: #7B7B7B #B6B6B6 #B6B6B6 #7B7B7B;
+	border-style: solid;
+	border-width: 1px;
+	display: inline-block;
+	height: 30px;
+	margin-right: 5px;
+	vertical-align: top;
+	width: 533px;
+}
+
+.s_ipt {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 0 none;
+	font: 16px/22px arial;
+	height: 22px;
+	margin: 5px 0 0 7px;
+	outline: 0 none;
+	padding: 0;
+	width: 520px;
+}
+
+.s_btn {
+	background: url("http://s1.bdstatic.com/r/www/img/i-1.0.0.png") repeat
+		scroll 0 0 #DDDDDD;
+	border: 0 none;
+	cursor: pointer;
+	font-size: 14px;
+	height: 32px;
+	padding: 0;
+	width: 95px;
+}
+
+.s_btn_h {
+	background-position: -100px 0;
+}
+
+.s_btn_wr {
+	background: url("http://s1.bdstatic.com/r/www/img/i-1.0.0.png")
+		no-repeat scroll -202px 0 transparent;
+	display: inline-block;
+	height: 34px;
+	vertical-align: top;
+	width: 97px;
+	z-index: 0;
+}
+
+.seth {
+	display: none;
+	margin-left: 22px;
+}
+
+.seth a,.setf a {
+	color: #0000CC;
+}
+
+.setf {
+	display: none;
+	margin-left: 22px;
+}
+
+.sethf {
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+.set_h {
+	display: none;
+}
+
+.set_f {
+	display: none;
+}
+
+#tb_mr {
+	color: #0000CC;
+	cursor: pointer;
+	position: relative;
+	z-index: 298;
+}
+
+#tb_mr b {
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+#tb_mr small {
+	font-size: 11px;
+}
+
+#more {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #9B9B9B;
+	display: none;
+	height: 100px;
+	left: 472px;
+	outline: 0 none;
+	overflow: hidden;
+	position: absolute;
+	top: 51px;
+	width: 58px;
+	z-index: 298;
+}
+
+#more a {
+	color: #0001CF;
+	display: block;
+	height: 25%;
+	line-height: 24px;
+	padding: 0 0 0 7px;
+	text-decoration: none;
+	width: 53px;
+}
+
+#more a span {
+	font-family: "宋体";
+}
+
+#more a:hover {
+	background: none repeat scroll 0 0 #EBEBEB;
+}
+
+#more div {
+	background: none repeat scroll 0 0 #EBEBEB;
+	height: 1px;
+	overflow: hidden;
+}
+
+#page {
+	font: 14px simsun;
+	white-space: nowrap;
+}
+
+#page a,#page strong {
+	background: none repeat scroll 0 0 white;
+	display: inline-block;
+	height: 54px;
+	line-height: 22px;
+	margin-right: 5px;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: text-bottom;
+}
+
+#page a {
+	cursor: pointer;
+}
+
+#page a:hover {
+	background: none repeat scroll 0 center transparent;
+}
+
+#page .n:hover,#page a:hover .pc {
+	background: none repeat scroll 0 0 #EBEBEB;
+}
+
+#page .n {
+	border: 1px solid #E7ECF0;
+	height: 22px;
+	padding: 0 6px;
+}
+
+#page span {
+	display: block;
+}
+
+#page .pc {
+	border: 1px solid #E7ECF0;
+	cursor: pointer;
+	height: 22px;
+	width: 22px;
+}
+
+#page .fk {
+	background:
+		url("http://s1.bdstatic.com/r/www/cache/global/img/bg-1.0.4.png")
+		no-repeat scroll -35px -309px transparent;
+	cursor: pointer;
+	height: 30px;
+	width: 24px;
+}
+
+#page strong .fk,#page strong .pc {
+	cursor: auto;
+}
+
+#page .fkd {
+	background-position: -35px -303px;
+}
+
+#page .fk_cur {
+	background-position: 2px -312px;
+}
+
+#page strong .pc {
+	border: 0 none;
+	height: 24px;
+	line-height: 24px;
+	width: 24px;
+}
+
+#page .nums {
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+
+#rs {
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin: 20px 0 0;
+	padding: 8px 0;
+	width: 100%;
+}
+
+#rs td {
+	width: 5%;
+}
+
+#rs th {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 19px;
+	text-align: left;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+#rs .tt {
+	font-weight: bold;
+	padding: 0 10px 0 20px;
+}
+
+#search {
+	padding: 35px 0 16px 20px;
+}
+
+#search .s_help {
+	position: relative;
+	top: 10px;
+}
+
+#foot {
+	background: none repeat scroll 0 0 #E6E6E6;
+	color: #7777CC;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	width: 100%
+}
+
+#foot span {
+	color: #666666;
+}
+
+.site_tip {
+	background: url("http://s1.bdstatic.com/r/www/img/bg-1.0.0.gif")
+		no-repeat scroll 0 0 transparent;
+	font-size: 13px;
+	line-height: 18px;
+	margin-bottom: 20px;
+	padding: 3px 0 5px 72px;
+}
+
+.to_zhidao,.to_tieba {
+	background: url("http://s1.bdstatic.com/r/www/img/bg-1.0.0.gif")
+		no-repeat scroll 0 -68px transparent;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 20px 0 0;
+	padding: 0 0 0 32px;
+}
+
+.to_tieba {
+	background-position: 0 -102px;
+}
+
+.f {
+	font-size: 100%;
+	/*line-height: 115%;*/
+	width: 33.7em;
+	word-wrap: break-word;
+}
+
+.h {
+	margin-left: 8px;
+	width: 100%;
+}
+
+.r {
+	width: 238px;
+}
+
+.t {
+	font-size: medium;
+	font-weight: normal;
+}
+
+.pl {
+	font-size: 14px;
+	height: 8px;
+	padding-left: 3px;
+	padding-right: 2px;
+}
+
+.mo,a.mo:link,a.mo:visited {
+	color: #666666;
+	font-size: 100%;
+	line-height: 10px;
+}
+
+.htb {
+	margin-bottom: 5px;
+}
+
+.jc a {
+	color: #CC0000;
+}
+
+a font[size="3"] font,font[size="3"] a font {
+	text-decoration: underline;
+}
+
+div.blog,div.bbs {
+	color: #707070;
+	padding-top: 3px;
+}
+
+.result {
+	table-layout: fixed;
+	width: 33.7em;
+}
+
+.result-op .f {
+	word-wrap: normal;
+}
+
+.nums {
+	color: #999999;
+	font-size: 12px;
+}
+
+.tools {
+	position: absolute;
+	top: 10px;
+	white-space: nowrap;
+	width: 230px;
+}
+
+#mHolder {
+	display: none;
+	margin-left: 9px;
+	margin-right: -12px;
+	position: relative;
+	top: -18px;
+	width: 62px;
+	z-index: 296;
+}
+
+#mCon {
+	background: url("http://s1.bdstatic.com/r/www/img/bg-1.0.0.gif")
+		no-repeat scroll right -133px transparent;
+	cursor: pointer;
+	height: 18px;
+	line-height: 18px;
+	padding: 0 18px 0 0;
+	position: absolute;
+	right: 7px;
+	top: 3px;
+}
+
+#mCon span {
+	color: #0000CC;
+	cursor: default;
+	display: block;
+}
+
+#mCon .hw {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#mMenu {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #9B9B9B;
+	display: none;
+	position: absolute;
+	right: 7px;
+	top: 23px;
+	width: 56px;
+}
+
+#mMenu a {
+	color: #0000CC;
+	display: block;
+	height: 100%;
+	line-height: 22px;
+	text-decoration: none;
+	text-indent: 6px;
+	width: 100%;
+}
+
+#mMenu a:hover {
+	background: none repeat scroll 0 0 #EBEBEB;
+}
+
+#mMenu .ln {
+	background: none repeat scroll 0 0 #EBEBEB;
+	font-size: 1px;
+	height: 1px;
+	line-height: 1px;
+	margin-top: -1px;
+	overflow: hidden;
+}
+
+.op_LAMP {
+	background:
+		url("http://s1.bdstatic.com/r/www/cache/global/img/aladdinIcon-1.0.gif")
+		no-repeat scroll 0 2px transparent;
+	color: #7777CC;
+	display: inline-block;
+	font-size: 13px;
+	height: 12px;
+	text-decoration: none;
+	width: 16px;
+}
+
+.EC_mr15 {
+	margin-left: 0;
+}
+
+.pd15 {
+	padding-left: 0;
+}
+
+.map_1 {
+	font-size: 80%;
+	line-height: 145%;
+	width: 30em;
+}
+
+.map_2 {
+	font-size: 80%;
+	line-height: 145%;
+	width: 25em;
+}
+
+.favurl {
+	background-position: 0 1px;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+}
+
+.dan_tip {
+	background: url("http://s1.bdstatic.com/r/www/img/bg-1.0.0.gif")
+		no-repeat scroll left -156px transparent;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 2px 0 0;
+	padding-left: 18px;
+}
+
+.dan_tip a {
+	color: #656565;
+}
+
+.likenums {
+	color: red;
+	margin-left: 10px;
+}
+
+.likenum {
+	display: inline-block;
+	height: 14px;
+	position: relative;
+	top: 0;
+	vertical-align: top;
+	width: 90px;
+}
+
+.likebox,.likepre,.likesuf {
+	background:
+		url("http://s1.bdstatic.com/r/www/cache/like/img/likeicon-1.0.png")
+		repeat scroll 0 0 transparent;
+	display: inline-block;
+	height: 16px;
+	overflow-y: hidden;
+}
+
+.likebox {
+	background-position: 0 -19px;
+	background-repeat: repeat-x;
+	left: 10px;
+	position: absolute;
+	top: 1px;
+}
+
+.likepre,.likesuf,.liketext {
+	cursor: default;
+	float: left;
+	overflow: hidden;
+}
+
+.liketext {
+	color: #2979A1;
+	font-family: Arial, 宋体;
+	font-size: 11px;
+	line-height: 16px;
+	text-align: center;
+	width: 30px;
+}
+
+.liketext_min {
+	width: 35px;
+}
+
+.liketext_max {
+	width: 55px;
+}
+
+.likepre {
+	width: 20px;
+}
+
+.likesuf {
+	background-position: -32px 0;
+	width: 3px;
+}
+
+.floatTip {
+	background-color: #FFFFFF;
+	display: none;
+	font-size: 13px;
+	position: absolute;
+	width: 400px;
+	z-index: 1000;
+}
+
+#floatTipCon {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #CCCCCC;
+	box-shadow: 1px 1px 2px #CCCCCC;
+	padding: 10px;
+	position: absolute;
+	top: 4px;
+}
+
+#floatTipDesc span {
+	color: #CC0000;
+}
+
+#floatTipDesc {
+	color: #666666;
+	font-family: arial, 宋体;
+}
+
+.floatTipLink {
+	background: url("http://www.baidu.com/cache/like/img/like-icon.png")
+		no-repeat scroll 0 0 transparent;
+	margin-top: 2px;
+}
+
+.floatTipLink a {
+	color: #0000CC;
+	font-family: arial, 宋体;
+	padding-left: 19px;
+}
+
+.floatTipLink a img {
+	border: 0 none;
+	line-height: 15px;
+	margin-right: 3px;
+}
+
+.floatTipArrow {
+	left: 30px;
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+}
+
+.floatTipArrow em,.floatTipArrow span {
+	display: block;
+	font-family: Simsun;
+	font-size: 9px;
+	font-style: normal;
+	height: 9px;
+	line-height: 9px;
+	position: absolute;
+	width: 9px;
+}
+
+.floatTipArrow em {
+	color: #CCCCCC;
+	top: 0;
+}
+
+.floatTipArrow span {
+	color: #FFFFFF;
+	top: 1px;
+}
+
+#more,#u ul,#mMenu,.msg_holder {
+	box-shadow: 1px 1px 2px #CCCCCC;
+}
+
+.other_mean {
+	overflow: hidden;
+}
+
+.other_mean span {
+	float: left;
+	margin-right: 2px;
+}
+
+.other_mean ul {
+	overflow: hidden;
+}
+
+.planeTipCon {
+	color: #FFFFFF;
+	position: relative;
+	text-align: center;
+}
+
+.zhx_rz {
+	background: url("http://www.baidu.com/cache/global/img/bg-1.0.5.gif")
+		no-repeat scroll left -488px #008000;
+	display: inline-block;
+	height: 12px;
+	overflow: hidden;
+	vertical-align: middle;
+	width: 39px;
+}
+
+.tip_plane {
+	background: url("http://www.baidu.com/cache/global/img/bg-1.0.5.gif")
+		no-repeat scroll left -362px transparent;
+	color: #575757;
+	font-size: 12px;
+	height: 63px;
+	left: 0;
+	line-height: 22px;
+	padding-left: 34px;
+	position: absolute;
+	text-align: left;
+	top: 17px;
+	width: 250px;
+	z-index: 10000;
+}
+
+.tip_plane a {
+	height: 14px;
+	line-height: 14px;
+}
+
+.single_top,.single_bt {
+	color: #CCCCCC;
+	font-family: Simsun;
+	font-size: 12px;
+	font-weight: 700;
+	height: 12px;
+	left: 6px;
+	position: absolute;
+	top: -18px;
+	width: 12px;
+}
+
+.single_bt {
+	color: #FFFFFF;
+	top: -17px;
+}
+
+.preBox {
+	float: left;
+	margin: 3px 5px 0 0;
+	position: relative;
+	text-decoration: none;
+}
+
+.preBox img {
+	border: 1px solid #CCCCCC;
+	float: left;
+	vertical-align: top;
+}
+
+.preBox span,.preBox b {
+	bottom: 1px;
+	cursor: pointer;
+	display: block;
+	height: 20px;
+	left: 1px;
+	position: absolute;
+}
+
+.preBox span {
+	background: none repeat scroll 0 0 #000000;
+	display: block;
+	opacity: 0.65;
+	width: 118px;
+}
+
+.preBox b {
+	background:
+		url("http://s1.bdstatic.com/r/www/cache/realtime/img/play-1.0.png")
+		no-repeat scroll 4px center transparent;
+	color: #FFFFFF;
+	font: 400 13px/20px arial;
+	padding-left: 20px;
+}
+
+.hit_top {
+	background: url("http://www.baidu.com/cache/global/img/bg-1.0.5.gif")
+		no-repeat scroll left -446px transparent;
+	height: 16px;
+	line-height: 14px;
+	margin: 2px 15px 10px 0;
+	overflow: hidden;
+	padding-left: 20px;
+}
+
+.STYLE0 {margin-top: 19px; font-size: 19px; color: black;}
+.STYLE1 {margin-top: 19px; font-size: 19px; color: red;}
+.STYLE2 {margin-top: 10px; font-size: 15px; color: blue;}
+.STYLE3 {margin-top: 10px; font-size: 15px; color: black;}
+.STYLE4 {margin-top: 10px; font-size: 15px; color: red;}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+             label="Code Generation Action Set"
+            visible="true"
+            id="avicit.platform6.tools.codegeneration.actionSet">
+         <menu
+               label="Avicit"
+               id="avicitMenu">
+            <separator
+                  name="pt6CodeGenerationActionSetGroup">
+            </separator>
+         </menu>
+         <action
+               label="代码生成器"
+               icon="icons/generation.png"
+               class="avicit.platform6.tools.codegeneration.actions.CodeGenerationAction"
+               tooltip="代码生成器"
+               menubarPath="avicitMenu/pt6CodeGenerationActionSetGroup"
+               toolbarPath="pt6CodeGenerationActionSetGroup"
+               id="avicit.platform6.tools.codegeneration.actions.CodeGenerationAction">
+         </action>
+      </actionSet>
+   </extension>
+    <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="avicit.platform6.tools.codegeneration.wizard.category"
+            name="AVICIT Platform6 Wizard">
+      </category>
+      <!--
+      <wizard
+            category="avicit.platform6.tools.codegeneration.wizard.category"
+            class="avicit.platform6.tools.codegeneration.wizard.CodeGenerationWizard"
+            icon="icons/generation.png"
+            id="avicit.platform6.tools.codegeneration.wizard.CodeGenerationWizard"
+            name="AVICIT 代码生成器">
+         <description>
+            	代码生成器
+         </description>
+      </wizard>
+      -->
+   </extension>
+</plugin>

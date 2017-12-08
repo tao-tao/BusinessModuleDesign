@@ -1,0 +1,149 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="avicit.platform6.commons.utils.ViewUtil"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<%
+	String entryId = request.getParameter("entryId");
+	String executionId = request.getParameter("executionId");
+	String taskId = request.getParameter("taskId");
+	String formId = request.getParameter("id");
+	String skinColor = "gray";
+%>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>详细</title>
+	<base href="<%=ViewUtil.getRequestPath(request) %>">
+	<jsp:include page="/avicit/platform6/component/common/BpmJsInclude.jsp"></jsp:include>
+</head>
+<script type="text/javascript">
+	var baseurl = '<%=request.getContextPath()%>';
+	var entryId = "<%=entryId%>";
+	var executionId = "<%=executionId%>";
+	var taskId = "<%=taskId%>";
+	var formId = "<%=formId%>"; 
+	
+	//初始化页面值
+	function initFormData(){
+		$.ajax({
+			url : 'platform/${tableInfo.entityBean.lowerFirstCharName}/toDetailJsp',
+			data : {
+				id : formId
+			},
+			type : 'post',
+			dataType : 'json',
+			success : function(result) {
+				if (result.flag == "success") {
+					//进行时间转化
+					result.${tableInfo.entityBean.lowerFirstCharName}.leavedate = formatDatebox(result.${tableInfo.entityBean.lowerFirstCharName}.leavedate);
+					result.${tableInfo.entityBean.lowerFirstCharName}.backdate = formatDatebox(result.${tableInfo.entityBean.lowerFirstCharName}.backdate);
+					$("#formDetail").form('load',result.${tableInfo.entityBean.lowerFirstCharName});
+				} else {
+					$.messager.show({
+						title : '提示',
+						msg : "数据加载失败。"
+					});
+				}
+			}
+		});
+	}
+
+	/**
+	 * 保存表单方法
+	 * @param processInstanceId
+	 * @param executionId
+	 */
+	window.saveFormData = function(processInstanceId,executionId){
+		var dataVo = $('#formDetail').serializeArray();
+		var dataJson = convertToJson(dataVo);
+		dataVo = JSON.stringify(dataJson);
+		$.ajax({
+			url : 'platform/${tableInfo.entityBean.lowerFirstCharName}/operation/save',
+			data : {
+				data : dataVo
+			},
+			type : 'post',
+			dataType : 'json',
+			success : function(result) {
+				if (result.flag == "success") {
+					initFormData();
+					$.messager.show({
+						title : '提示',
+						msg : "操作成功。"
+					});
+				} else {
+					$.messager.show({
+						title : '提示',
+						msg : "操作失败。"
+					});
+				}
+			}
+		});
+	};
+	
+	//返回
+	function doBack(){
+		if(parent!=null&&parent.$('#tabs')!=null){
+			var currTab = parent.$('#tabs').tabs('getSelected');
+			var currTitle = currTab.panel('options').title; 
+			parent.$('#tabs').tabs('close',currTitle);
+		}
+	}
+	//页面加载完成后入口
+	$(function(){
+		initFormData();
+		//不控制表单权限
+ 		//initBpmInfo(entryId,executionId,taskId,formId);
+		//控制表单权限用这个
+		initBpmInfoAndFormAccess(entryId,executionId,taskId,formId);
+	});
+	
+</script>
+<body class="easyui-layout">
+<div  region='center' border="false" style="overflow: hidden;">
+<!-- 流程按钮区域开始 -->
+<DIV class=toolbar-left-wrap><DIV class=toolbar-left>
+<DIV id=bpmToolBar></DIV>
+<!-- 自定义按钮放到这里 -->
+<DIV id="buttonBack_c"  onclick="doBack()"  title="返回" class="bbtnContainer" onmouseup="onButtonUp(this);"  onmouseover="onButtonOver(this);"  onmouseout="onButtonOut(this);" onmousedown="onButtonDown(this);">
+<DIV id="buttonBack_l" class="bbtn-left"></DIV>
+<DIV id="buttonBack_t" class="bbtn"><IMG style="border:0px;vertical-align:text-top;" src="static/js/platform/component/jQuery/jquery-easyui-1.3.5/themes/<%=skinColor%>/icons/undo.png">&nbsp;返回</DIV>
+<DIV id="buttonBack_r" class="bbtn-right"></DIV></DIV>
+</DIV></DIV>
+<!-- 流程按钮区域结束 -->
+<fieldset> 
+
+<form id='formDetail'>
+#foreach($param in ${tableInfo.entityBean.params})##
+#if($param.field.fieldName.equals(${tableInfo.primaryField.fieldName}))###主键
+			<input type="hidden" name="id"/>
+#end
+#end
+				<table width="100%" style="padding-top: 10px;">
+					<tr>
+#set($index=1)					
+#foreach($param in ${tableInfo.entityBean.params})##
+#if($param.standName!="createdBy" && $param.standName!="creationDate" && $param.standName!="lastUpdatedBy" && $param.standName!="lastUpdateDate" && $param.standName!="lastUpdateIp" && $param.standName!="version" && $param.standName!="attribute01" && $param.standName!="attribute02" && $param.standName!="attribute03" && $param.standName!="attribute04" && $param.standName!="attribute05" && $param.standName!="attribute06" && $param.standName!="attribute07" && $param.standName!="attribute08" && $param.standName!="attribute09" && $param.standName!="attribute10")##
+#if($param.field.fieldName.equals(${tableInfo.primaryField.fieldName}))###主键
+#else##
+							<th align="right">${param.field.comment}:</th>
+							<td>
+								  <input title="${param.field.comment}" class="inputbox" style="width: 180px;" type="text" name="${param.standName}" id="${param.standName}"  readonly="readonly" value='${${tableInfo.entityBean.lowerFirstCharName}DTO.${param.standName}}'/>
+							</td>
+													
+#if($!index % 2 == 0)##
+					</tr>
+					<tr>
+#end
+#set($index=$index+1)
+#end
+#end## 
+#end##
+					</tr>
+				</table>
+		</form>
+	</fieldset>
+	<div id="idea"></div>
+</div>
+</body>
+</html>

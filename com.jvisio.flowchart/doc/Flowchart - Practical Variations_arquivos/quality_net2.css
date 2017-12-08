@@ -1,0 +1,68 @@
+a:link.butn2 {
+	font-family: Arial Narrow, Univers Condensed,Arial,Sans Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #0000FF;
+	text-decoration: none;
+	background: #FFCCFF;
+	color: #0000FF;
+	width: 96px;
+	float: left;
+	}
+
+a:visited.butn2 {
+	font-family: Arial Narrow, Univers Condensed,Arial,Sans Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #0000FF;
+	text-decoration: none;
+	background: #FFCCFF;
+	width: 96px;
+	float: left;
+	}
+
+a:hover.butn2 {
+	font-family: Arial Narrow, Univers Condensed,Arial,Sans Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FF0000;
+	text-decoration: none;
+	background: #FFFFCC; 
+	width: 96px;
+	float: left;
+	}
+	
+a:link.butn3 {
+	font-family: Arial Narrow, Univers Condensed,Arial,Sans Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #0000FF;
+	text-decoration: none;
+	background: #CCFFCC;
+	color: #0000FF;
+	width: 96px;
+	float: left;
+	}
+
+a:visited.butn3 {
+	font-family: Arial Narrow, Univers Condensed,Arial,Sans Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #0000FF;
+	text-decoration: none;
+	background: #CCFFCC;
+	width: 96px;
+	float: left;
+	}
+
+a:hover.butn3 {
+	font-family: Arial Narrow, Univers Condensed,Arial,Sans Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FF0000;
+	text-decoration: none;
+	background: #FFFFCC; 
+	width: 96px;
+	float: left;
+	}
+	

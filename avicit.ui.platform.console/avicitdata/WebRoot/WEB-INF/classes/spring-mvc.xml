@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:component-scan base-package="avicit" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
+		<!-- <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/> -->
+	</context:component-scan>
+	
+	
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	<!-- <bean id="dataAccessAnalyze" class="avicit.platform6.modules.system.sysdatapermission.permissionanalysis.core.DataAccessAnalyze">
+	</bean> -->
+	<!-- 根据内容自动转向视图解析器配置，根据不同的类型转向到不同的视图解析器，位于视图解析器链的顶端 -->
+	<bean id="contentNegotiationManager" class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="0"></property>
+		<property name="defaultContentType" value="text/html"></property>
+		<property name="favorParameter" value="true"></property>
+		<property name="favorPathExtension" value="true"></property>
+		<property name="ignoreAcceptHeader" value="false"></property>
+		<property name="parameterName" value="format"></property>
+		<property name="mediaTypes">
+			<map>
+				<entry key="htm" value="text/html"></entry>
+				<entry key="html" value="text/html"></entry>
+				<entry key="json" value="application/json"></entry>
+				<entry key="js" value="application/js"></entry>
+				<entry key="xml" value="application/xml"></entry>
+			</map>
+		</property>
+		<property name="useJaf" value="true"></property>
+		<property name="defaultViews">
+			<list>
+				<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<bean id="springMVCFactory" class="avicit.platform6.core.spring.SpringMVCFactory" scope="singleton" lazy-init="false"></bean>
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<!-- 将StringHttpMessageConverter的默认编码设为UTF-8 -->
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+		    	<constructor-arg value="UTF-8" />
+			</bean>
+			<!-- 将Jackson2HttpMessageConverter的默认格式化输出设为true -->
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="prettyPrint" value="true"/>
+            </bean>			
+  		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<!-- 容器默认的DefaultServletHandler处理 所有静态内容与无RequestMapping处理的URL-->	
+	<mvc:default-servlet-handler/>
+	<mvc:resources mapping="/static/**" location="/static/" />
+
+	
+	<bean id="excelViewResolver" class="avicit.platform6.core.excel.web.servlet.view.ExcelViewResolve">  
+        <property name="chartSuffix" value=".down"/>
+        <property name="order" value="0"></property>
+        <property name="mapView">
+			<map>
+				<entry key="excel"><bean class="avicit.platform6.core.excel.web.servlet.view.DownloadExcelView"></bean></entry>
+				<entry key="file"><bean class="avicit.platform6.core.excel.web.servlet.view.DownloadFileView"></bean></entry>
+			</map>
+		</property>
+	</bean>
+	
+	
+	<!-- 默认的资源视图解析器，设置为从Web根目录下开始寻找 -->
+	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" 	value="org.springframework.web.servlet.view.JstlView" />
+		<property name="order" value="1"></property>
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp" />
+	</bean>
+	   
+</beans>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<layout name="模板五" enName="template5">
+		<layout-columns>
+			<layout-column id="column_1" width="39.5%"/>
+			<layout-column id="column_2" width="60%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_3" width="39.5%"/>
+			<layout-column id="column_4" width="60%"/>
+		</layout-columns>
+		<layout-columns>
+			<layout-column id="column_5" width="39.5%"/>
+			<layout-column id="column_6" width="60%"/>
+		</layout-columns>
+		
+	</layout>

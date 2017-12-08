@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>portlet 模板</title>
+<link rel="stylesheet" type="text/css" href="<#path>avicit/platform6/modules/system/sysportal/portalstyle/style.css">
+<script src="<#path>avicit/platform6/component/js/jQuery/jQuery-1.8.2/jquery-1.8.2.js"></script>
+<script src="<#path>avicit/platform6/modules/system/js/jQuery/jQuery-ui-1.9.2/jquery-ui-1.9.2.js"></script>
+<script type="text/javascript" src="<#path>avicit/platform6/modules/system/sysportal/js/portlet.js"></script>
+<script type="text/javascript">
+	 var path = '<#path>';
+	 var historyLayoutContent = '<#historyLayoutContent>';
+	 var portletType = '<#portletType>';
+	 var flag = '<#flag>';
+</script>
+<style>
+.column {
+	float: left;
+    width: 33.3%;
+	height: auto !important; 
+	position: relative;
+}
+
+.portlet-header .ui-icon {
+	float: right;
+}
+.ui-sortable-placeholder {
+	border: 1px dotted black;
+	visibility: visible !important;
+	height: 50px !important;
+}
+.ui-sortable-placeholder * {
+	visibility: hidden;
+}
+.demo-description {
+	clear: both;
+	padding: 12px;
+	font-size: 1.3em;
+	line-height: 1.4em;
+}
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+</style>
+</head>
+<body>
+<div id="loading">
+	<div class="loading-indicator"><img src="<#path>avicit/platform6/modules/system/sysportal/portalstyle/waiting.gif" width="30" height="30" style="margin-right:8px;" align="absmiddle"/>正在加载数据，请稍候...</div>
+</div>
+<div id="mainPanel" style="display:none;">
+	<div style='display:<#isShow>;width:100%'>
+		<span style="margin: 15px 0 0 10px; color: red"><#portletType></span><br>
+		<hr width=100% height=1>
+	</div>
+<!-- 	<div id="columns"> -->
+	   
+<!-- 	</div> -->
+	<#portlet>
+</div>
+<!-- <script type="text/javascript" src="<#path>avicit/platform6/modules/system/sysportal/js/jquery-1.2.6.min.js"></script> -->
+<!-- <script type="text/javascript" src="<#path>avicit/platform6/modules/system/sysportal/js/jquery-ui-personalized-1.6rc2.min.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,648 @@
+.mega-menu ul,.mega-menu ul li {
+	list-style: none;
+}
+
+/* 这个宽度只针对ie6，ie7以上不会用到这 */
+ul{
+	margin:0;
+	padding:0;
+	_width:180px;
+}
+
+.mega-menu ul {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	display:none;
+}
+
+.mega-menu ul li ul {
+	display: none;
+}
+
+.mega-menu .sub {
+	display: none;
+}
+
+.mega-menu .sub ul {
+	position:relative;
+	display: block;
+
+}
+
+.index-menu ul.mega-menu,.index-menu ul.mega-menu,.index-menu ul.mega-menu li {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+/* 顶层结点的样式设置,不能设置z-index */
+.index-menu ul.mega-menu {
+	background: #1174cd url(images/menuBar-bg-gray.png);
+	width: 100%;
+	height: 30px;
+	line-height: 2px;
+	position: relative;
+	box-shadow: #999 0px 5px 5px;
+}
+
+/* menu菜单顶层结点的样式 */
+.index-menu ul.mega-menu li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.index-menu ul.mega-menu li a {
+	float: left;
+	display: block;
+	color: #fff;
+	padding: 12px 32px 12px 32px;
+	text-shadow: 1px 1px 1px #272727;
+	text-decoration: none;
+}
+
+/* toolsBar的样式 */
+.index-menu ul.mega-menu li a.dc-mega {
+	position: relative;
+	text-align: center;
+	border-right: 1px solid #a5b5c7;
+	float: left;
+	line-height: 6px;
+	font-size: 12px;
+}
+
+/* 与最外层的分开，指定弹出卡面中第一层的宽度以及其它样式 */
+.index-menu ul.mega-menu li a.pop-dc-mega { /* 	原来的 */
+	width: 130px;
+	text-align: left;
+	float: left;
+	color: #fff;
+	line-height: 5px;
+	font-size: 12px;
+	*padding-top: 4px;
+	height: 16px;
+}
+
+/* 样式与pop-dc-mega一致，主要是兼容pmo以及serviceimpl，给分开了。 */
+.index-menu ul.mega-menu li a.pmo-dc-mega { /* 	原来的 */
+	width: 130px;
+	text-align: left;
+	float: left;
+	color: #fff;
+	line-height: 5px;
+	font-size: 12px;
+	*padding-top: 8px;
+	height: 16px;
+}
+
+.index-menu ul.mega-menu li a .dc-mega-icon {
+	display: block;
+	position: absolute;
+	top: 20px;
+	right: 15px;
+	width: 8px;
+	height: 6px;
+	/* 	background: url(images/arrow.png) no-repeat 0 0; */
+}
+
+/* 原来tab中选中时，上面高亮显示时的样式 */
+.index-menu ul.mega-menu li.mega-hover a,.index-menu ul.mega-menu li a:hover {
+	background: url(images/hover-blue.png) center 0 no-repeat;
+	*background: url(images/hover-gray.jpg) center 0 no-repeat;
+	color: #fff;
+	/* pmo项目管理中的样式 */
+	/*     background: url(images/title_bg.png) center 0 no-repeat; */
+	/* 	color: #385b7f; */
+}
+
+/* 与原来的要分开，在ie6下面，弹出卡片上的hover事件要显示title中的背景图片。 */
+.index-menu ul.mega-menu li ul li a:hover{
+	_background:none;
+}
+
+.index-menu ul.mega-menu li.mega-hover a .dc-mega-icon {
+	background-position: 0 100%;
+}
+
+.index-menu ul.mega-menu li .sub-container {
+	position: absolute;
+	background: url(images/bg_sub_left.png) no-repeat 0 100%;
+	padding-left: 20px;
+	margin-left: -3px;
+/* 	border:1px solid green; */
+}
+
+/*修改弹出层最下面样式的padding*/
+.index-menu ul.mega-menu li .sub {
+	background: url(images/bg_sub.png) no-repeat 100% 100%;
+	padding: 10px 10px 20px 10px;
+}
+
+/*修改弹出层最下面样式的padding*/
+.index-menu ul.mega-menu li .sub-container.mega .sub {
+	padding: 10px 10px 20px 0;
+}
+
+.index-menu ul.mega-menu li .sub li.mega-hdr {
+	margin: 0 10px 10px 0;
+	float: left;
+}
+
+.index-menu ul.mega-menu li .sub li.mega-hdr.last {
+	margin-right: 0;
+}
+
+/* 弹出式卡片上第一个table中字体的宽度设置以及字体的颜色设置 */
+.index-menu ul.mega-menu li .sub a { /* 	width:150px; */
+	padding-left: 1px;
+	padding-bottom: 3px;
+	*padding-bottom: 5px;
+	background: #f5f5f5 no-repeat 0 0;
+	color: #1f1f1f;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+/* 弹出式卡片上第一层结点的字体样式 */
+/* div中每一个table的外层宽度 */
+.index-menu ul.mega-menu li .sub li {
+	list-style: none;
+	float: none;
+	width: 165px;
+	font-size: 14px;
+	font-weight: normal;
+	overflow: visible;
+	zoom: 1;
+	white-space: nowrap;
+}
+
+/*第一层结点的hover样式*/
+.index-menu ul.mega-menu li .sub a:hover {
+	*background:none;
+	color: #0cadd6;
+	text-shadow: none;
+}
+
+/*第二层结点的hover样式*/
+.index-menu ul.mega-menu li .sub .subMenuSen:hover {
+	*background:none;
+	color: #0cadd6;
+}
+/*第二层结点字体的样式  width:110px设置第二层的宽度  增加透明的效果*/
+.index-menu ul.mega-menu li .sub .subMenuStyle { /* 	width:140px; */
+	margin-left: 17px;
+	*margin-left: 15px;
+	_margin-left: 7px;
+	font-size: 12px;
+	color: #737373;
+	background: none;
+	*padding-top: 4px;
+	*line-height: 20px;
+	height: 16px;
+}
+
+.tableBorder {
+	padding: 5px 5px 5px 20px;
+	margin-bottom: 5px;
+	background: white no-repeat 0 0;
+	color: #737373;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+/* 向上向下的箭头样式 */
+.arrowFrame {
+	position: absolute;
+	right: 2px;
+	top: 5px;
+}
+
+/* 向上的箭头样式 */
+.arrowUp{
+	cursor: pointer;
+	display:block;
+	height:20px;
+	width:13px;
+	background:url('images/arrowup01.gif') left no-repeat;
+}
+
+/* 向下的箭头样式 */
+.arrowDown{
+	cursor: pointer;
+	display:block;
+	height:20px;
+	width:13px;
+	background:url('images/arrowdown01.gif') left no-repeat;
+}
+
+/* 弹出式卡片上的样式 */
+.iconItemLeft {
+	padding: 5px 5px 5px 20px;
+	*padding: 5px 5px 5px 0px;
+	margin-bottom: 5px;
+	background: #f5f5f5 no-repeat 0 0;
+	color: #737373;
+	text-shadow: 1px 1px 1px #fff;
+	/* 	*width:150px; */
+}
+
+/* 弹出式卡片上的样式 */
+.iconItemLeftWithoutPadding {
+	padding: 5px 5px 5px 20px;
+	*padding: 5px 5px 5px 0px;
+	margin-bottom: 5px;
+	background: #f5f5f5 no-repeat 0 0;
+	color: #737373;
+	text-shadow: 1px 1px 1px #fff;
+/* 	*width:155px; */
+}
+/* 利用dorado7自带的图标，集成到平台V6中来的样式 */
+.icon {
+	background-repeat: no-repeat;
+	padding-left: 15px;
+	width: 0;
+	height: 21px;
+	line-height: 16px;
+	padding-right: 4px;
+}
+
+.search_subject {
+	background: white;
+	height: 18px;
+	width: 150px;
+	line-height: 18px;
+	font-size: 12px;
+	border: 0;
+	outline: none;
+	position: absolute;
+	right: 30px;
+	top: 5px;
+}
+
+.icon_search {
+	height: 18px;
+	width: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(images/search.png) no-repeat 100% 100%;
+	right: 5px;
+	top: 5px;
+	position: absolute;
+	right: 30px;
+	top: 6px;
+}
+
+.img_ico03 {
+	width: 30px;
+}
+
+.user {
+	background: url(images/contact_blue.png) no-repeat;
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-top: 8px;
+	font-weight: bold;
+	font-coler: red;
+}
+
+/* 不需要设置宽度值，自动的向左扩展就行 */
+.info {
+	height: 35px;
+	float: right;
+	/* 	min-width: 300px; */
+}
+
+.info li {
+	float: left;
+	list-style: none;
+	color: #fff;
+	margin-right: 10px;
+	line-height: 30px;
+	display: block;
+	font-weight: bold;
+}
+
+.info li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.info li a:hover {
+	color: #acb5bf;
+}
+
+.info .msgbg {
+	background: url(images/msgBg2.png) no-repeat;
+	width: 17px;
+	height: 13px;
+	line-height: 13px;
+	float: left;
+	margin-top: 8px;
+	font-size: 8px;
+	text-align: center;
+	color: #fff;
+	display: none;
+}
+
+.info .msgbg  a {
+	color: #fff;
+	font-size: 8px;
+}
+
+#header {
+	width: 100%;
+	height: 58px;
+	background: #a1a1a1;
+	overflow: hidden;
+	position: relative;
+	z-index: 1
+}
+
+.logo {
+	margin-top: 1px;
+	width: 100%;
+	height: 62px;
+	background: url(images/logo.jpg) no-repeat;
+	float: left;
+}
+
+/* 修改密码样式 */
+.changePassword {
+	background: #fff;
+	padding: 5px;
+	width: 500px;
+	height: 300px;
+}
+
+/* .search_subject */
+.agileSearchResults { /* 	position: absolute; */
+	position: relative;
+	z-index: 16;
+	display: none;
+	width: 250px;
+	background-color: white;
+	color: black;
+	font: 12px;
+	-moz-box-shadow: 2px 2px 10px #06C;
+	-webkit-box-shadow: 2px 2px 10px #06C;
+	box-shadow: 2px 2px 10px #06C;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#bdbdbd',
+		Direction=135, Strength=5 );
+	border: 1px solid #E7E7E7;
+}
+
+/***quick_search_tip_style start***/
+.verticalStyle {
+	Writing-mode: tb-rl;
+	Text-align: left;
+	font-size: 13pt
+}
+
+.warp_table {
+	border-collapse: collapse;
+	border: 0 solid #F1F5FB
+}
+
+.warp_table td {
+	border-bottom: 1px dashed #F1F5FB
+}
+
+#full_text_search_link {
+	font-size: 12px;
+	cursor: pointer;
+	width: 14px;
+	height: 14px;
+	padding-top: 4px;
+	background: url(images/small-search.png) no-repeat;
+}
+
+.agile_search_tip_footer {
+	width: 100%;
+	vertical-align: padding-left:3px;
+	padding-bottom: 4px;
+	border-top: 1px ridge #ccccff;
+}
+
+.agile_search_tip_footer span {
+	margin-left: 6px;
+}
+
+.searchContextIcon {
+	width: 16px;
+	height: 16px;
+	padding-top: 2px;
+	background: url(images/txt.png) no-repeat;
+	background-position: 0% center;
+}
+
+/***quick_search_tip_style end***/
+.warp_table a:link {
+	text-decoration: none;
+	color: #000
+}
+
+.warp_table a:active {
+	text-decoration: none
+}
+
+.warp_table a:hover {
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+}
+
+.warp_table a:visited {
+	text-decoration: none;
+	color: #000
+}
+/* 集成object如甘特图等 */
+.supportObjectButtom {
+	border: 0 none;
+	height: 100%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+	opacity: 0.1;
+	width: 100%;
+	display: none;
+}
+.portlet{
+	background: url(images/mywork.gif) no-repeat;
+	position:absolute;
+    font-size: 12px;
+    height: 20px;
+    width:25px;
+    right: 10px;
+    margin-top : 5px;
+	float:right;
+	width:25px;
+	cursor: pointer;
+}
+/* portlet config menu css*/
+#menu {
+    top: 110px;
+    right:5px;
+    display: none;
+    position:absolute;
+    z-index:1000;
+}
+#triangle {
+    border-width: 2px 0 0 2px;
+    width:10px;
+    height:8px;
+    /* for firefox, safari, chrome, etc. */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform:rotate(45deg);
+    border-top: 1px solid #E7E7E7;
+    border-left: 1px solid #E7E7E7;
+/*     -moz-box-shadow: 2px 2px 10px #06C; */
+/* 	-webkit-box-shadow: 2px 2px 10px #06C; */
+/* 	box-shadow: 2px 2px 10px #06C; */
+/* 	filter: progid:DXImageTransform.Microsoft.Shadow(color='#bdbdbd',Direction=135, Strength=5 ); */
+    z-index: 1;
+    position: relative;
+    bottom: -4px;
+    margin-left: 114px;
+    background-color: white;
+}
+#tooltip_menu {
+	margin-top:5px;
+/*     -webkit-border-radius: .5em; */
+/*     -moz-border-radius: .5em; */
+/*     border-radius: .5em; */
+    width: 160px;
+    background-color: white;
+	color: black;
+	font: 12px;
+	-moz-box-shadow: 2px 2px 10px #06C;
+	-webkit-box-shadow: 2px 2px 10px #06C;
+	box-shadow: 2px 2px 10px #06C;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#bdbdbd',Direction=135, Strength=5 );
+	border: 1px solid #E7E7E7;
+}
+#tooltip_menu a {
+    z-index: 2;
+    padding: 0 0 7px 2px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    padding-left : 20px;
+    margin-top : 1px;
+    line-height: 22px;
+/*     vertical-align:bottom; */
+}
+#tooltip_menu a img{
+/*     line-height: 22px; */
+/*     vertical-align:top; */
+}
+#tooltip_menu .mouseover {
+    background: #9ec5ec;
+    -webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+/*     color: #5ab5dc; */
+}
+#tooltip_menu a img {
+    position: relative;
+    top: 5px;
+    border: 0;
+}
+.menu_top {
+    -webkit-border-radius: .5em .5em 0 0;
+    -moz-border-radius: .5em .5em 0 0;
+    border-radius: .5em .5em 0 0;
+   	margin-top : 15px;
+}
+.menu_bottom {
+    -webkit-border-radius: 0 0 .5em .5em;
+    -moz-border-radius: 0 0 .5em .5em;
+    border-radius: 0 0 .5em .5em;
+}
+/* end portlet config menu css*/
+/*portlet dialog*/
+.web_dialog {
+	display: none;
+	position: absolute;
+	width: 380px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	background-color: #ffffff;
+	border: 2px solid #336699;
+	padding: 0px;
+	z-index: 102;
+	font-family: Verdana;
+	font-size: 10pt;
+	border-radius: 4px 4px 4px 4px;
+	-moz-box-shadow: 2px 2px 10px #06C;
+	-webkit-box-shadow: 2px 2px 10px #06C;
+	box-shadow: 2px 2px 10px #06C;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#bdbdbd',Direction=135, Strength=5 );
+	border: 1px solid #E7E7E7;
+}
+.web_dialog #cancel{
+	cursor: pointer;
+}
+.web_dialog #save{
+	background-color: #336699;
+    background-image: -moz-linear-gradient(center top , #6c8aa8, #0e81f3);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #113860;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 30px;
+    margin-right: 3px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    width:80px;
+}
+.web_dialog #cancel{
+	background-color: #336699;
+    background-image: -moz-linear-gradient(center top , #0e81f3, #6c8aa8);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #113860;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 30px;
+    margin-right: 2px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    width:80px;
+}
+.web_dialog_title {
+	border-bottom: solid 1px #336699;
+	padding: 4px;
+	font-weight:bold;
+	cursor: move;
+}
+.web_dialog_title a {
+	color: #336699;
+	padding-right:4px;
+	text-decoration: none;
+}
+.web_dialog_title a:hover {
+	color: #336699;
+	padding-right:4px;
+	text-decoration: none;
+}
+.align_right {
+	text-align: right;
+}
+.window-mask{
+	background:#FFFFFF;
+	position:absolute;
+	width:100%;
+	top:0px;
+	left:0px;
+	opacity:0.6; 
+	filter:alpha(opacity=60);
+	z-index:2;
+}
+/* end portlet dialog*/

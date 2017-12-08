@@ -1,0 +1,11 @@
+.x_report_table { border:#f4f8fc solid 1px; font-size:12px;}
+.x_report_table td { border:#f4f8fc solid 1px; font-size:12px; background-color:#f4f8fc;text-align:left;}
+.x_report_table .head {
+	background-color:#E8F0F9;
+	font-size:12px;
+	height:22px;
+	font-weight:bold;
+	line-height:normal;
+	border:none;
+	text-align:center;
+}

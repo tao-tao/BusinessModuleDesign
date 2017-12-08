@@ -1,0 +1,291 @@
+.MegaMenuTable td.LastCell {
+  border: block;
+}
+
+.fnb {
+	font-weight: 200;
+	margin-left: -1px;
+}
+.fchot {
+	color: #ff0700
+}
+.f11 {
+	font-size: 12px;
+	font-family: tahoma;
+}
+a {
+	color: #00007F;
+	text-decoration: none;
+}
+a:hover {
+	color: #bd0a01;
+	text-decoration: underline;
+}
+h3 {
+	font-size: 14px;
+}
+h4 {
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+}
+h4 a {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+a.lcblue {
+	color: #0F479C;
+}
+.lchot, a.lchot {
+	color: #bd0a01;
+}
+.black, a.black {
+	color: #000;
+}
+.hr_6, .hr_10 {
+	font-size: 1px;
+	line-height: 1px;
+	clear: both;
+}
+.hr_6 {
+	height: 6px;
+}
+.hr_10 {
+	height: 10px;
+}
+.hr_25 {
+	height: 25px;
+}
+.w800 {
+	width: 800px;
+}
+.w600 {
+	width: 630px;
+}
+.w600 span {
+	margin-left: 20px;
+	line-height: 26px;
+}
+.w900 {
+	width: 900px;
+}
+.mt30 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.mt18 {
+	margin-top: 8px;
+}
+.ml18 {
+	margin-left: 18px;
+}
+.mt20 {
+	margin-top: 10px;
+}
+.mr20 {
+	margin-right: 20px;
+}
+.ml20 {
+	margin-left: 30px;
+}
+.header {
+	width: 1004px;
+	height: 77px;
+	background: url(img/banner.png) no-repeat;
+	margin: 0 auto;
+}
+.navPopInfo {
+	width: 120px;
+	height: 30px;
+	background: #697a96;
+	border-top-left-radius: 10px;
+	margin-top:10px;
+	margin-right:10px;
+}
+
+.navPopInfo .navPersonConfigOp {
+	background: url(images/downarr.gif) 0px 12px no-repeat;
+	cursor:pointer;
+	margin-bottom:8px;
+}
+#navPopInfo .bdBox {
+	width: 120px;
+	height:120px;
+	background: #f3f3f4;
+	-moz-box-shadow: 2px 2px 20px #909090;
+	-webkit-box-shadow: 2px 2px 15px #909090;
+	box-shadow: 2px 2px 15px #909090;
+	position: absolute;
+	top: 28px;
+	margin-right: -20px;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+	z-index:2100;
+}
+.navPopMenu {
+	height: 39px;
+	margin-top: 38px;
+	background: url(images/bannerPopMenuBg2.png) no-repeat;
+}
+.navPopMenuT {
+	font-size: 16px;
+	color: #fff;
+}
+#navPopMenu ul {
+	margin: 12px auto;
+	margin-left: 13px;
+	padding-left: 20px;
+	padding-right: 10px;
+	float: left;
+	list-style: none;
+}
+#navPopMenu li {
+	float: left;
+	margin-left: 15px;
+	list-style: none;
+	/*	display:block;
+	
+	
+
+*/
+	text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+#navPopMenu li a {
+	color: #696e74;
+}
+#navPopMenu li a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.footer {
+	width: 1004px;
+	height: 70px;
+	background: url(img/footer.gif) repeat-x;
+	margin: 0 auto;
+}
+.container {
+	width: 1004px;
+	margin: 0 auto;
+}
+#footer p {
+	text-align: center;
+	margin-top: 10px;
+	color: #004b91;
+}
+#learn-more-tab-content {
+	padding-top: 0;
+}
+.tab-controls {
+	padding-right: 35px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 0;
+	float: right;
+	margin-top: 10px;
+	_margin-top: 9px;
+	overflow: visible;
+}
+.tab-controls ul, li {
+	list-style-type: none;
+	float: left;
+}
+.tab-controls li {
+	position: relative;
+	text-align: center;
+	height: 40px;
+}
+.tab-controls li a {
+	width: 174px;
+	float: left;
+	margin-top: 0px;
+	margin-right: -49px;
+	padding: 0;
+	font-size: 14px;
+	line-height: 40px;
+	color: #666;/*	border:1px solid red;
+*/
+}
+.tab-controls li a strong {
+	font-weight: normal;
+}
+.tab-controls li a.active {
+	color: #999;
+	cursor: default;
+}
+.tab-controls li a.active:hover {
+	text-decoration: none;
+}
+.tab-controls li.left a {
+	position: relative;
+	background: url(img/tabbg-left.png) 0 0 no-repeat;
+	z-index: 3;
+	_background: url(img/tabbg-left.gif) 0 0 no-repeat;
+	_margin-right: -60px;
+	text-indent: 1em;
+}
+.tab-controls li.mid a {
+	position: relative;
+	background: url(img/tabbg-center.png) 0 0 no-repeat;
+	z-index: 2;
+	_background: url(img/tabbg-center.gif) 0 0 no-repeat;
+	margin-left: -10px;
+	_margin-left: -10px;
+	;
+}
+.tab-controls li.mid a span {
+	font-size: 12px;
+}
+.tab-controls li.right a {
+	position: relative;
+	background: url(img/tabbg-right.png) 0 0 no-repeat;
+	z-index: 1;
+	_background: url(img/tabbg-right.gif) 0 0 no-repeat;
+	margin-left: -11px;
+	_margin-left: -10px;
+}
+.tab-controls li a.active {
+	background-position: 0 -52px;
+	z-index: 4;
+}
+.tab-controls li .portrait {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	visibility: visible;
+	top: 38px;
+	left: 20px;
+	width: 400px;
+}
+.tab-controls li .portrait div {
+	margin: 0;
+	padding: 0;
+	width: 130px;
+	height: 30px;
+	line-height: 30px;
+	background: #f2f2f2;
+	margin-right: 1px;
+	/*display: inline*/
+	
+
+	margin-top: 1px;
+}
+.tab-controls li .portrait .left {
+	float: left;
+}
+.tab-controls li .portrait div a {
+	text-decoration: none;
+	color: #24313C;
+	margin: 0;
+	background: #f2f2f2;
+	background-image: none;
+	text-indent: 0em;
+	line-height: 30px;
+	width: 130px;
+}
+.tab-controls li .portrait div a:hover {
+	background: #024ab3;
+	color: #fff;
+}

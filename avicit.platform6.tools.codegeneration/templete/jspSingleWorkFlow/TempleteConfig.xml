@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : TempleteConfig.xml
+    Created on : 2012年8月6日, 上午10:35
+    Author     : Administrator
+    Description:
+        Purpose of the document follows.
+-->
+
+<root>
+    <!--基础包名称，比如"com.navinfo."-->
+    
+    <company>AVICIT Co., Ltd</company>
+    <author>AVICIT DEV</author>
+    <copyright>Copyright (c) 2012</copyright>
+    <description>针对金航数码V6平台的代码模板</description>
+    <dynafilename>true</dynafilename>
+    
+    <base_package></base_package>
+    <base_src>src</base_src>
+    <base_page>WebRoot</base_page>
+    
+    
+    <templetes>
+        <templete>
+            <file_name>controller.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.controller</pack_name>
+            <file_postfix>［实体名］Controller.java</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>code</dir_type>
+        </templete>        
+        <templete>
+            <file_name>domain.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.dto</pack_name>
+            <file_postfix>［实体名］DTO.java</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>code</dir_type>
+        </templete>
+        <templete>
+            <file_name>dao.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.dao</pack_name>
+            <file_postfix>［实体名］Dao.java</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>code</dir_type>
+        </templete>
+       <templete>
+            <file_name>service.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.service</pack_name>
+            <file_postfix>［实体名］Service.java</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>code</dir_type>
+        </templete>
+
+        <templete>
+            <file_name>rest.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.rest</pack_name>
+            <file_postfix>［实体名］Rest.java</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>code</dir_type>
+        </templete>
+        
+        <templete>
+            <file_name>manage.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.view</pack_name>
+            <file_postfix>［实体名］Manage.jsp</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>jsp</dir_type>
+        </templete>
+        <templete>
+            <file_name>add.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.view</pack_name>
+            <file_postfix>［实体名］Add.jsp</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>jsp</dir_type>
+        </templete> 
+        <templete>
+            <file_name>edit.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.view</pack_name>
+            <file_postfix>［实体名］Edit.jsp</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>jsp</dir_type>
+        </templete> 
+        <templete>
+            <file_name>detail.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.view</pack_name>
+            <file_postfix>［实体名］Detail.jsp</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>jsp</dir_type>
+        </templete>
+        <templete>
+            <file_name>js.vm</file_name>
+            <pack_name>［基础包名］［模块名］.［小写实体名］.js</pack_name>
+            <file_postfix>［实体名］.js</file_postfix>
+            <file_prefix></file_prefix>
+            <encoding>UTF-8</encoding>
+            <dir_type>jsp</dir_type>
+        </templete>                     
+    </templetes>
+    
+</root>

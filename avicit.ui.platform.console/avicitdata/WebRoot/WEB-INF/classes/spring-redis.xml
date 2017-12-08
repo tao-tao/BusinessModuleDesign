@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!-- 使用服务器缓存配置 -->
+	<bean id="jedisSentinelPool" class="avicit.platform6.core.redis.JedisSentinelPool">
+		<constructor-arg index="0" ref="jedisPoolConfig" />
+		<constructor-arg index="1">
+			<list>
+			</list>
+		</constructor-arg>
+		<constructor-arg index="2">
+			<set>
+				<value>127.0.0.1:6379</value>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxTotal" value="2000" />
+		<property name="maxIdle" value="200" />
+		<property name="maxWaitMillis" value="2000" />
+		<property name="testOnBorrow" value="true" />
+	</bean>
+	<bean id="baseCacheManager" class="avicit.platform6.core.redisCacheManager.BaseCacheManager">
+		<property name="jedisSentinelPool" ref="jedisSentinelPool"/>
+		<property name="commonHibernateDao" ref="commonHibernateDao2"/>
+	</bean>
+	
+</beans>

@@ -1,0 +1,72 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	font-family: Microsoft Yahei;
+	background: #6c6c6c;
+}
+.container {
+	width: 940px;
+	height: 468px;
+	background: url(../img/background.png) no-repeat;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	margin: -234px -470px;/*	border:1px solid #c8c8c8;
+*//*	border-radius:8px;
+*/
+border-top-right-radius:20px;
+border-bottom-left-radius:20px;
+
+}
+.loginForm {
+	width: 470px;
+	height: 256px;
+	background: url(../img/login-Frame.png) no-repeat;
+	float: right;
+	margin-top: 87px;
+}
+.clear {
+	clear: both;
+}
+.btn {
+	width: 72px;
+	height: 28px;
+	background: url(../img/login.png) no-repeat;
+	float: left;
+	margin-left: 270px;
+	margin-top: 24px;
+}
+.btn:hover {
+	background-position: 0 -30px;
+	cursor: pointer;
+}
+input {
+	margin-top: 120px;
+	float: left;
+	border: 0;
+	width: 141px;
+	height: 23px;
+	line-height: 23px;
+	text-indent: 3px;
+}
+.ml-70 {
+	margin-left: 40px;
+	background: url(../img/input_bg.png) no-repeat;
+}
+.ml-30 {
+	margin-left: 18px;
+	background: url(../img/input_bg.png) no-repeat;
+	background-position: 0 -25px;
+
+	}
+	
+.forgetPwdLine {
+/* 	height: 18px; */
+	line-height: 18px;
+	margin-left: 42px;
+	clear: both;
+/* 	width: 253px; */
+	text-align: left;
+/* 	margin-top: 8px; */
+}	

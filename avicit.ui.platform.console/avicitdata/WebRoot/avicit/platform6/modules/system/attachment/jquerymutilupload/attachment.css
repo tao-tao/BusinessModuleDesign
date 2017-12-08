@@ -1,0 +1,11 @@
+.addAttache {
+	display: block;
+	CURSOR: pointer;
+	height:50px;
+	width:270px;
+	background:  url(images/attachFlag.png) no-repeat;
+}
+
+.MultiFile-list{
+	display:block;	
+}

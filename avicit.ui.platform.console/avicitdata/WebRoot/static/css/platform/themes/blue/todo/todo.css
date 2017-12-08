@@ -1,0 +1,85 @@
+.pt-pt-cont{
+	border-top:0px;
+	padding:0px 0px 0px 0px;
+	padding-bottom:0px;
+	background:#e0ecff;
+	
+}
+table{
+	border-collapse:collapse;
+}
+.p-table4 thead td{
+	height:22px;
+	color:#313131;
+	padding-left:12px;
+	background:#C5DFFB;
+	border-bottom:1px solid #BBCFF3;
+}
+.p-table4{
+	width:100%;
+	margin:0px;
+	border-bottom:1px solid #BBCFF3;
+}
+.p-table4 td{
+	border-right:1px solid #BBCFF3;
+}
+.p-table4 tbody td{
+	line-height:28px;
+	padding-left:12px;
+}
+.p-table4{
+	border-top:1px solid #BBCFF3;
+}
+.p-table4 tbody tr.odd td{
+	background:#f3f3f3;
+}
+.p-table4 tbody tr.even td{
+	background:white;
+}
+.list-pageNav{
+	width:98%;
+	margin:6px auto;
+	font-size:12px;
+	color:#5b5b5b;
+}
+.list-pageNav .pageNav-info{
+	float:left;
+	margin-top:4px;
+}
+.list-pageNav .pageNav-page{
+	float:right;
+}
+.list-pageNav .pageNav-page a{
+	color:#5b5b5b;
+	margin:0px 5px 0px 3px;
+}
+.list-pageNav .pageNav-page a:hover{
+	color:#ff0000;
+}
+.list-pageNav .pageNav-page .jumpPage{
+	margin-left:3px;
+}
+
+.list-pageNav .pageNav-page .jumpPage input{
+	width:26px;
+	height:16px;
+	vertical-align:middle;
+	border:1px solid #7ba8db;
+}
+.list-pageNav .pageNav-page .jumpPage .jump_btn{
+	width:38px;
+	height:20px;
+	border:0px;
+	margin-left:6px;
+	cursor:pointer;
+	vertical-align:middle;
+	background:url(static/images/platform/bpm/client/images/jump_btn.png) no-repeat left top;
+}
+a,a:link,a:active,a:visited{
+	color:#497ea6;
+	cursor:pointer;
+	text-decoration:none;
+}
+a:hover{
+	color:#ff0000;
+}

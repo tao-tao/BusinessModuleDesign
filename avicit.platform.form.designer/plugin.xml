@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Ec Form Editor"
+            extensions="jsp"
+            icon="icons/form.gif"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="com.tansun.form.designer.editors.FormEditor"
+            id="com.tansun.form.designer.editors.FormEditor">
+      </editor>
+   </extension>
+
+</plugin>

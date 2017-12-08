@@ -1,0 +1,71 @@
+package ${packageName};
+import java.util.List;
+#foreach( $sub_Table in ${tableInfo.ChildTables})
+#set($subTable=$sub_Table)    
+#end
+import avicit.platform6.core.mybatis.MyBatisRepository;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dto.${subTable.childTable.entityBean.standName}DTO;
+/**
+ * @classname: ${subTable.childTable.entityBean.standName}Dao
+ * @description: 定义 ${subTable.childTable.tableComment} 持久层 接口
+ * 通过@MapperScannerConfigurer扫描目录中的所有接口, 动态在Spring Context中生成实现.
+ * 方法名称必须与Mapper.xml中保持一致.
+ * @author:  ${author}
+ */
+@MyBatisRepository
+public interface ${subTable.childTable.entityBean.standName}Dao {
+    
+
+    /**
+     * @author ${author}
+     * @description:查询 ${subTable.childTable.tableComment} 
+     * @date 2014-12-26 11:13:20
+     * @param id
+     * @return
+     */
+    public ${subTable.childTable.entityBean.standName}DTO find${subTable.childTable.entityBean.standName}ById(String id);
+    
+    /**
+     * @author ${author}
+     * @description:按照父id查询对象
+     * @date 2014-12-26 11:13:20
+     * @param id
+     * @return
+     */
+    public List<${subTable.childTable.entityBean.standName}DTO> find${subTable.childTable.entityBean.standName}ByPid(String pid);
+    
+    /**
+     * @author ${author}
+     * @description: 新增${subTable.childTable.tableComment} 
+     * @date 2014-12-26 11:13:20
+     * @param paramMap
+     * @return
+     */
+    public int insert${subTable.childTable.entityBean.standName}(${subTable.childTable.entityBean.standName}DTO ${subTable.childTable.entityBean.lowerFirstCharName}DTO);
+    
+    /**
+     * @author ${author}
+     * @description: 更新${subTable.childTable.tableComment} 
+     * @date 2014-12-26 11:13:20
+     * @param paramMap
+     */
+    public int update${subTable.childTable.entityBean.standName}Sensitive(${subTable.childTable.entityBean.standName}DTO ${subTable.childTable.entityBean.lowerFirstCharName}DTO);
+    
+    /**
+     * @author ${author}
+     * @description: 更新${subTable.childTable.tableComment} 
+     * @date 2014-12-26 11:13:20
+     * @param paramMap
+     */
+    public int update${subTable.childTable.entityBean.standName}All(${subTable.childTable.entityBean.standName}DTO ${subTable.childTable.entityBean.lowerFirstCharName}DTO);
+    
+    
+    /**
+     * @author ${author}
+     * @description: 按主键删除${subTable.childTable.tableComment}
+     * @date 2014-12-26 11:13:20
+     * @param ids
+     * @return
+     */ 
+    public int delete${subTable.childTable.entityBean.standName}ById(String id);
+}

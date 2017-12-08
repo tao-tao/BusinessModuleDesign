@@ -1,0 +1,256 @@
+package ${packageName};
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Iterator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
+import avicit.platform6.core.domain.BeanBase;
+import avicit.platform6.commons.utils.ComUtil;
+import avicit.platform6.commons.utils.PojoUtil;
+import avicit.platform6.core.dao.Paging;
+import avicit.platform6.core.dao.PropertyFilter;
+import avicit.platform6.core.exception.DaoException;
+import avicit.platform6.core.api.system.syslog.service.SysLogUtil;
+import avicit.platform6.core.properties.PlatformConstant.OpResult;
+import avicit.platform6.core.properties.PlatformConstant.OpType;
+import avicit.platform6.core.service.ServiceBase;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dao.${tableInfo.entityBean.standName}Dao;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.domain.${tableInfo.entityBean.standName};
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.service.${tableInfo.entityBean.standName}Service;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.service.${tableInfo.entityBean.standName}Event;
+
+import com.bstek.dorado.data.entity.EntityState;
+import com.bstek.dorado.data.entity.EntityUtils;
+import com.bstek.dorado.data.entity.FilterType;
+
+
+
+/**
+ * Title: ${tableInfo.entityBean.standName}服务实现类
+ * Description: ${tableInfo.entityBean.standName}服务实现类，实现了接口${tableInfo.entityBean.standName}Service所定义的针对对象的各种操作
+ * Copyriht: ${copyright}
+ * Company: ${company}
+ * @author ${author}
+ * @version 1.0 Date: ${date}
+ */
+@Component
+public class ${tableInfo.entityBean.standName}ServiceImpl extends ServiceBase implements ${tableInfo.entityBean.standName}Service {
+
+    Logger log = LoggerFactory.getLogger(${tableInfo.entityBean.standName}ServiceImpl.class);   
+
+    @Autowired(required=true)
+    private ${tableInfo.entityBean.standName}Dao ${tableInfo.entityBean.lowerFirstCharName}Dao;
+    
+    @Autowired(required=false)
+    private List<${tableInfo.entityBean.standName}Event> eventBaseList;
+    
+    /**
+    *  根据主键加载${tableInfo.entityBean.standName}对象(${tableInfo.tableComment})
+    * @param ${tableInfo.primaryField.paramInfo.standName} 主键
+    * @return ${tableInfo.entityBean.standName}对象(${tableInfo.tableComment})
+    */
+    public ${tableInfo.entityBean.standName} get${tableInfo.entityBean.standName}By${tableInfo.primaryField.paramInfo.upperFirstCharName}(${tableInfo.primaryField.paramInfo.paramType} ${tableInfo.primaryField.paramInfo.standName}){
+       ${tableInfo.entityBean.standName} h = (${tableInfo.entityBean.standName}) hibernateDao.getSession().get(
+				${tableInfo.entityBean.standName}.class, ${tableInfo.primaryField.paramInfo.standName});
+		return h;
+    }
+
+    /**
+    *  将一个新的${tableInfo.entityBean.standName}对象存入数据库表${tableInfo.tableName}(${tableInfo.tableComment})中
+    * @param ${tableInfo.entityBean.lowerFirstCharName} 新创建的实体对象
+    * @return 无
+    */
+    public void insert${tableInfo.entityBean.standName}(BeanBase bean){
+       
+		  this.insert(bean);
+    }
+    
+    /**
+     *  新增或修改${tableInfo.entityBean.standName} 操作成功数据将存入数据库表${tableInfo.tableName}(${tableInfo.tableComment})中
+     * @param ${tableInfo.entityBean.lowerFirstCharName}s 待新增或修改${tableInfo.entityBean.standName}集合
+     * @return 无
+     * @throws Exception 
+     */
+   	public void insertOrUpdate${tableInfo.entityBean.standName}s(Collection<${tableInfo.entityBean.standName}> ${tableInfo.entityBean.lowerFirstCharName}s) throws Exception{
+   	   Assert.notNull(${tableInfo.entityBean.lowerFirstCharName}s,"没有可供新增或修改的对象！");
+    	 for (Iterator iter = EntityUtils.getIterator(${tableInfo.entityBean.lowerFirstCharName}s, FilterType.DIRTY); iter.hasNext(); ) {
+    		 ${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName}=(${tableInfo.entityBean.standName})iter.next();
+		      EntityState state = EntityUtils.getState(${tableInfo.entityBean.lowerFirstCharName});
+          if (state.equals(EntityState.NEW)) {
+		    	  insert${tableInfo.entityBean.standName}(${tableInfo.entityBean.lowerFirstCharName});
+		      }else if (state.equals(EntityState.MODIFIED)) {
+		    	  update${tableInfo.entityBean.standName}(${tableInfo.entityBean.lowerFirstCharName});
+		      }
+		   }
+   	}
+   	
+    /**
+    *  更新${tableInfo.entityBean.standName}对象入数据库表${tableInfo.tableName}(${tableInfo.tableComment})中
+    * @param ${tableInfo.entityBean.lowerFirstCharName} 已存实体对象
+    * @return 无
+    */
+    public void update${tableInfo.entityBean.standName}(BeanBase bean) throws Exception{
+       
+		  this.update(bean);
+    }
+
+    /**
+    *  删除${tableInfo.entityBean.standName}对象
+    * @param ${tableInfo.entityBean.lowerFirstCharName} 已存实体对象
+    * @return 无
+    */
+    public void delete${tableInfo.entityBean.standName}(BeanBase bean){
+         
+        this.delete(bean);
+         
+    }
+
+   /**
+    *  根据主键删除${tableInfo.entityBean.standName}对象
+    * @param ${tableInfo.entityBean.lowerFirstCharName} 已存实体对象
+    * @return 无
+    */
+    public void delete${tableInfo.entityBean.standName}By${tableInfo.primaryField.paramInfo.upperFirstCharName}(${tableInfo.primaryField.paramInfo.paramType} ${tableInfo.primaryField.paramInfo.standName}) throws Exception{
+        ${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName}=${tableInfo.entityBean.lowerFirstCharName}Dao.findUniqueBy("id",${tableInfo.primaryField.paramInfo.standName});
+        
+        //事件前处理
+        super.BeforeUpdateEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+        
+        ${tableInfo.entityBean.lowerFirstCharName}Dao.delete(${tableInfo.entityBean.lowerFirstCharName});
+        SysLogUtil.log(${tableInfo.entityBean.lowerFirstCharName},null,OpType.delete,OpResult.success);
+       	
+       	//事件后处理
+        super.AfterInsertEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+       	
+    }
+
+    /**
+	   * 同时删除一或多个${tableInfo.entityBean.standName}对象  
+	   * @param ${tableInfo.entityBean.lowerFirstCharName}s 待删除对象集合
+	   * @return 无
+	   */
+  	public void delete${tableInfo.entityBean.standName}s(Collection<${tableInfo.entityBean.standName}> ${tableInfo.entityBean.lowerFirstCharName}s){
+  	     Assert.notNull(${tableInfo.entityBean.lowerFirstCharName}s, "没有可删除对象");
+		     for (Iterator iter = EntityUtils.getIterator(${tableInfo.entityBean.lowerFirstCharName}s,FilterType.DIRTY); iter.hasNext();) {
+				    ${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName}= (${tableInfo.entityBean.standName}) iter.next();
+			      EntityState state = EntityUtils.getState(${tableInfo.entityBean.lowerFirstCharName});
+		      	if (state.equals(EntityState.DELETED)) {
+			     	   if (null != ${tableInfo.entityBean.lowerFirstCharName}.get${tableInfo.primaryField.paramInfo.upperFirstCharName}()) {
+				          	delete${tableInfo.entityBean.standName}(${tableInfo.entityBean.lowerFirstCharName});
+				       }
+		  	   }
+		    }
+    }
+  	
+   /**
+    *  获取数据库表${tableInfo.tableName}中所有的记录,并封装为${tableInfo.entityBean.standName}对象
+    * @return POJO对象列表
+    */
+    public List<${tableInfo.entityBean.standName}> getAllList(){
+         	return ${tableInfo.entityBean.lowerFirstCharName}Dao.getAll();
+    }
+    
+    /**
+     * 按查询条件分页查询${tableInfo.entityBean.standName}对象
+     * @param page      分页信息对象
+     * @param parameter 查询条件 map中key的格式filter_比较字符_属性名称   比较字符：EQ, LIKE, LT, GT, LE, GE
+     * @return  Paging
+	   * @throws Exception 
+     */
+	 public Paging<${tableInfo.entityBean.standName}> get${tableInfo.entityBean.standName}ListByPage(Paging<${tableInfo.entityBean.standName}> page,Map<String, Object> parameter) throws Exception{
+	  	List<PropertyFilter> filters = PropertyFilter.buildFromParameterMap(parameter);
+	  	return ${tableInfo.entityBean.lowerFirstCharName}Dao.findPage(page,filters);
+	 }
+	 
+  @Override
+	public void insert(BeanBase bean) throws DaoException {
+		${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName} = null;
+		if (bean instanceof ${tableInfo.entityBean.standName}) {
+			${tableInfo.entityBean.lowerFirstCharName} = (${tableInfo.entityBean.standName}) bean;
+		}
+
+		Assert.notNull(${tableInfo.entityBean.lowerFirstCharName}, "没有可插入的对象！");
+
+		// 事件前处理
+		try {
+		super.BeforeInsertEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new DaoException("插入"+${tableInfo.entityBean.lowerFirstCharName}+"前处理出错");
+		}
+		// 增加默认字段
+		PojoUtil.setSysProperties(${tableInfo.entityBean.lowerFirstCharName}, OpType.insert);
+
+		${tableInfo.entityBean.lowerFirstCharName}.set${tableInfo.primaryField.paramInfo.upperFirstCharName}(ComUtil.getId());
+		hibernateDao.save(${tableInfo.entityBean.lowerFirstCharName});
+		// 记日志
+		SysLogUtil.log(${tableInfo.entityBean.lowerFirstCharName}, null, OpType.insert, OpResult.success);
+
+		// 事件后处理
+		super.AfterInsertEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+	}
+
+	@Override
+	public void delete(BeanBase bean) throws DaoException {
+		${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName} = null;
+		if (bean instanceof ${tableInfo.entityBean.standName}) {
+			${tableInfo.entityBean.lowerFirstCharName} = (${tableInfo.entityBean.standName}) bean;
+		}
+
+		Assert.notNull(${tableInfo.entityBean.lowerFirstCharName}, "没有可删除的对象！");
+
+		// 事件前处理
+		try {
+		super.BeforeDeleteEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new DaoException("插入"+${tableInfo.entityBean.lowerFirstCharName}+"前处理出错");
+		}
+		${tableInfo.entityBean.lowerFirstCharName} = get${tableInfo.entityBean.standName}By${tableInfo.primaryField.paramInfo.upperFirstCharName}(${tableInfo.entityBean.lowerFirstCharName}.get${tableInfo.primaryField.paramInfo.upperFirstCharName}());
+		hibernateDao.delete(${tableInfo.entityBean.lowerFirstCharName});
+		// 记日志
+		SysLogUtil.log(${tableInfo.entityBean.lowerFirstCharName}, null, OpType.delete, OpResult.success);
+
+		// 事件后处理
+		super.AfterDeleteEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+	}
+
+	@Override
+	public void update(BeanBase bean) throws DaoException {
+		${tableInfo.entityBean.standName} ${tableInfo.entityBean.lowerFirstCharName} = null;
+		if (bean instanceof ${tableInfo.entityBean.standName}) {
+			${tableInfo.entityBean.lowerFirstCharName} = (${tableInfo.entityBean.standName}) bean;
+		}
+
+		Assert.notNull(${tableInfo.entityBean.lowerFirstCharName}, "没有可更新的对象！");
+		// 事件前处理
+		try {
+		super.BeforeUpdateEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new DaoException("插入"+${tableInfo.entityBean.lowerFirstCharName}+"前处理出错");
+		}
+		${tableInfo.entityBean.standName} old${tableInfo.entityBean.standName} = get${tableInfo.entityBean.standName}By${tableInfo.primaryField.paramInfo.upperFirstCharName}(${tableInfo.entityBean.lowerFirstCharName}.get${tableInfo.primaryField.paramInfo.upperFirstCharName}());
+
+		try {
+			PojoUtil.copyProperties(old${tableInfo.entityBean.standName}, ${tableInfo.entityBean.lowerFirstCharName}, true);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new DaoException("对象拷贝出错！");
+
+		}
+
+		hibernateDao.update(old${tableInfo.entityBean.standName});
+		// 记日志
+		SysLogUtil.log(${tableInfo.entityBean.lowerFirstCharName}, old${tableInfo.entityBean.standName}, OpType.update,
+				OpResult.success);
+		// 事件后处理
+		super.AfterUpdateEvent(eventBaseList, ${tableInfo.entityBean.lowerFirstCharName});
+	}
+}

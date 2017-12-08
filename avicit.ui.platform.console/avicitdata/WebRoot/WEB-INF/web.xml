@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	 <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>avicit_platform.root</param-value>
+    </context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath*:/spring-base.xml
+		</param-value>
+	</context-param>
+	
+	<listener>  
+    	<listener-class>org.springframework.web.util.WebAppRootListener</listener-class>  
+	</listener>  
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	
+	<filter>
+		<filter-name>OpenSessionInViewFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+		<init-param>
+			<param-name>excludeSuffixs</param-name>
+			<param-value>js,css,jpg,gif,png</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>OpenSessionInViewFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<filter>
+		<display-name>RedisSessionFilter</display-name>
+		<filter-name>RedisSessionFilter</filter-name>
+		<filter-class>avicit.platform6.core.filter.session.RedisSessionFilter</filter-class>
+		<init-param>
+			<param-name>sessionId</param-name>
+			<param-value>_platform6sid</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cookieDomain</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>cookiePath</param-name>
+			<param-value>/</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>RedisSessionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 设置session的过滤器 		-->
+	<filter>	
+	    <filter-name>loginFilter</filter-name>	
+	    <filter-class>	
+	        avicit.platform6.api.syssso.filter.LoginFilter	
+	    </filter-class>	
+	     <init-param>	
+	     <!--httpHeader单点开关-->
+	        <param-name>httpheaderlogin</param-name>	
+	        <param-value>false</param-value>	
+	    </init-param>	
+	     <init-param>	
+	     <!--sso单点开关-->
+	        <param-name>ssologin</param-name>	
+	        <param-value>false</param-value>	
+	    </init-param>	
+	     <init-param>	
+	        <param-name>loginPage</param-name>	
+	        <param-value>login_sso_cas.jsp</param-value>	
+	    </init-param>	
+	    <init-param>	
+	        <param-name>authSessionVars</param-name>	
+	        <param-value>CURRENT_LOGINUSER</param-value>	
+	    </init-param>	
+	     <init-param>	
+	        <param-name>redirectURIVarName</param-name>	
+	        <param-value>sourceURI</param-value>	
+	    </init-param>	
+	    <init-param>	
+	        <param-name>redirectQueryStringVarName</param-name>	
+	        <param-value>sourceQueryString</param-value>	
+	    </init-param>	
+	    <init-param>	
+	        <param-name>notFilters</param-name>	
+	        <param-value>login_sso_cas.jsp,login-normal.jsp,logout_forCas.jsp,logout.jsp,login.action,login_sso_err.jsp,login.jsp,login4.jsp,caslogin,login</param-value>	
+	    </init-param>	
+	</filter>	
+	<filter-mapping>	
+	    <filter-name>loginFilter</filter-name>	
+	    <url-pattern>*.jsp</url-pattern>	
+	</filter-mapping>	
+	<filter-mapping>	
+	    <filter-name>loginFilter</filter-name>	
+	    <url-pattern>/platform/*</url-pattern>	
+	</filter-mapping>	
+	
+	<!-- sso avicit cas -->
+	
+	<filter>	
+	    <filter-name>ssoCasFiller</filter-name>	
+	    <filter-class>	
+	       avicit.platform6.api.syssso.filter.CASFilter	
+	    </filter-class>	
+	     
+	</filter>	
+	<filter-mapping>	
+	    <filter-name>ssoCasFiller</filter-name>	
+	    <url-pattern>/login/login_sso_cas.jsp</url-pattern>	
+	</filter-mapping>	
+	
+	<!-- shrio 安全过滤器 start  -->
+	<filter>
+		<filter-name>contextShirocommonFilter</filter-name>
+		<filter-class>avicit.platform6.api.sysshirolog.filter.ShiroContextPersistenceFilter</filter-class>
+		<init-param>
+			<!-- 系统初始化缓存开关-->
+			<param-name>initLoadFlag</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		
+		<init-param>
+			<!-- 线程安全操作类-->
+			<param-name>frameworkContextRepository</param-name>
+			<param-value>avicit.platform6.api.sysshirolog.utils.HttpSessionFrameworkContextRepository</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>contextShirocommonFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- shrio 安全过滤器 end  -->
+	<filter>
+		<filter-name>shiroFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>shiroFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 
+	<filter>
+		<filter-name>RestAuthFilter</filter-name>
+		<filter-class>avicit.platform6.core.rest.auth.RestAuthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>RestAuthFilter</filter-name>
+		<url-pattern>/rest/*</url-pattern>
+	</filter-mapping>
+	 -->
+	<servlet>
+		<servlet-name>springServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath*:/spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springServlet</servlet-name>
+		<url-pattern>/platform/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>springServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet>  
+        <servlet-name>CXFService</servlet-name>  
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>CXFService</servlet-name>  
+        <url-pattern>/ws/*</url-pattern>  
+    </servlet-mapping>  
+	<welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+  <servlet>
+	<servlet-name>swfUpload</servlet-name>
+	<servlet-class>
+	    avicit.platform6.modules.system.sysfileupload.action.SwfUploadServlet
+	</servlet-class>
+	<load-on-startup>3</load-on-startup>
+</servlet>
+<servlet-mapping>
+	<servlet-name>swfUpload</servlet-name>
+	<url-pattern>/swfUpload</url-pattern>
+</servlet-mapping>
+
+</web-app>

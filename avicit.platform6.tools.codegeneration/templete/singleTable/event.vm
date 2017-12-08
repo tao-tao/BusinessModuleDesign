@@ -1,0 +1,16 @@
+package ${packageName};
+
+import avicit.platform6.core.service.EventBase;
+/**
+ * Title: ${tableInfo.entityBean.standName}添加、删除、修改操作前置处理及后置处理接口,继承EventBase类
+ * Description: 提供了对${tableInfo.entityBean.standName}添加、删除、修改操作操作前后做一些相关操作的接口，根据实际情况决定是否实现该接口
+ * Copyriht: ${copyright}
+ * Company: ${company}
+ * @author ${author}
+ * @version 1.0 Date: ${date}
+ */
+public interface ${tableInfo.entityBean.standName}Event extends EventBase{
+   
+
+	
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<layout name="模板1(50/50)" enName="layout1">
+		<layout-columns id="layout_row_1">
+			<layout-column id="column_1" xy="1-1" width="50%"/>
+			<layout-column id="column_2" xy="1-2" width="50%"/>
+		</layout-columns>
+	</layout>

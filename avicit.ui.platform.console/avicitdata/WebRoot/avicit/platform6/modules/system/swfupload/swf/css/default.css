@@ -1,0 +1,190 @@
+.swfupload {
+	vertical-align: top;
+}
+
+.uploadBar {
+	display:block;
+	width: 0px;
+	height: 1px;
+	border: solid 1px green;
+	background-color: green;
+	overflow:hidden;
+}
+
+TR.uploadTR{}
+TD.uploadTD{}
+
+.uploadFileList {
+	width: 100%;
+	height: 5px;
+}
+TR.uploadTitle{vertical-align: middle;font-weight:700;background-color: #B8DBF4;height:22px;color:#000000}
+
+.uploadFileList {
+	width: 100%;
+	height: 5px;
+}
+
+TR.uploadTitle{vertical-align: middle;font-weight:700;background-color: #B8DBF4;height:22px;color:#000000}
+
+#content { width: 100%; margin: 20px;}
+TD.DH1{border: 1px dotted #B0C4DE;}
+TD.DH2{border-bottom: 1px dotted #CCCCCC;}
+
+.btn-upload {
+	background-image:
+		url(../images/button_bg.png);
+	width: 80px;
+	height: 22px;
+	border: none;
+	padding-top: 2px;
+	cursor: pointer;
+}
+
+.datagrid-header {
+	overflow: hidden;
+	background-color: #cccccc;
+	cursor: default;
+	font-size: 12px;
+	font-weight: normal;
+	height: 24px;
+	vertical-align: middle;
+}
+
+.datagrid-cell {
+	white-space: nowrap;
+	word-wrap: normal;
+	overflow: hidden;
+	background-color: white;
+	font-size: 12px;
+	font-weight: normal;
+	height: 24px;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+.datagrid-cello {
+	white-space: nowrap;
+	word-wrap: normal;
+	overflow: hidden;
+	background-color: #dfeaf5;
+	font-size: 12px;
+	font-weight: normal;
+	height: 24px;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+/* file type ico*/
+.nui-ico-file {
+	font-weight: normal;
+	line-height: normal;
+	overflow: hidden;
+	text-align: center;
+	background-image:
+		url("../../../sysfileupload/img/fileico.png");
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 16px;
+	margin: 0 4 0 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.new-ico-file {
+	font-weight: normal;
+	line-height: normal;
+	overflow: hidden;
+	text-align: center;
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 16px;
+	margin: 0 4 0 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.link-black {
+	text-decoration: none;
+	cursor: pointer;
+	color: black;
+}
+
+.link-red {
+	text-decoration: none;
+	cursor: pointer;
+	color: red;
+}
+
+.nui-ico-file-xls,.nui-ico-file-xlsx {
+	background-position: -32px -0px;
+}
+
+.nui-ico-file-doc,.nui-ico-file-docx {
+	background-position: -64px -0px;
+}
+
+.nui-ico-file-ppt,.nui-ico-file-pptx {
+	background-position: -96px -64px;
+}
+
+.nui-ico-file-rar {
+	background-position: -160px -0px;
+}
+
+.nui-ico-file-zip {
+	background-position: -192px -0px;
+}
+
+.nui-ico-file-html {
+	background-position: -288px -0px;
+}
+
+.nui-ico-file-js {
+	background-position: -320px -0px;
+}
+
+.nui-ico-file-xml,.nui-ico-file-css {
+	background-position: -352px -0px;
+}
+
+.nui-ico-file-pdf {
+	background-position: -512px -0px;
+}
+
+.nui-ico-file-txt {
+	background-position: -672px -0px;
+}
+
+.nui-ico-file-jpg {
+	background-position: 0 -32px;
+}
+
+.nui-ico-file-gif {
+	background-position: -32px -32px;
+}
+
+.nui-ico-file-png {
+	background-position: -64px -96px;
+}
+
+.nui-ico-file-bmp {
+	background-position: -96px -32px;
+}
+
+.nui-ico-file-dir {
+	background-position: -896px -32px;
+}
+
+.nui-ico-file-default {
+	background-position: -384px -0px;
+}
+.btn-downloadAll {
+	background-image:
+		url(../images/btn_downall.png);
+	width: 113px;
+	height: 28px;
+	border: none;
+	padding-top: 2px;
+	cursor: pointer;
+}

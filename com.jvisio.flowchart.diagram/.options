@@ -1,0 +1,7 @@
+# Debugging options for the com.jvisio.flowchart.diagram plug-in
+
+# Turn on general debugging for the com.jvisio.flowchart.diagram plug-in
+com.jvisio.flowchart.diagram/debug=false
+
+# Turn on debugging of visualID processing
+com.jvisio.flowchart.diagram/debug/visualID=true

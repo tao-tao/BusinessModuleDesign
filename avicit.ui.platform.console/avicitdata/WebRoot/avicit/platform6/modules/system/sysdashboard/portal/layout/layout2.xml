@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<layout name="模板2(30/70)" enName="layout2">
+		<layout-columns id="layout_row_1">
+			<layout-column id="column_1" xy="1-1" width="30%"/>
+			<layout-column id="column_2" xy="1-2" width="70%"/>
+		</layout-columns>
+	</layout>

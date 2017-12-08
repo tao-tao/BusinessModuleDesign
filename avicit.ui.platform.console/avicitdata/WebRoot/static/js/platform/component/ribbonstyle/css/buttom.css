@@ -1,0 +1,106 @@
+
+.ribbon-buttom
+{
+	text-align: left;
+	height: 46px;
+	overflow: hidden;
+	width: 100%;
+	line-height: 25px;
+	margin: 0;
+	border-bottom: none;
+	z-index: 999;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	_position: absolute;
+	_top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight);
+	background: transparent url(../images/mpm/buttom_background.png) repeat;	
+}
+
+.ribbon-buttom-splitbar
+{
+	height: 6px;
+	text-align: left;
+	line-height: 0px;
+	font-size: 0px;
+	border-top: solid 1px #9cbdff;
+	border-bottom: solid 1px #9cbdff;
+	
+}
+
+.ribbon-buttom-splitbutton{
+	cursor: pointer;
+	height: 68px;
+	overflow: hidden;
+	width: 105px;
+	line-height: 25px;
+	margin: 0;
+	border: 0;
+	border-bottom: none;
+	z-index: 998;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	_position: absolute;
+	_top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight);
+	background: transparent url(../images/mpm/down_personal1.png) no-repeat;	
+}
+
+.ribbon-buttom-splitbutton.invert{
+	background: transparent url(../images/mpm/down_personal1.png) 100% -10px;
+}
+
+.ribbon-buttom .ribbon-buttom-menu{
+	margin-left: 20px;
+	width: 100%;
+}
+
+.ribbon-buttom .ribbon-buttom-menu *{
+	border: 0px;
+	margin: 0px;
+	list-style-type: none;
+	list-style-position: outside;
+	list-style-image: none;
+}
+
+.ribbon-buttom .ribbon-buttom-menu ul li{
+	display: block;
+	width: 120px;
+	height: 40px;
+	float: left; 
+}
+
+.ribbon-buttom .ribbon-buttom-menu ul li:hover{
+	padding:2px;
+	margin:2px;
+	border: 1px dotted white;
+}
+
+.ribbon-buttom .ribbon-buttom-menu ul li img{
+	width: 30px;
+	height: 30px;
+	margin-top: 4px;
+	margin-right: 4px;
+	margin-left: 3px;
+	margin-bottom: 0px;
+	float: left; 
+	display: inline;
+}
+
+.ribbon-buttom .ribbon-buttom-menu ul li span{
+	height: 100%;
+	width: 80px;
+	float: left; 
+	display: inline;
+	color: white;
+	line-height: 40px;
+	cursor: pointer;
+	font-size: 12px;
+	font-variant: normal;
+	font-weight: normal;
+	position: absolute;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+    

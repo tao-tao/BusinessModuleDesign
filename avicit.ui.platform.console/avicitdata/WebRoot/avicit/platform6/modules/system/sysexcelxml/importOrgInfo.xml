@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<avicit_excel_import>
+	<importType  id="importOrgInfo">
+		<tablePorperty name="SYS_ORG" priority="1" >
+			<model class="avicit.platform6.core.api.unituser.sysorg.domain.SysOrg"
+		    updateCurrentRecord="select t.id from sys_org t where t.org_code =?uniqueCheckRecord[]0" 
+			updateCurrentValue="orgCode"
+			uniqueCheck="true">
+				<classPorperty name="orgCode" valueMode="single">
+					<property id="1" ExcelTitleName="组织代码"
+						DataType="String"  isNull="n" />
+				</classPorperty>
+				
+				<classPorperty name="attribute01" valueMode="single">
+					<property id="1" ExcelTitleName="父组织名称"
+						DataType="String" isDump="y" />
+				</classPorperty>
+				
+				<classPorperty name="id" valueMode="single">
+					<property id="1" ExcelTitleName="接口部门名称"
+						DataType="String" isDump="y" />
+				</classPorperty>
+				
+				<classPorperty name="parentOrgId" valueMode="single">
+					<property id="2" ExcelTitleName="父组织代码"
+						DataType="String" fkCheck="select t.id from sys_org t where t.org_code = ?'3'"
+						saveDataFrom="FK" default="-1"/>
+				</classPorperty>
+				
+				<classPorperty name="orderBy" valueMode="single">
+					<property id="3" ExcelTitleName="排序"
+						DataType="Integer" default="0"/>	
+				</classPorperty>	
+				
+				<classPorperty name="post" valueMode="single">
+					<property id="4" ExcelTitleName="邮编"
+						DataType="String"/>
+				</classPorperty>	
+				
+				
+				<classPorperty name="tel" valueMode="single">
+					<property id="5" ExcelTitleName="电话"
+						DataType="String"/>
+				</classPorperty>	
+				
+				<classPorperty name="fax"
+					valueMode="single">
+					<property id="6" ExcelTitleName="传真"
+						DataType="String"/>
+				</classPorperty>	
+				
+				<classPorperty name="email" valueMode="single">
+					<property id="7" ExcelTitleName="邮箱"
+						DataType="String"/>
+				</classPorperty>	
+				
+				<classPorperty name="id"
+					valueMode="single">
+					<property id="8" ExcelTitleName="接口部门名称"
+						DataType="String" isDump="y"/>
+				</classPorperty>
+				
+				<classPorperty name="responsibleDeptId"
+					valueMode="single">
+					<property id="9" ExcelTitleName="接口部门编码"
+						DataType="String" fkCheck="select t.id from sys_dept t where t.dept_code = ?'11'"
+						saveDataFrom="FK" />
+				</classPorperty>
+				
+				
+				<classPorperty name="workCalendarId"
+					valueMode="single">
+					<property id="10" ExcelTitleName="工作日历"
+						DataType="String"/>
+				</classPorperty>
+				
+				<classPorperty name="validFlag"
+					valueMode="single">
+					<property id="11" ExcelTitleName="有效"
+						DataType="String" default="1"/>
+				</classPorperty>
+				
+			</model>
+		</tablePorperty>
+		
+		<tablePorperty name="SYS_ORG_TL" priority="2">
+			<model class="avicit.platform6.core.api.unituser.sysorg.domain.SysOrgTl"
+			 updateCurrentRecord="select t.id from sys_org_tl t where t.sys_org_id =?uniqueCheckRecord[]0 and t.sys_language_code=?uniqueCheckRecord[]1" 
+			 updateCurrentValue="sysOrgId,sysLanguageCode">
+				<classPorperty name="sysOrgId" valueMode="single">
+					<property id="1" ExcelTitleName="组织表ID"
+						DataType="String"  saveDataFrom="mainTable" fkCheck="SYS_ORG"/>
+				</classPorperty>
+				
+				<classPorperty name="orgName" valueMode="single">
+					<property id="2" ExcelTitleName="组织名称"
+						DataType="String" />
+				</classPorperty>
+				
+				<classPorperty name="orgDesc" valueMode="single">
+					<property id="3" ExcelTitleName="描述"
+						DataType="String" />
+				</classPorperty>
+				
+				<classPorperty name="orgPlace" valueMode="single">
+					<property id="4" ExcelTitleName="办公地点"
+						DataType="String" />
+				</classPorperty>
+				
+			<!-- 支持后台的方法 -->
+				<classPorperty name="sysLanguageCode" valueMode="single">
+					<property id="5" ExcelTitleName="语言设置"
+						DataType="String"  saveDataFrom="classMethod" saveDataFromClass="avicit.platform6.core.session.SessionHelper" saveDataFromMethod="getCurrentLanguageCode"/>
+				</classPorperty>
+			</model>
+		</tablePorperty>
+		
+	</importType>
+</avicit_excel_import>
+

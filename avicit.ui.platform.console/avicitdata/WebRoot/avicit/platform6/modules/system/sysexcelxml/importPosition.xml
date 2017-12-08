@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<avicit_excel_import>
+	<importType  id="importPosition">
+		<tablePorperty name="SYS_POSITION" priority="1" >
+			<model class="avicit.platform6.core.api.unituser.sysposition.domain.SysPosition"
+		    updateCurrentRecord="select t.id from SYS_POSITION t where t.org_id =?uniqueCheckRecord[]0 and t.POSITION_CODE =?uniqueCheckRecord[]1" 
+			updateCurrentValue="orgId,positionCode"
+			uniqueCheck="true">
+				<classPorperty name="orgId" valueMode="single">
+					<property id="1" ExcelTitleName="组织代码"
+						DataType="String"  saveDataFrom="classMethod" saveDataFromClass="avicit.platform6.core.session.SessionHelper" saveDataFromMethod="getCurrentOrgId"/>
+				</classPorperty>
+				
+				<classPorperty name="positionCode" valueMode="single">
+					<property id="2" ExcelTitleName="岗位代码"
+						DataType="String" isNull="n" />
+				</classPorperty>
+				
+				<classPorperty name="orderBy" valueMode="single">
+					<property id="3" ExcelTitleName="排序编号"
+						DataType="BigDecimal" default="0" />
+				</classPorperty>
+			</model>
+		</tablePorperty>
+		
+		<tablePorperty name="SYS_POSITION_TL" priority="2">
+			<model class="avicit.platform6.core.api.unituser.sysposition.domain.SysPositionTl"
+			 updateCurrentRecord="select t.id from SYS_POSITION_TL t where sys_position_id =?uniqueCheckRecord[]0 and t.sys_language_code=?uniqueCheckRecord[]1" 
+			 updateCurrentValue="sysPositionId,sysLanguageCode">
+				<classPorperty name="sysPositionId" valueMode="single">
+					<property id="4" ExcelTitleName="岗位表ID"
+						DataType="String"  saveDataFrom="mainTable" fkCheck="SYS_POSITION"/>
+				</classPorperty>
+				
+				<classPorperty name="positionName" valueMode="single">
+					<property id="5" ExcelTitleName="岗位名称"
+						DataType="String" isNull="n"/>
+				</classPorperty>
+				
+				<classPorperty name="positionDesc" valueMode="single">
+					<property id="6" ExcelTitleName="描述"
+						DataType="String" />
+				</classPorperty>
+				
+			<!-- 支持后台的方法 -->
+				<classPorperty name="sysLanguageCode" valueMode="single">
+					<property id="7" ExcelTitleName="语言设置"
+						DataType="String"  saveDataFrom="classMethod" saveDataFromClass="avicit.platform6.core.session.SessionHelper" saveDataFromMethod="getCurrentLanguageCode"/>
+				</classPorperty>
+			</model>
+		</tablePorperty>
+		
+	</importType>
+</avicit_excel_import>
+

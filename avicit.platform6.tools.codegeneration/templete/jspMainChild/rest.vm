@@ -1,0 +1,231 @@
+package ${packageName};
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import avicit.platform6.core.rest.msg.QueryReqBean;
+import avicit.platform6.core.rest.msg.QueryRespBean;
+import avicit.platform6.core.rest.msg.ResponseMsg;
+import avicit.platform6.core.rest.resteasy.RestEasyController;
+
+#foreach( $sub_Table in ${tableInfo.ChildTables})
+#set($subTable=$sub_Table)    
+#end
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dto.${tableInfo.entityBean.standName}DTO;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dto.${subTable.childTable.entityBean.standName}DTO;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.service.${tableInfo.entityBean.standName}Service;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.service.${subTable.childTable.entityBean.standName}Service;
+//import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.service.Service;
+
+
+@RestEasyController
+@Path("/api/${mappingPath}${tableInfo.entityBean.standName}Rest")
+public class ${tableInfo.entityBean.standName}Rest{
+    private static final Logger logger =  LoggerFactory.getLogger(${tableInfo.entityBean.standName}Rest.class);
+    
+	@Autowired
+	private ${tableInfo.entityBean.standName}Service ${tableInfo.entityBean.lowerFirstCharName}Service;
+	
+	@Autowired
+	private ${subTable.childTable.entityBean.standName}Service ${subTable.childTable.entityBean.lowerFirstCharName}Service;
+	
+	/**
+	 * 通过主表id获得主表数据
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	@GET
+	@Path("/getMain/v1/{id}")
+	@Produces("application/json;charset=UTF-8")
+	public ResponseMsg<${tableInfo.entityBean.standName}DTO> getMainById(@PathParam("id") String id) throws Exception {
+		ResponseMsg<${tableInfo.entityBean.standName}DTO> responseMsg = new ResponseMsg<${tableInfo.entityBean.standName}DTO>();
+		${tableInfo.entityBean.standName}DTO dto = ${tableInfo.entityBean.lowerFirstCharName}Service.query${tableInfo.entityBean.standName}ByPrimaryKey(id);
+		responseMsg.setResponseBody(dto);
+		return responseMsg;
+	}
+	/**
+	 * 保存一条主表数据
+	 * @param dto
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/saveMain/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<String> saveMain(${tableInfo.entityBean.standName}DTO dto) throws Exception {
+		ResponseMsg<String> responseMsg = new ResponseMsg<String>();
+		String id =  ${tableInfo.entityBean.lowerFirstCharName}Service.insert${tableInfo.entityBean.standName}(dto);
+		responseMsg.setResponseBody(id);
+		return responseMsg;
+	}
+	/**
+	 * 更新主表数据
+	 * @param dto
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/updateMain/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<Integer> updateMainSensitive(${tableInfo.entityBean.standName}DTO dto) throws Exception {
+		ResponseMsg<Integer> responseMsg = new ResponseMsg<Integer>();
+		int count = ${tableInfo.entityBean.lowerFirstCharName}Service.update${tableInfo.entityBean.standName}Sensitive(dto);
+		responseMsg.setResponseBody(count);
+		return responseMsg;
+	}
+	/**
+	 * 修改主表一条记录的全部字段
+	 * @param dto
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/updateMainAll/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<Integer> updateMainAll(${tableInfo.entityBean.standName}DTO dto) throws Exception {
+		ResponseMsg<Integer> responseMsg = new ResponseMsg<Integer>();
+		int count = ${tableInfo.entityBean.lowerFirstCharName}Service.update${tableInfo.entityBean.standName}(dto);
+		responseMsg.setResponseBody(count);
+		return responseMsg;
+	}
+	/**
+	 * 按条件分页查询主表数据
+	 * @param queryReqBean
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/searchMainByPage/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<QueryRespBean<${tableInfo.entityBean.standName}DTO>> searchMainByPage(QueryReqBean<${tableInfo.entityBean.standName}DTO> queryReqBean) throws Exception {
+		ResponseMsg<QueryRespBean<${tableInfo.entityBean.standName}DTO>> responseMsg = new ResponseMsg<QueryRespBean<${tableInfo.entityBean.standName}DTO>>();
+		QueryRespBean<${tableInfo.entityBean.standName}DTO> queryRespBean = ${tableInfo.entityBean.lowerFirstCharName}Service.search${tableInfo.entityBean.standName}ByPage(queryReqBean);
+		responseMsg.setResponseBody(queryRespBean);
+		return responseMsg;
+	}
+	
+	/**
+	 * 按条件不分页查询主表数据
+	 * @param queryReqBean
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/searchMain/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<List<${tableInfo.entityBean.standName}DTO>> searchMain(QueryReqBean<${tableInfo.entityBean.standName}DTO> queryReqBean) throws Exception {
+		ResponseMsg<List<${tableInfo.entityBean.standName}DTO>> responseMsg = new ResponseMsg<List<${tableInfo.entityBean.standName}DTO>>();
+		List<${tableInfo.entityBean.standName}DTO> queryRespBean = ${tableInfo.entityBean.lowerFirstCharName}Service.search${tableInfo.entityBean.standName}(queryReqBean);
+		responseMsg.setResponseBody(queryRespBean);
+		return responseMsg;
+	}
+	
+	/**
+	 * 按照ID删除一条主表记录
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/deleteMainById/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<Integer> deleteMainById(String id) throws Exception {
+		ResponseMsg<Integer> responseMsg = new ResponseMsg<Integer>();
+		int count = ${tableInfo.entityBean.lowerFirstCharName}Service.delete${tableInfo.entityBean.standName}ById(id);
+		responseMsg.setResponseBody(count);
+		return responseMsg;
+	}
+	
+	//*********************************子表操作*********************************************
+	//按照父id获得子表数据
+	@GET
+	@Path("/getSubByPid/v1/{pid}")
+	@Produces("application/json;charset=UTF-8")
+	public ResponseMsg<List<${subTable.childTable.entityBean.standName}DTO>> getSubByPid(@PathParam("pid") String pid) throws Exception {
+		ResponseMsg<List<${subTable.childTable.entityBean.standName}DTO>> responseMsg = new ResponseMsg<List<${subTable.childTable.entityBean.standName}DTO>>();
+		List<${subTable.childTable.entityBean.standName}DTO> dto = ${subTable.childTable.entityBean.lowerFirstCharName}Service.query${subTable.childTable.entityBean.standName}ByPid(pid);
+		responseMsg.setResponseBody(dto);
+		return responseMsg;
+	}
+	
+	/**
+	 * 通过子表id获得数据
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	@GET
+	@Path("/getSub/v1/{id}")
+	@Produces("application/json;charset=UTF-8")
+	public ResponseMsg<${subTable.childTable.entityBean.standName}DTO> getSubById(@PathParam("id") String id) throws Exception {
+		ResponseMsg<${subTable.childTable.entityBean.standName}DTO> responseMsg = new ResponseMsg<${subTable.childTable.entityBean.standName}DTO>();
+		${subTable.childTable.entityBean.standName}DTO dto = ${subTable.childTable.entityBean.lowerFirstCharName}Service.query${subTable.childTable.entityBean.standName}ByPrimaryKey(id);
+		responseMsg.setResponseBody(dto);
+		return responseMsg;
+	}
+	/**
+	 * 更新子表数据
+	 * @param dto
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/updateSub/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<Integer> updateSubSensitive(${subTable.childTable.entityBean.standName}DTO dto) throws Exception {
+		ResponseMsg<Integer> responseMsg = new ResponseMsg<Integer>();
+		int count = ${subTable.childTable.entityBean.lowerFirstCharName}Service.update${subTable.childTable.entityBean.standName}(dto);
+		responseMsg.setResponseBody(count);
+		return responseMsg;
+	}
+	/**
+	 * 修改子表一条记录的全部字段
+	 * @param dto
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/updateSubAll/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<Integer> updateSubAll(${subTable.childTable.entityBean.standName}DTO dto) throws Exception {
+		ResponseMsg<Integer> responseMsg = new ResponseMsg<Integer>();
+		int count = ${subTable.childTable.entityBean.lowerFirstCharName}Service.update${subTable.childTable.entityBean.standName}Sensitive(dto);
+		responseMsg.setResponseBody(count);
+		return responseMsg;
+	}
+	/**
+	 * 按照ID删除一条子表记录
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/deleteSubById/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<Integer> deleteSubById(String id) throws Exception {
+		ResponseMsg<Integer> responseMsg = new ResponseMsg<Integer>();
+		int count = ${subTable.childTable.entityBean.lowerFirstCharName}Service.delete${subTable.childTable.entityBean.standName}ById(id);
+		responseMsg.setResponseBody(count);
+		return responseMsg;
+	}
+}

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+     <DataType name="dataType${tableInfo.entityBean.standName}">
+      <Property name="creationType">${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.domain.${tableInfo.entityBean.standName}</Property>
+      #foreach ( $param in ${tableInfo.entityBean.params})
+          #set($lastIndex=$param.paramType.lastIndexOf(".")+1)
+          #set($end=$param.paramType.length())
+          
+          #if($end>0)
+       	     #set($dataCategory=$param.paramType.substring($lastIndex,$end)) 
+          #end
+      
+          #set($isPK = false)
+	      
+	      #foreach($primaryKey in ${tableInfo.primaryKeys})
+	      
+	         #if($primaryKey.fieldLabel == $param.field.fieldLabel)
+	   		    #set($isPK = true)
+	         #end
+	      #end
+      
+      <PropertyDef name="${param.standName}">
+      <Property name="dataType">${dataCategory}</Property>
+        <Property name="label">${param.field.comment}</Property>
+        
+          #if($param.field.isNullable == false && $isPK == false)
+             <Property name="required">true</Property>
+             <Validator type="required"/>
+		  #end
+        
+          <Validator type="length">
+            <Property name="minLength">0</Property> 
+            <Property name="maxLength">${param.field.fieldDisplaySize}</Property>
+          </Validator>
+      </PropertyDef>
+    #end
+   </DataType>
+      <DataType name="dataType${tableInfo.entityBean.standName}Query">
+       #foreach ( $param in ${tableInfo.entityBean.params})
+           #set($lastIndex=$param.paramType.lastIndexOf(".")+1)
+           #set($end=$param.paramType.length())
+           #if($end>0)
+             #set($dataCategory=$param.paramType.substring($lastIndex,$end))
+           #end
+           
+           #if($dataCategory.length()>0)
+              #if($dataCategory=="String")
+                 #set($queryProperty="filter_LIKE_${param.standName}")
+              #else
+                 #set($queryProperty="filter_EQ_${param.standName}")
+              #end
+           #end 
+        <PropertyDef name="$queryProperty">
+          <Property name="dataType">${dataCategory}</Property>
+           <Property name="label">${param.field.comment}</Property>
+        </PropertyDef>
+    #end
+   </DataType>
+  </Model>
+  <View>
+     <DataSet id="dataSet${tableInfo.entityBean.standName}">
+      <Property name="dataType">[dataType${tableInfo.entityBean.standName}]</Property>
+      <Property name="dataProvider">${tableInfo.entityBean.lowerFirstCharName}Action#get${tableInfo.entityBean.standName}ListByPage</Property>
+      <Property name="pageSize">10</Property>
+    </DataSet>
+	 <DataSet id="dataSet${tableInfo.entityBean.standName}Query">
+      <ClientEvent name="onCreate">self.insert();&#xD;
+     </ClientEvent>
+      <Property name="dataType">dataType${tableInfo.entityBean.standName}Query</Property>
+    </DataSet>
+   
+   
+   
+    <ToolBar id="toolBar${tableInfo.entityBean.standName}" layoutConstraint="top">
+      <ToolBarButton id="buttonAddRow">
+        <ClientEvent name="onClick">this.get(&quot;#dataSet${tableInfo.entityBean.standName}.data&quot;).insert();</ClientEvent>
+        <Property name="caption">添加行</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -120px -0px</Property>
+      </ToolBarButton>
+     
+     
+      <ToolBarButton id="buttonAdd${tableInfo.entityBean.standName}">
+        <ClientEvent name="onClick">var currEntity=view.get(&quot;#dataSet${tableInfo.entityBean.standName}.data&quot;);&#xD;
+if(currEntity){&#xD;
+	 	var saveAction=this.id(&quot;updateActionSave${tableInfo.entityBean.standName}&quot;);&#xD;
+	 	saveAction.execute(function(result){&#xD;
+	 	});&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;没有可提交的数据！&quot;);	 &#xD;
+}&#xD;
+&#xD;
+     &#xD;
+</ClientEvent>
+        <Property name="caption">保存</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+      </ToolBarButton>
+     
+     
+     
+      <ToolBarButton id="buttonDelete${tableInfo.entityBean.standName}">
+        <ClientEvent name="onClick">var dataSetTestBusiness= this.id(&quot;dataSet${tableInfo.entityBean.standName}&quot;).getData(); //获得${tableInfo.entityBean.standName}的数据集&#xD;
+	var dataGrid${tableInfo.entityBean.standName}= this.id(&quot;dataGrid${tableInfo.entityBean.standName}&quot;);&#xD;
+	var selection = dataGrid${tableInfo.entityBean.standName}.get(&quot;selection&quot;); //获得数据集中选中的数据项&#xD;
+	if(typeof(selection)=='undefined' || selection.length==0){   //未勾选数据情况 给出提示&#xD;
+		dorado.MessageBox.alert(&quot;请选择要删除的数据！&quot;);&#xD;
+	}else{&#xD;
+		 var special=&quot;&quot;;&#xD;
+		 var deleteCount=0; //记录待删除已存在数据的总数&#xD;
+		 var blankCount=0;  //记录待删除未保存数据的总数&#xD;
+		 selection.each(function(item){ //循环遍历已选择的数据&#xD;
+		 	  if(typeof(item.get(&quot;id&quot;))!='undefined'){&#xD;
+			   	   item.state=dorado.Entity.STATE_DELETED;&#xD;
+				   deleteCount=deleteCount+1;&#xD;
+			  }else{&#xD;
+			  	 blankCount=blankCount+1;&#xD;
+			  }&#xD;
+		 });&#xD;
+		 if(special.length>0){  //由于业务需要不能删除的情况在此进行处理&#xD;
+		 &#xD;
+		 }else{&#xD;
+		 	if(deleteCount>0){   &#xD;
+			  var action=this.id(&quot;updateActionDelete${tableInfo.entityBean.standName}&quot;);&#xD;
+		        dorado.MessageBox.confirm(&quot;确认要删除选定的数据吗？&quot;,function(){&#xD;
+				  if(blankCount>0){ //待删除数据含有未保存的数据&#xD;
+				     selection.each(function(item){&#xD;
+				         dataSet${tableInfo.entityBean.standName}.remove(item);&#xD;
+			          });&#xD;
+			      } &#xD;
+			      action.execute(function(){      //删除选中的数据&#xD;
+				      dataGrid${tableInfo.entityBean.standName}.set(&quot;selection&quot;,new Array());&#xD;
+					   this.id(&quot;dataSet${tableInfo.entityBean.standName}&quot;).flushAsync();&#xD;
+			      });&#xD;
+		      });&#xD;
+			}else{&#xD;
+				if(blankCount>0){ //待删除数据仅有未保存的数据&#xD;
+			     dorado.MessageBox.confirm(&quot;确认要删除未保存的数据吗？&quot;,function(){&#xD;
+					     selection.each(function(item){&#xD;
+					         dataSet${tableInfo.entityBean.standName}.remove(item);&#xD;
+				         });&#xD;
+		         });&#xD;
+			  } &#xD;
+			}&#xD;
+		 }&#xD;
+	}&#xD;
+	arg.processDefault = false;
+</ClientEvent>
+        <Property name="caption">删除</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -140px -0px</Property>
+      </ToolBarButton>
+      <ToolBarButton id="buttonQuery${tableInfo.entityBean.standName}">
+        <ClientEvent name="onClick">/**&#xD;
+ * 弹出查询窗口&#xD;
+ */&#xD;
+this.get(&quot;#dialog${tableInfo.entityBean.standName}Query&quot;).show();</ClientEvent>
+        <Property name="caption"> 查询 </Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -40px -100px</Property>
+        <Property name="visible">true</Property>
+      </ToolBarButton>
+      <Fill/>
+      <Separator/>
+      <DataPilot id="dataPilot${tableInfo.entityBean.standName}">
+        <Property name="itemCodes">pageSize,pages</Property>
+        <Property name="dataSet">dataSet${tableInfo.entityBean.standName}</Property>
+      </DataPilot>
+    </ToolBar>
+    <DataGrid id="dataGrid${tableInfo.entityBean.standName}" layoutConstraint="center">
+      <Property name="dataSet">dataSet${tableInfo.entityBean.standName}</Property>
+      <Property name="dataType">dataType${tableInfo.entityBean.standName}</Property>
+      <Property name="stretchColumnsMode">allColumns</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <Property name="filterMode">clientSide</Property>
+      <Property name="dynaRowHeight">true</Property>
+      <Property name="sortMode">clientSide</Property>
+      <RowSelectorColumn>
+        <Property name="width">20</Property>
+      </RowSelectorColumn>
+       #foreach ( $param in ${tableInfo.entityBean.params})
+	       #if($param.standName!="createdBy" && $param.standName!="creationDate" && $param.standName!="lastUpdatedBy" && $param.standName!="lastUpdateDate" && $param.standName!="lastUpdateIp" && $param.standName!="version")
+	            <DataColumn name="${param.standName}">
+                   <Property name="property">${param.standName}</Property>
+              </DataColumn>
+         #end
+       #end
+    </DataGrid>
+	 <Dialog id="dialog${tableInfo.entityBean.standName}Query" layout="">
+      <ClientEvent name="onClose">this.id(&quot;dataSet${tableInfo.entityBean.standName}Query&quot;).getData(&quot;#&quot;).cancel();</ClientEvent>
+      <Property name="center">false</Property>
+      <Property name="width">40%</Property>
+      <Property name="height">50%</Property>
+      <Property name="modal">false</Property>
+      <Property name="caption">查询条件</Property>
+      <Property name="style">
+        <Property name="margin-left">240px</Property>
+        <Property name="margin-top">30px</Property>
+      </Property>
+      <Buttons>
+        <Button id="dialogButtonQuery${tableInfo.entityBean.standName}">
+          <ClientEvent name="onClick">var queryData=this.id(&quot;dataSet${tableInfo.entityBean.standName}Query&quot;).getData();&#xD;
+this.get(&quot;#dataSet${tableInfo.entityBean.standName}&quot;).set(&quot;parameter&quot;,queryData).flushAsync();&#xD;
+</ClientEvent>
+          <Property name="caption">查 询</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -40px -100px</Property>
+        </Button>
+        <Button id="buttonReset${tableInfo.entityBean.standName}">
+          <ClientEvent name="onClick">var queryData=this.id(&quot;dataSet${tableInfo.entityBean.standName}Query&quot;).getData();&#xD;
+queryData.clearData();&#xD;
+//var form=this.id('${tableInfo.entityBean.lowerFirstCharName}QueryConditions');&#xD;
+//form.set('entity',{});&#xD;
+</ClientEvent>
+          <Property name="caption">重 置</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -100px -20px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="${tableInfo.entityBean.lowerFirstCharName}QueryConditions">
+          <ClientEvent name="onKeyDown">if(arg.keyCode==13){&#xD;
+  var queryData=this.id(&quot;dataSet${tableInfo.entityBean.standName}Query&quot;).getData();&#xD;
+  this.get(&quot;#dataSet${tableInfo.entityBean.standName}&quot;).set(&quot;parameter&quot;,queryData).flushAsync();&#xD;
+}&#xD;
+</ClientEvent>
+          <Property name="cols">*,*</Property>
+          <Property name="showHint">false</Property>
+          <Property name="dataSet">dataSet${tableInfo.entityBean.standName}Query</Property>
+          <Property name="dataType">dataType${tableInfo.entityBean.standName}Query</Property>
+          <Property name="labelAlign">right</Property>
+         				#foreach ( $param in ${tableInfo.entityBean.params})
+	       						#if($param.standName!="id" && $param.standName!="createdBy" && $param.standName!="creationDate" && $param.standName!="lastUpdatedBy" && $param.standName!="lastUpdateDate" && $param.standName!="lastUpdateIp" && $param.standName!="version")
+	         #set($lastIndex=$param.paramType.lastIndexOf(".")+1)
+             #set($end=$param.paramType.length())
+             #if($end>0)#set($dataCategory=$param.paramType.substring($lastIndex,$end)) #end
+             #if($dataCategory.length()>0)#if($dataCategory=="String")#set($queryProperty="filter_LIKE_${param.standName}")#else #set($queryProperty="filter_EQ_${param.standName}") #end #end 
+			 <AutoFormElement>
+               <Property name="name">$queryProperty</Property>
+               <Property name="property">$queryProperty</Property>
+               <Editor/>
+		    </AutoFormElement>
+           #end
+		 #end
+	    </AutoForm>
+      </Children>
+    </Dialog>
+	 <UpdateAction id="updateActionSave${tableInfo.entityBean.standName}">
+      <Property name="successMessage">操作执行成功！</Property>
+      <Property name="executingMessage">正在执行操作，请稍后.....</Property>
+      <Property name="dataResolver">${tableInfo.entityBean.lowerFirstCharName}Action#saveOrUpdate${tableInfo.entityBean.standName}s</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSet${tableInfo.entityBean.standName}</Property>
+      </UpdateItem>
+    </UpdateAction>
+   
+       <UpdateAction id="updateActionDelete${tableInfo.entityBean.standName}">
+      <Property name="executingMessage">正在执行操作，请稍后.....</Property>
+      <Property name="successMessage">操作执行成功！</Property>
+      <Property name="dataResolver">${tableInfo.entityBean.lowerFirstCharName}Action#delete${tableInfo.entityBean.standName}s</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSet${tableInfo.entityBean.standName}</Property>
+        <Property name="dataPath">!DIRTY_TREE</Property>
+      </UpdateItem>
+    </UpdateAction>
+    
+    
+  </View>
+</ViewConfig>

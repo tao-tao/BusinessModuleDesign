@@ -1,0 +1,24 @@
+document.write('<object id="TANGER_OCX" classid="clsid:A39F1330-3322-4a1d-9BF0-0BA2BB90E970" codebase="static/js/platform/component/commonword/control/OfficeControl.cab#version=5,0,1,0" width="100%" height="100%">   ');
+document.write('<param name="MakerCaption" value="金航数码科技有限责任公司">   ');
+document.write('<param name="MakerKey" value="C2B7A69180DB8373B3A311AF76F6452EF0B7BC17">   ');
+document.write('<param name="ProductCaption" value="金航数码科技有限责任公司">   ');
+document.write('<param name="ProductKey" value="CEAEA23F3FC63DA650E61D476F49037727C2F0C5">   ');
+document.write('<param name="BorderStyle" value="3">   ');
+document.write('<param name="Titlebar" value="false">   ');
+document.write('<param name="Toolbars" value="true">   ');
+document.write('<param name="MenuBar" value="true">   ');
+document.write('<param name="FileOpen" value="true">   ');
+document.write('<param name="FileSave" value="true">   ');
+document.write('<param name="Caption" value="">   ');
+
+document.write('<param name="BorderColor" value="14402205">   ');
+document.write('<param name="TitlebarColor" value="15658734">   ');
+document.write('<param name="TitlebarTextColor" value="0">   ');
+document.write('<param name="IsShowToolMenu" value="-1">   ');
+document.write('<param name="IsUseUTF8URL" value="-1">   ');
+document.write('<param name="MenubarColor" value="14402205">   ');
+document.write('<param name="MenuButtonColor" VALUE="16180947">   ');
+document.write('<param name="MenuBarStyle" value="3">   ');
+document.write('<param name="MenuButtonStyle" value="7">   ');
+document.write('<SPAN STYLE="color:red">不能装载文档控件。请在检查浏览器的选项中检查浏览器的安全设置。</SPAN>   ');
+document.write('</object>   ');

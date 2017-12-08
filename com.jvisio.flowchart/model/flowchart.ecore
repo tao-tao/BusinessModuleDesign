@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="flowchart"
+    nsPrefix="flowchart">
+  <eClassifiers xsi:type="ecore:EClass" name="Terminator" eSuperTypes="#//FlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//FlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Decision" eSuperTypes="#//FlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//FlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//FlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" unique="false" eType="#//TransitionType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//FlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Subprocess" eSuperTypes="#//FlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Wait" eSuperTypes="#//FlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowElement" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flowchart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//FlowElement" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//Transition" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lanes" upperBound="-1"
+        eType="#//SwimLane" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputOutput" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ManualOperation" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Document" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Disk" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Display" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="TransitionType">
+    <eLiterals name="SOLID"/>
+    <eLiterals name="DOTTED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SwimLane">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" unique="false" eType="#//SwimLaneType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SwimLaneType">
+    <eLiterals name="HORIZONTAL"/>
+    <eLiterals name="VERTICAL"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tape" eSuperTypes="#//Action"/>
+</ecore:EPackage>

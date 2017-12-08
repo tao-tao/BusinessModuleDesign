@@ -1,0 +1,144 @@
+package ${packageName};
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import avicit.platform6.core.rest.msg.QueryReqBean;
+import avicit.platform6.core.rest.msg.QueryRespBean;
+import avicit.platform6.core.rest.msg.ResponseMsg;
+import avicit.platform6.core.rest.resteasy.RestEasyController;
+
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dto.${tableInfo.entityBean.standName}DTO;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.service.${tableInfo.entityBean.standName}Service;
+
+@RestEasyController
+@Path("/api/${mappingPath}${tableInfo.entityBean.standName}Rest")
+public class ${tableInfo.entityBean.standName}Rest{
+    private static final Logger logger =  LoggerFactory.getLogger(${tableInfo.entityBean.standName}Rest.class);
+    
+	@Autowired
+	private ${tableInfo.entityBean.standName}Service ${tableInfo.entityBean.lowerFirstCharName}Service;
+	/**
+	 * 通过ID获取单条记录
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	@GET
+	@Path("/get/v1/{id}")
+	@Produces("application/json;charset=UTF-8")
+	public ResponseMsg<${tableInfo.entityBean.standName}DTO> get(@PathParam("id") String id) throws Exception {
+		ResponseMsg<${tableInfo.entityBean.standName}DTO> responseMsg = new ResponseMsg<${tableInfo.entityBean.standName}DTO>();
+		${tableInfo.entityBean.standName}DTO dto = ${tableInfo.entityBean.lowerFirstCharName}Service.query${tableInfo.entityBean.standName}ByPrimaryKey(id);
+		responseMsg.setResponseBody(dto);
+		return responseMsg;
+	}
+	
+	/**
+	 * 插入一条记录
+	 * @param dto
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/save/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<String> save(${tableInfo.entityBean.standName}DTO dto) throws Exception {
+		ResponseMsg<String> responseMsg = new ResponseMsg<String>();
+		String id = ${tableInfo.entityBean.lowerFirstCharName}Service.insert${tableInfo.entityBean.standName}(dto);
+		responseMsg.setResponseBody(id);
+		return responseMsg;
+	}
+	/**
+	 * 修改一条记录，按照匹配字段修改
+	 * @param dto
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/updateSensitive/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<Integer> updateSensitive(${tableInfo.entityBean.standName}DTO dto) throws Exception {
+		ResponseMsg<Integer> responseMsg = new ResponseMsg<Integer>();
+		int count = ${tableInfo.entityBean.lowerFirstCharName}Service.update${tableInfo.entityBean.standName}Sensitive(dto);
+		responseMsg.setResponseBody(count);
+		return responseMsg;
+	}
+	/**
+	 * 修改一条记录的全部字段
+	 * @param dto
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/updateAll/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<Integer> updateAll(${tableInfo.entityBean.standName}DTO dto) throws Exception {
+		ResponseMsg<Integer> responseMsg = new ResponseMsg<Integer>();
+		int count = ${tableInfo.entityBean.lowerFirstCharName}Service.update${tableInfo.entityBean.standName}(dto);
+		responseMsg.setResponseBody(count);
+		return responseMsg;
+	}
+	/**
+	 * 按照ID删除一条记录
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/deleteById/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<Integer> deleteById(String id) throws Exception {
+		ResponseMsg<Integer> responseMsg = new ResponseMsg<Integer>();
+		int count = ${tableInfo.entityBean.lowerFirstCharName}Service.delete${tableInfo.entityBean.standName}ById(id);
+		responseMsg.setResponseBody(count);
+		return responseMsg;
+	}
+	/**
+	 * 按条件分页查询
+	 * @param queryReqBean
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/searchByPage/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<QueryRespBean<${tableInfo.entityBean.standName}DTO>> searchByPage(QueryReqBean<${tableInfo.entityBean.standName}DTO> queryReqBean) throws Exception {
+		ResponseMsg<QueryRespBean<${tableInfo.entityBean.standName}DTO>> responseMsg = new ResponseMsg<QueryRespBean<${tableInfo.entityBean.standName}DTO>>();
+		QueryRespBean<${tableInfo.entityBean.standName}DTO> queryRespBean = ${tableInfo.entityBean.lowerFirstCharName}Service.search${tableInfo.entityBean.standName}ByPage(queryReqBean);
+		responseMsg.setResponseBody(queryRespBean);
+		return responseMsg;
+	}
+	/**
+	 * 按条件不分页查询
+	 * @param queryReqBean
+	 * @return
+	 * @throws Exception
+	 */
+	@POST
+	@Path("/search/v1/")
+	@Produces("application/json;charset=UTF-8")
+	@Consumes("application/json;charset=UTF-8")
+	public ResponseMsg<List<${tableInfo.entityBean.standName}DTO>> search(QueryReqBean<${tableInfo.entityBean.standName}DTO> queryReqBean) throws Exception {
+		ResponseMsg<List<${tableInfo.entityBean.standName}DTO>> responseMsg = new ResponseMsg<List<${tableInfo.entityBean.standName}DTO>>();
+		List<${tableInfo.entityBean.standName}DTO> queryRespBean = ${tableInfo.entityBean.lowerFirstCharName}Service.search${tableInfo.entityBean.standName}(queryReqBean);
+		responseMsg.setResponseBody(queryRespBean);
+		return responseMsg;
+	}
+	
+}

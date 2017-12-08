@@ -1,0 +1,195 @@
+﻿
+.ribbon-tools
+{
+	margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 90px;
+    font-size: 12px;
+    clear: both;
+    border: 1px solid #3b5a82;
+    border-top: 1px solid #8db2e3;
+    border-bottom: 1px solid #9FAEC2;
+    background-image: url(../images/menu_background.png);
+    background-repeat: repeat-x;
+}
+
+.ribbon-tools *
+{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.ribbon-tools ul
+{
+	height: 84px;
+    display: block;
+}
+
+.ribbon-tools Ul li
+{
+    float: left;
+    height: 78px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+	padding: 0px 10px 0px 10px;
+    cursor: pointer;
+    background-image: url(../images/mpm/split2.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+
+.ribbon-tools ul li a
+{
+    display: block;
+    padding-top: 3px;
+    text-decoration: none;
+    margin-right: 0px;
+    margin-top: 10px;
+    height: 20px;
+    width: 75px;
+    text-align: center;
+}
+
+.ribbon-tools li a.active
+{
+    background-color: #d9e3f3;
+    background-image: url(../images/menuitem_background.png);
+    background-repeat: no-repeat;
+}
+
+
+.ribbon-tools li h2
+{
+	font-family: Calibri;
+	font-size: 11px;
+	font-weight: normal;
+	margin: 0px auto;
+	top: 65px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	position: absolute;
+}
+.ribbon-tools li div
+{
+    padding: 5px;
+    padding-top: 1px;
+    text-align: center;
+    margin: 2px;
+    height: 55px;
+    float: left;
+    min-width: 50px;
+    *width: 50px;
+}
+
+.ribbon-tools li div:hover
+{
+    padding: 4px;
+    padding-top: 0px;
+    background-image: url(../images/item_background.png);
+    background-repeat: repeat-x;
+    height: 62px;
+    border: 1px solid #FFB700;
+}
+
+.ribbon-tools li div.ribbon-list
+{
+	padding: 0px 5px 0px 5px;
+	height: 1.5em !important;
+}
+
+.ribbon-tools li div.ribbon-list:hover
+{
+	background-image: none;
+	border: 0px;
+	padding: 0px 5px 0px 5px;
+}
+
+.ribbon-tools li div.ribbon-list div
+{
+    padding: 1px;
+    text-align: left;
+    margin: 1px;
+    height: 25px;
+    line-height: 25px;
+    float: none;
+}
+
+.ribbon-tools li div.ribbon-list input
+{
+	margin-top: 3px;
+    margin-right: 3px;
+}
+
+.ribbon-tools li div.ribbon-list div img
+{
+    float: left;
+    padding: 2px;
+    padding-right: 3px;
+    vertical-align: middle;
+}
+
+.ribbon-tools li div.ribbon-list div:hover
+{
+    padding: 0px;
+    background-image: url(../images/item_small_background.png);
+    background-repeat: repeat-x;
+    height: 25px;
+    border: 1px solid #FFB700;
+}
+
+.ribbon-tools .ribbon-list ul
+{
+	background-color: #fff;
+	position: absolute;
+	margin-left: -1px;
+	border: 1px solid #8492A6;
+}
+
+.ribbon-tools .ribbon-list ul li
+{
+	background-image: url(../images/menu_dropdownitembg.png);
+	background-repeat: repeat-y;
+	margin: 0px;
+	border: 0px;
+	height: auto;
+	padding: 1px;
+	padding-left: 30px;
+	border-right: 0px;
+}
+
+.ribbon-tools .ribbon-list ul li:hover
+{
+	background-image: url(../images/menu_dropdownitembghover.png);
+	background-repeat: repeat-x;
+	border: 1px solid #FFB700;
+	padding: 0px;
+	padding-left: 29px;
+}
+
+.ribbon-tools li div img
+{
+    padding-top: 5px;
+    display: block;
+    margin: 0px auto;
+}
+
+.ribbon-tools-close
+{
+	height: 5px;
+	width: 100%;
+	background-color: rgb(112, 185, 224);
+}
+
+.ribbon-tools-close .ribbon-tools-close-button{
+	left: 50%;
+	position: relative;
+	height: 5px;
+	width: 35px;
+	cursor: pointer;
+	background: transparent url(../images/tools_close.gif) 50% 0px no-repeat;
+}
+

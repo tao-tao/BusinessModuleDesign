@@ -1,0 +1,40 @@
+p            { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; margin-top: 4px; margin-bottom: 1px; margin-right: 2px; margin-left: 2px;}
+.nom		 { margin:0px; text-align:center}
+.smaller     { font-size: 8pt; margin-top: 1px; ; margin-bottom: 1px; margin-right: 2px; margin-left: 2px}
+.eighthigh   { margin-bottom: 0px; margin-top: 0px; margin-right: 0px; margin-left: 0px}
+.blank		 { color: #FFFFFF;text-align:right }
+.Picture	 { margin-top: 24px; margin-bottom: 16px;text-align:center }
+.FigTitle	 { ; margin-bottom: 16px;text-align:center; font-weight:bold }
+.q1			 { margin-top: 8 }
+.q2			 { text-align:right; margin-top:-2 }
+td           { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; margin-left: 4; margin-right: 4; }
+h1           { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 16pt; color: #800000; font-weight: bold ; margin-top: 10px; margin-bottom: 24px}
+h2           { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12pt; color: #000080; font-weight: bold ; margin-top: 8px; margin-bottom: 2px}
+h3           { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; color: #008000; font-weight: bold ; margin-top: 6px; margin-bottom: 1px}}
+h4           { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; color: #800080; font-weight: none ; margin-top: 2px; margin-bottom: 1px}}
+img			   { border=0px none;  }
+li           { font-size: 10pt; font-family: Verdana, Arial, Helvetica, sans-serif; margin-bottom:4 }
+blockquote   { font-size: 10pt; font-family: Verdana, Arial, Helvetica, sans-serif; line-height: 100%; margin-top: 8px; margin-bottom: 8px }
+A:link		  { font:Verdana, Arial; text-decoration:none; color:#0000FF; }  
+  A:visited     { font:Verdana, Arial; text-decoration:none; color:#800080; }  
+  A:hover       { font:Verdana, Arial; text-decoration:underline; color:#FF0000; }
+a:link.butn {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+	background: #CCCCCC;
+	color: #000000;
+}
+a:visited.butn {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+    text-decoration: none;
+	background: #CCCCCC;
+	color: #000000;
+}
+a:hover.butn {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	text-decoration: none;
+	background: #FF9933;
+	color: #000000;
+}

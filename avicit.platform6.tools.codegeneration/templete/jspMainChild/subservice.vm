@@ -1,0 +1,212 @@
+package ${packageName};
+import java.io.Serializable;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import avicit.platform6.commons.utils.ComUtil;
+import avicit.platform6.commons.utils.PojoUtil;
+import avicit.platform6.core.properties.PlatformConstant.OpType;
+
+import avicit.platform6.core.exception.DaoException;
+#foreach( $sub_Table in ${tableInfo.ChildTables})
+#set($subTable=$sub_Table)    
+#end
+
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dto.${subTable.childTable.entityBean.standName}DTO;
+import ${pack}${modeName}.${tableInfo.entityBean.lowerAllCharName}.dao.${subTable.childTable.entityBean.standName}Dao;
+
+import avicit.platform6.modules.system.syslog.service.SysLogUtil;
+
+#foreach( $sub_Table in ${tableInfo.ChildTables})
+#set($subTable=$sub_Table)    
+#end
+
+/**
+ * @classname: ${subTable.childTable.entityBean.standName}Service
+ * @description: 定义  ${subTable.childTable.tableComment} 实现类
+ * @author:  ${author}
+ */
+@Service
+public class ${subTable.childTable.entityBean.standName}Service  implements Serializable {
+
+	private static final Logger logger =  LoggerFactory.getLogger(${subTable.childTable.entityBean.standName}Service.class);
+	
+    private static final long serialVersionUID = 1L;
+    
+	@Autowired
+	private ${subTable.childTable.entityBean.standName}Dao dao;
+	/**
+	 * 通过主键查询单条记录
+	 * @param id
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public ${subTable.childTable.entityBean.standName}DTO query${subTable.childTable.entityBean.standName}ByPrimaryKey(String id) throws Exception {
+		try{
+			${subTable.childTable.entityBean.standName}DTO dto = dao.find${subTable.childTable.entityBean.standName}ById(id);
+			//记录日志
+			SysLogUtil.log4Query(dto);
+			return dto;
+		}catch(Exception e){
+	    	logger.error("search${subTable.childTable.entityBean.standName}出错：", e);
+	    	throw new DaoException("",e);
+	    }
+	}
+	/**
+	 * 通过父键查询单条记录
+	 * @param id
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public List<${subTable.childTable.entityBean.standName}DTO> query${subTable.childTable.entityBean.standName}ByPid(String pid) throws Exception {
+		try{
+			List<${subTable.childTable.entityBean.standName}DTO> dto = dao.find${subTable.childTable.entityBean.standName}ByPid(pid);
+			//记录日志
+			return dto;
+		}catch(Exception e){
+	    	logger.error("search${subTable.childTable.entityBean.standName}出错：", e);
+	    	throw new DaoException("",e);
+	    }
+	}
+
+	/**
+	 * 新增对象
+	 * @param dto
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public String insert${subTable.childTable.entityBean.standName}(${subTable.childTable.entityBean.standName}DTO dto) throws Exception {
+		try{
+			String id = ComUtil.getId();
+			dto.setId(id);
+			PojoUtil.setSysProperties(dto, OpType.insert);
+			dao.insert${subTable.childTable.entityBean.standName}(dto);
+			//记录日志
+			SysLogUtil.log4Insert(dto);
+			return id;
+		}catch(Exception e){
+			logger.error("insert${subTable.childTable.entityBean.standName}出错：", e);
+			throw new DaoException("",e);
+		}
+	}
+	/**
+	 * 修改对象全部字段
+	 * @param dto
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public int update${subTable.childTable.entityBean.standName}(${subTable.childTable.entityBean.standName}DTO dto) throws Exception {
+			
+			//记录日志
+			${subTable.childTable.entityBean.standName}DTO old =findById(dto.getId());
+			SysLogUtil.log4Update(dto,old);
+			PojoUtil.setSysProperties(dto, OpType.update);
+			PojoUtil.copyProperties(old, dto,true);
+			int count = dao.update${subTable.childTable.entityBean.standName}All(old);
+			if(count ==0){
+				throw new DaoException("数据失效，请从新更新");
+			}
+			return count;
+
+	}
+	/**
+	 * 修改对象部分字段
+	 * @param dto
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public int update${subTable.childTable.entityBean.standName}Sensitive(${subTable.childTable.entityBean.standName}DTO dto) throws Exception {
+		try{
+			//记录日志
+			${subTable.childTable.entityBean.standName}DTO old =findById(dto.getId());
+			SysLogUtil.log4Update(dto, findById(dto.getId()));
+			PojoUtil.setSysProperties(dto, OpType.update);
+			PojoUtil.copyProperties(old, dto,true);
+			int count = dao.update${subTable.childTable.entityBean.standName}Sensitive(old);
+			if(count ==0){
+				throw new DaoException("数据失效，请从新更新");
+			}
+			return count;
+		}catch(Exception e){
+			logger.error("searchDemoBusinessTrip出错：", e);
+			throw new DaoException("",e);
+		}
+
+	}
+	
+	/**
+	 * 按主键单条删除
+	 * @param id
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public int delete${subTable.childTable.entityBean.standName}ById(String id) throws Exception {
+		if(StringUtils.isEmpty(id)) throw new Exception("删除失败！传入的参数主键为null");
+		try{
+			//记录日志
+			SysLogUtil.log4Delete(findById(id));
+			return dao.delete${subTable.childTable.entityBean.standName}ById(id);
+		}catch(Exception e){
+			logger.error("search${subTable.childTable.entityBean.standName}出错：", e);
+			throw new DaoException("",e);
+		}
+	}
+	/**
+	 * 按主键单条删除
+	 * @param id
+	 * @param logBase
+	 * @return
+	 * @throws Exception
+	 */
+	public int delete${subTable.childTable.entityBean.standName}(${subTable.childTable.entityBean.standName}DTO dto) throws Exception {
+		try{
+			//记录日志
+			SysLogUtil.log4Delete(dto);
+			return dao.delete${subTable.childTable.entityBean.standName}ById(dto.getId());
+		}catch(Exception e){
+			logger.error("search${subTable.childTable.entityBean.standName}出错：", e);
+			throw new DaoException("",e);
+		}
+	}
+
+	/**
+	 * 批量删除数据
+	 * @param ids id的数组
+	 * @return
+	 * @throws Exception
+	 */
+	public int delete${subTable.childTable.entityBean.standName}ByIds(String[] ids) throws Exception{
+		int result =0;
+		for(String id : ids ){
+			delete${subTable.childTable.entityBean.standName}ById(id);
+			result++;
+		}
+		return result;
+	}
+	/**
+	 * 日志专用，内部方法，不再记录日志
+	 */
+	private ${subTable.childTable.entityBean.standName}DTO findById(String id) throws Exception {
+		try{
+			${subTable.childTable.entityBean.standName}DTO dto = dao.find${subTable.childTable.entityBean.standName}ById(id);
+			return dto;
+		}catch(DaoException e){
+	    		logger.error("search${subTable.childTable.entityBean.standName}出错：", e);
+	    		throw e;
+	    }
+	}
+		
+
+}
+

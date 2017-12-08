@@ -1,0 +1,156 @@
+body{
+	font-family: Microsoft Yahei,sans-serif,Arial,Helvetica;
+	font-size:12px;
+	margin:0px 0px 0px 0px;
+}
+
+/* icon css*/
+.icon-close {
+    background: url("static/images/platform/bpm/images/close.gif") no-repeat scroll 0 0 transparent;
+}
+.icon-submit {
+    background: url("static/images/platform/bpm/images/submit.gif") no-repeat scroll 0 0 transparent;
+}
+
+
+.bbtnContainer {
+	width: auto; height : 22px;
+	margin-right: 3px;
+	display: block;
+	background: #f5f5f5;
+	float: left;
+	height: 22px;
+	font-family:"Microsoft YaHei"; 
+	FONT-SIZE: 12px;
+}
+
+.bbtn {
+	height: 22px;
+	line-height: 24px;
+	text-indent: 3px;
+	cursor: pointer;
+	float: left;
+	line-height: 20px;
+}
+
+.bbtn-left {
+	float: left;
+	height: 22px;
+	width: 6px;
+	cursor: pointer;
+}
+
+.bbtn-right {
+	float: left;
+	height: 22px;
+	width: 6px;
+	cursor: pointer;
+}
+
+.idea-table {
+	border-collapse: collapse;
+	width: 97%;
+	font-size: 12.0pt;
+	font-family: 宋体;
+	margin:3pt 3pt 3pt 5pt;
+	border-bottom:2px solid #ddd;
+	border-top:2px solid #ddd;
+	background-color: #ffffff;
+}
+.idea-table-idea {
+	border: 2px solid #ddd;
+	padding: 3px;
+
+}
+.idea-table-title {
+	border: 2px solid #ddd;
+	padding: 3px;
+	width: 15%;
+	text-align: center;
+}
+.web_dialog {
+	display: none;
+	width: 380px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	background-color: #ffffff;
+	padding: 0px;
+	z-index: 102;
+	font-family: Verdana;
+	border-radius: 5px 5px 5px 5px;
+	background: url("../user/images/panel_title.gif") repeat-x scroll 0 0 #EEEEEE;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 12px;
+    overflow: hidden;
+    padding: 5px;
+    position: absolute;
+}
+.web_dialog .web_dialog_title align_right .close{
+	background: url("../user/images/panel_tools.gif") no-repeat scroll -16px 0 transparent
+}
+.web_dialog #cancel{
+	cursor: pointer;
+}
+
+
+.web_dialog #save{
+	background-color: #336699;
+    background-image: -moz-linear-gradient(center top , #6c8aa8, #0e81f3);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #113860;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 30px;
+    margin-right: 3px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    width:80px;
+}
+.web_dialog input[type=button]{
+	background-color: #336699;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 30px;
+    margin-right: 2px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    width:80px;
+}
+.web_dialog_title {
+	padding: 1px;
+	font-weight:bold;
+	cursor: move;
+	background : url("../user/images/blank.gif") no-repeat scroll 0 0 transparent
+}
+.web_dialog_title a {
+	color: #336699;
+	padding-right:4px;
+	text-decoration: none;
+}
+.web_dialog_title a:hover {
+	color: #336699;
+	padding-right:4px;
+	text-decoration: none;
+}
+.align_right {
+	text-align: right;
+}
+.window-mask{
+	background:#FFFFFF;
+	position:absolute;
+	width:100%;
+	top:0px;
+	left:0px;
+	opacity:0.6; 
+	filter:alpha(opacity=60);
+	z-index:2;
+}
+
+/* 进度条*/
+.Bar ,.Bars { position: relative; width: 200px;/* 宽度 */ border: 0px solid #B1D632; padding: 1px; }
+.Bar div,.Bars div { display: block; position: relative; background:#9ACD32;/* 进度条背景颜色 */ color: #FF4500; height: 16px; /* 高度 */ line-height: 16px;  /* 必须和高度一致，文本才能垂直居中 */ }
+.Bars div{ background:#090}
+.Bar div span,.Bars div span { position: absolute; width: 200px; /* 宽度 */ text-align: center; font-weight: bold; }
+.cent{ margin:0 auto; width:300px; overflow:hidden} 
+	 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+       point="org.eclipse.jdt.core.classpathContainerInitializer">
+      <classpathContainerInitializer
+          id="avicit.platform.config.COMP_CONTAINER"
+          class="avicit.platform.config.SimpleDirContainerInitializer"/>
+   </extension>
+   
+   <extension 
+       point="org.eclipse.jdt.ui.classpathContainerPage">
+      <classpathContainerPage
+          id="avicit.platform.config.COMP_CONTAINER"
+          name="%ContainerName"
+          class="avicit.platform.config.SimpleDirContainerPage"/>
+   </extension>
+   
+   <extension point="org.eclipse.jdt.core.classpathContainerInitializer">
+      <classpathContainerInitializer
+          id="avicit.platform.config.THIRDPARTY_CONTAINER"
+          class="avicit.platform.config.ThirdPartyContainerInitializer"/>
+   </extension>
+   
+   <extension 
+       point="org.eclipse.jdt.ui.classpathContainerPage">
+      <classpathContainerPage
+          id="avicit.platform.config.THIRDPARTY_CONTAINER"
+          name="%TPContainerName"
+          class="avicit.platform.config.ThirdPartyContainerPage"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.jdt.ui.javaElementFilters">
+         <filter
+               id="avicit.platform.config.ContainerDirFilter"
+               targetId="org.eclipse.jdt.ui.PackageExplorer"
+               enabled="true"
+               name="%ContainerFilterName"
+               description="%ContainerFilterDesc"
+               class="avicit.platform.config.ContainerDirFilter"/>
+   </extension>
+</plugin>
